@@ -1,12 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
+
+<super-tabs>
+  <super-tabs-toolbar slot="top">
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Page #1</ion-label>    
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Page #2</ion-label>    
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Page #3</ion-label>    
+    </super-tab-button>
+  </super-tabs-toolbar>
+  <super-tabs-container>
+    <super-tab>
+      <ion-content>
+        Page #1
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        Page #2
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        Page #3
+      </ion-content>
+    </super-tab>
+  </super-tabs-container>
+</super-tabs>
+
+<!-- <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
@@ -17,4 +45,4 @@
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
-</ion-content>
+</ion-content> -->
