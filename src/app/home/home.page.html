@@ -1,20 +1,22 @@
-
-
-<super-tabs>
+<super-tabs activeTabIndex="0">
+  
   <super-tabs-toolbar slot="top">
     <super-tab-button>
       <ion-icon name="home"></ion-icon>
-      <ion-label>Page #1</ion-label>    
+      <ion-label>Home</ion-label>    
     </super-tab-button>
+
     <super-tab-button>
       <ion-icon name="home"></ion-icon>
-      <ion-label>Page #2</ion-label>    
+      <ion-label>Alojamientos</ion-label>    
     </super-tab-button>
+
     <super-tab-button>
       <ion-icon name="home"></ion-icon>
       <ion-label>Page #3</ion-label>    
     </super-tab-button>
   </super-tabs-toolbar>
+
   <super-tabs-container>
     <super-tab>
       <ion-content>
@@ -22,9 +24,7 @@
       </ion-content>
     </super-tab>
     <super-tab>
-      <ion-content>
-        Page #2
-      </ion-content>
+      <ion-nav [root]="alojamientosPage"></ion-nav>    
     </super-tab>
     <super-tab>
       <ion-content>

@@ -1,8 +1,8 @@
 {
-  "name": "testSuper-tabs",
+  "name": "arbanconturismo",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Jose Lopez",
+  "homepage": "www.joselopez-foto.eu",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -56,3 +56,4 @@
   },
   "description": "An Ionic project"
 }
+

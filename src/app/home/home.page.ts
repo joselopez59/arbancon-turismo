@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { SuperTabs } from '@ionic-super-tabs/angular';
+import { SuperTabsConfig } from '@ionic-super-tabs/core';
 
+import { AlojamientosPage } from '../alojamientos/alojamientos.page';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +12,15 @@ import { Component } from '@angular/core';
 
 
 export class HomePage {
+
+  @ViewChild(SuperTabs, { static: false }) superTabs: SuperTabs;
+
+  alojamientosPage = AlojamientosPage;
+
+  config: SuperTabsConfig = {
+    debug: true,
+    allowElementScroll: false,
+  };
 
   constructor() {}
 

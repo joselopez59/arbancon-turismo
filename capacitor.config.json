@@ -1,6 +1,6 @@
 {
-  "appId": "com.example.app",
-  "appName": "testSuperTabs",
+  "appId": "de.joselopez.arbanconturismo",
+  "appName": "arbanconturismo",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
