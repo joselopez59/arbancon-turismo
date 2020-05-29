@@ -1,3 +1,8 @@
+#home {
+  display: flex;
+  flex-direction: column;
+}
+
 .ion-padding ion-col { padding: 10px; }
 
 .side { display: grid; }

@@ -73,7 +73,13 @@
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
-  --ion-color-light-tint: #f5f6f9;
+  --ion-color-light-tint: #f5f6f9;  
+
+  /** supertabs  **/
+  --st-icon-size: 18px;
+  --st-base-color-active: white;
+  --st-icon-color-inactive: rgb(200, 200, 200);
+  --st-base-color-inactive: rgb(200, 200, 200);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -224,5 +230,7 @@
     --ion-toolbar-background: #1f1f1f;
 
     --ion-tab-bar-background: #1f1f1f;
+
+    
   }
 }
