@@ -1,11 +1,10 @@
-ion-col {
-  padding: 8px;
-  border: 1px solid red;
+.ion-padding ion-col { padding: 10px; }
 
-  // display: flex;
-  // flex-direction: column;
-  // align-items: stretch;
-}
+.side { display: grid; }
+
+.top { align-self: flex-start;}
+
+.bottom { align-self: flex-end;}
 
 // #container {
 //   text-align: center;
