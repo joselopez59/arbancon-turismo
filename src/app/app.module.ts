@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -18,7 +19,8 @@ import { SuperTabsModule } from '@ionic-super-tabs/angular';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    SuperTabsModule.forRoot()
+    SuperTabsModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
     StatusBar,
