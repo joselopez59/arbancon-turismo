@@ -19,7 +19,7 @@
 
   <super-tabs-container>
     <super-tab id="home">
-      <!-- <ion-content [fullscreen]="true"></ion-content> -->
+      
         <ion-grid class="ion-no-padding">
           <ion-row >
             <ion-col >
@@ -27,7 +27,7 @@
             </ion-col>
           </ion-row>
             
-          <ion-row class="ion-padding ">
+          <ion-row class="ion-padding" id="centro">
             
             <ion-col class="side">
               <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
@@ -35,13 +35,17 @@
               
             </ion-col>
       
-            <ion-col size="8">
+            <ion-col size="7">
               <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
             </ion-col>
             
             <ion-col class="side">
-      
-              <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
+              <div id="wetterCont">
+                <ion-img src="{{ iconUrl }}" id="wicon" class="top"></ion-img>
+                <!-- <p id="temp">{{ temp }}</p>  -->
+                <span id="temp">{{ temp }}</span>
+              </div>
+              
               <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" class="bottom"></ion-img>
       
             </ion-col>
@@ -50,14 +54,18 @@
         </ion-grid>
       
       <ion-footer>
-        <ion-toolbar >
+        <ion-toolbar color="danger">
 
-          <ion-fab horizontal="starr" vertical="center" >
-            <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara">
+            <!-- <ion-button href="https://www.turismoarbancon.com" fill="outline" size="large" shape="round">
+            <ion-icon name="earth-outline" ></ion-icon>
+          </ion-button> -->
+
+          <ion-fab horizontal="star" vertical="center" >
+            <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara" >
               <ion-icon name="logo-facebook" ></ion-icon>
             </ion-fab-button>
           </ion-fab>
-      
+          
           <ion-fab horizontal="center" vertical="center" >
             <ion-fab-button size="small" href="https://www.turismoarbancon.com">
               <ion-icon name="earth-outline" ></ion-icon>
@@ -78,7 +86,13 @@
     </super-tab>
     <super-tab>
       <ion-content>
-        Page #3
+        
+        <ion-card>
+          <ion-card-content>
+            Page #3
+            
+          </ion-card-content>
+        </ion-card>
       </ion-content>
     </super-tab>
   </super-tabs-container>

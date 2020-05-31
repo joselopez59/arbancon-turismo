@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,26 +9,13 @@ import { HttpClient } from '@angular/common/http';
 export class WheaterService {
 
   constructor(private http: HttpClient) { }
-  //constructor() { }
+  
+  base_path = 'http://api.openweathermap.org/data/2.5/weather?q=arbancon&appid=bcb1205e58d5edb65c1502281e25273f&lang=sp&units=metric';
 
-  public loaded: boolean = false;
+  getWheater(): Observable<any> {
 
-  load() {
-    console.log("load()");
-    this.http.get('http://api.openweathermap.org/data/2.5/weather?q=arbancon&appid=bcb1205e58d5edb65c1502281e25273f&lang=sp&units=metric')
-    .subscribe((response) => {
-        //console.log(response);
-    });
+    return this.http
+      .get(this.base_path)
   }
 
-  // load(): Promise<boolean> {
-  //   console.log("load()");
-
-  //   return new Promise((resolve) => {
-  //     this.http.get('http://api.openweathermap.org/data/2.5/weather?q=arbancon&appid=bcb1205e58d5edb65c1502281e25273f&lang=sp&units=metric')
-  //     .subscribe((response) => {
-  //       resolve(true);
-  //     });
-  //   });
-  // }
 }

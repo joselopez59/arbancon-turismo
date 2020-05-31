@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SuperTabs } from '@ionic-super-tabs/angular';
 import { SuperTabsConfig } from '@ionic-super-tabs/core';
-import { Observable } from 'rxjs/Observable';
+
 
 import { AlojamientosPage } from '../alojamientos/alojamientos.page';
 import { WheaterService } from './../services/wheater.service';
-import { resolve } from 'dns';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -13,18 +13,7 @@ import { resolve } from 'dns';
   styleUrls: ['home.page.scss'],
 })
 
-
 export class HomePage implements OnInit {
-
-  constructor( public weatherService: WheaterService) {}
-
-  wheater: Observable<any>;
-
-  ngOnInit(){
-    console.log("HomePage onInit()");
-    this.wheater = this.weatherService.load();
-    console.log(this.wheater);
-  }
 
   @ViewChild(SuperTabs, { static: false }) superTabs: SuperTabs;
 
@@ -35,6 +24,32 @@ export class HomePage implements OnInit {
     allowElementScroll: false,
   };
 
+
+  temp: any;
+  
+  iconUrl: any;
+
+  constructor(
+    public wheaterService: WheaterService
+  ) {
+    //this.wheater = [];
+  }
+
+  ngOnInit() {}
+
+  ionViewWillEnter() { 
+    this.getWheater();
+  }
+  
+  getWheater() {
+    this.wheaterService.getWheater().subscribe(response => {
+     
+      this.temp = Math.round(parseFloat(response.main.temp)) + '°';
+      
+      this.iconUrl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+      console.log(this.iconUrl);
+    })
+  }
   
 
 }
