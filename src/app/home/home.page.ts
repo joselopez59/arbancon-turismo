@@ -26,7 +26,6 @@ export class HomePage implements OnInit {
 
 
   temp: any;
-  
   iconUrl: any;
 
   constructor(
