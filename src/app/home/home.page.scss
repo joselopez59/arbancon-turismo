@@ -25,16 +25,28 @@
   right: 0;
 }
 
-ion-button {
- 
-  // --border-radius: 60%;
+ion-card { 
+  width: 100%; 
+  padding: 10px;
 }
 
+/** TAB ALOJAMIENTOS **/
 
+#alojamientos img {
+  border-radius: 4px;
+}
 
-ion-fab-button {
-  
-  box-shadow: none;
+.H-Mitte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.H-Top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
 }
 
 

@@ -8,13 +8,13 @@ import { AlojamientosService } from './../services/alojamientos.service';
 })
 export class AlojamientosPage implements OnInit {
   
-  alojamientos: [] = [];
+  public alojamientos: [] = [];
   
   constructor(
     public alojamientosService: AlojamientosService
   ) {
-    this.alojamientos = this.alojamientosService.getAlojamientos();
-    console.log(this.alojamientos);
+    // this.alojamientos = this.alojamientosService.getAlojamientos();
+    // console.log(this.alojamientos);
    }
 
   

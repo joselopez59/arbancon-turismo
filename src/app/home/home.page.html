@@ -1,4 +1,4 @@
-<super-tabs activeTabIndex="0">
+<super-tabs activeTabIndex="1">
   
   <super-tabs-toolbar slot="top">
     <super-tab-button>
@@ -20,45 +20,41 @@
   <super-tabs-container>
     <super-tab id="home">
       
-        <ion-grid class="ion-no-padding">
-          <ion-row >
-            <ion-col >
-              <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
-            </ion-col>
-          </ion-row>
+      <ion-grid class="ion-no-padding">
+        <ion-row >
+          <ion-col >
+            <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
+          </ion-col>
+        </ion-row>
+          
+        <ion-row class="ion-padding" id="centro">
+          
+          <ion-col class="side">
+            <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
+            <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
             
-          <ion-row class="ion-padding" id="centro">
+          </ion-col>
+    
+          <ion-col size="7">
+            <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
+          </ion-col>
+          
+          <ion-col class="side">
+            <div id="wetterCont">
+              <ion-img src="{{ iconUrl }}" id="wicon" class="top"></ion-img>
+              <!-- <p id="temp">{{ temp }}</p>  -->
+              <span id="temp">{{ temp }}</span>
+            </div>
             
-            <ion-col class="side">
-              <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
-              <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
-              
-            </ion-col>
-      
-            <ion-col size="7">
-              <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
-            </ion-col>
+            <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" class="bottom"></ion-img>
+    
+          </ion-col>
+        </ion-row>        
             
-            <ion-col class="side">
-              <div id="wetterCont">
-                <ion-img src="{{ iconUrl }}" id="wicon" class="top"></ion-img>
-                <!-- <p id="temp">{{ temp }}</p>  -->
-                <span id="temp">{{ temp }}</span>
-              </div>
-              
-              <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" class="bottom"></ion-img>
-      
-            </ion-col>
-          </ion-row>        
-             
-        </ion-grid>
+      </ion-grid>
       
       <ion-footer>
         <ion-toolbar color="danger">
-
-            <!-- <ion-button href="https://www.turismoarbancon.com" fill="outline" size="large" shape="round">
-            <ion-icon name="earth-outline" ></ion-icon>
-          </ion-button> -->
 
           <ion-fab horizontal="star" vertical="center" >
             <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara" >
@@ -81,19 +77,65 @@
         </ion-toolbar>
       </ion-footer>
     </super-tab>
-    <super-tab>
-      <ion-nav [root]="alojamientosPage"></ion-nav>    
-    </super-tab>
-    <super-tab>
-      <ion-content>
-        
-        <ion-card>
-          <ion-card-content>
-            Page #3
+
+    <!-- TAB  ALOJAMIENTOS -->
+    <super-tab id="alojamientos">
+      <!-- <ion-nav [root]="alojamientosPage"></ion-nav>     -->
+      <ion-list>
+        <ion-item 
+          *ngFor="let alojamiento of alojamientos" 
+          [routerLink]="['/alojamiento-detail/' + alojamiento.id]"
+          routerDirection="forward"
+          lines="none"
+        >
+          <ion-card href="#">
+            <ion-card-title class="ion-text-end">
+              {{ alojamiento.vendor }}
+            </ion-card-title>
+            <ion-grid>
+              <ion-row>
+
+                <ion-col class="H-Mitte" size="4">
+                    <img src="../../../assets/{{ alojamiento.mainImage }}">                
+                </ion-col>
+
+                <ion-col size="2"></ion-col>
+
+                <ion-col size="6" class="H-Top">
+                  
+                  <div *ngFor="let feature of alojamiento.features">
+                    {{ feature.amount }} {{ feature.typ }}
+                  </div>
+
+                  <!-- <ul>
+                    <li *ngFor="let feature of alojamiento.features" lines="none">
+                      {{ feature.amount }} {{ feature.typ }} 
+                    </li>
+                  </ul>     -->
+
+                </ion-col>
+              </ion-row>
+            </ion-grid>
             
-          </ion-card-content>
-        </ion-card>
-      </ion-content>
+
+            
+            
+          </ion-card>
+          
+          
+        </ion-item>
+      </ion-list>
+    </super-tab>
+
+    <!-- TAB  GASTRONOMIA -->
+    <super-tab>
+      <ion-content></ion-content>
+        
+
+            
+            
+          
+      
     </super-tab>
   </super-tabs-container>
 </super-tabs>

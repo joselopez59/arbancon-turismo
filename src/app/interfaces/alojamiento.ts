@@ -1,6 +1,6 @@
-export interface Alojamiento{
-    type: string;
+export interface Alojamiento {
     id: string;
     vendor: string;
     name: string;
+    type: string;
   }
