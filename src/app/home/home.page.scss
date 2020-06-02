@@ -1,4 +1,4 @@
-#home {
+.tab {
   display: flex;
   flex-direction: column;
 }
@@ -25,29 +25,44 @@
   right: 0;
 }
 
+/** TAB ALOJAMIENTOS **/
+
 ion-card { 
-  width: 100%; 
-  padding: 10px;
+  width: 100%;
 }
 
-/** TAB ALOJAMIENTOS **/
+ion-button {
+  --border-color: white;
+  --color: white;
+}
+
+ion-card .inCard {
+  
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
 
 #alojamientos img {
   border-radius: 4px;
+  height: 65px;
 }
 
-.H-Mitte {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.H-Top {
+ion-card .card-right {
+  
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: space-between;
 }
+
+#alojamientos ion-card-content {
+  padding: 0 0 0 14px;
+}
+
+.btn-wrapper {
+  text-align: center;
+  background-color: var(--ion-color-danger);
+  padding: 4px;
+}
+
 
 
 #container {

@@ -1,58 +1,59 @@
 <super-tabs activeTabIndex="1">
-  
+
   <super-tabs-toolbar slot="top">
     <super-tab-button>
       <ion-icon name="home"></ion-icon>
-      <ion-label>Home</ion-label>    
+      <ion-label>Home</ion-label>
     </super-tab-button>
 
     <super-tab-button>
       <ion-icon name="home"></ion-icon>
-      <ion-label>Alojamientos</ion-label>    
+      <ion-label>Alojamientos</ion-label>
     </super-tab-button>
 
     <super-tab-button>
       <ion-icon name="home"></ion-icon>
-      <ion-label>Gastronomia</ion-label>    
+      <ion-label>Gastronomia</ion-label>
     </super-tab-button>
   </super-tabs-toolbar>
 
   <super-tabs-container>
-    <super-tab id="home">
-      
-      <ion-grid class="ion-no-padding">
-        <ion-row >
-          <ion-col >
-            <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
-          </ion-col>
-        </ion-row>
-          
-        <ion-row class="ion-padding" id="centro">
-          
-          <ion-col class="side">
-            <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
-            <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
-            
-          </ion-col>
-    
-          <ion-col size="7">
-            <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
-          </ion-col>
-          
-          <ion-col class="side">
-            <div id="wetterCont">
-              <ion-img src="{{ iconUrl }}" id="wicon" class="top"></ion-img>
-              <!-- <p id="temp">{{ temp }}</p>  -->
-              <span id="temp">{{ temp }}</span>
-            </div>
-            
-            <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" class="bottom"></ion-img>
-    
-          </ion-col>
-        </ion-row>        
-            
-      </ion-grid>
-      
+    <super-tab class="tab">
+      <ion-content>
+        <ion-grid class="ion-no-padding">
+          <ion-row >
+            <ion-col >
+              <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-padding" id="centro">
+
+            <ion-col class="side">
+              <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
+              <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
+
+            </ion-col>
+
+            <ion-col size="7">
+              <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
+            </ion-col>
+
+            <ion-col class="side">
+              <div id="wetterCont">
+                <ion-img src="{{ iconUrl }}" id="wicon" class="top"></ion-img>
+                <!-- <p id="temp">{{ temp }}</p>  -->
+                <span id="temp">{{ temp }}</span>
+              </div>
+
+              <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" class="bottom"></ion-img>
+
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </ion-content>
+
       <ion-footer>
         <ion-toolbar color="danger">
 
@@ -61,81 +62,166 @@
               <ion-icon name="logo-facebook" ></ion-icon>
             </ion-fab-button>
           </ion-fab>
-          
-          <ion-fab horizontal="center" vertical="center" >
+
+          <ion-fab horizontal="center" vertical="center">
             <ion-fab-button size="small" href="https://www.turismoarbancon.com">
               <ion-icon name="earth-outline" ></ion-icon>
             </ion-fab-button>
           </ion-fab>
-      
+
           <ion-fab horizontal="end" vertical="center" >
             <ion-fab-button size="small" href="https://twitter.com/TurismoArbancon">
               <ion-icon name="logo-twitter" ></ion-icon>
             </ion-fab-button>
           </ion-fab>
-      
+
         </ion-toolbar>
       </ion-footer>
     </super-tab>
 
     <!-- TAB  ALOJAMIENTOS -->
-    <super-tab id="alojamientos">
-      <!-- <ion-nav [root]="alojamientosPage"></ion-nav>     -->
-      <ion-list>
-        <ion-item 
-          *ngFor="let alojamiento of alojamientos" 
-          [routerLink]="['/alojamiento-detail/' + alojamiento.id]"
-          routerDirection="forward"
-          lines="none"
-        >
-          <ion-card href="#">
-            <ion-card-title class="ion-text-end">
-              {{ alojamiento.vendor }}
-            </ion-card-title>
+    <super-tab id="alojamientos" class="tab">
+      <ion-content>
+        <ion-list>
+          <ion-item
+            *ngFor="let alojamiento of alojamientos"
+            [routerLink]="['/alojamiento-detail/' + alojamiento.id]"
+            routerDirection="forward"
+            lines="none"
+          >
+            <ion-card>
+
+              <div class="inCard">
+                <img src="../../../assets/{{ alojamiento.logo }}">
+
+                <div class="card-right">
+                  <ion-card-title class="ion-text-end">
+                    {{ alojamiento.vendor }}
+                  </ion-card-title>
+                  <ion-card-content class="ion-text-end ion-text-end">
+                    {{ alojamiento.shortProfil }} 
+                  </ion-card-content>
+                </div>
+              </div>
+              
+
+              <!-- <ion-grid class="ion-no-padding">
+                <ion-row class="ion-text-end ion-align-items-center ion-align-items-stretch">
+                  <ion-col class="ion-justify-content-center">
+                    <img src="../../../assets/{{ alojamiento.logo }}" >
+                  </ion-col>
+
+                  <ion-col size="9" >
+                                         
+                    <ion-card-title >
+                      {{ alojamiento.vendor }}
+                    </ion-card-title>
+                    <ion-card-content>
+                      {{ alojamiento.shortProfil }} 
+                    </ion-card-content>
+                             
+                  </ion-col>
+                </ion-row>                   
+              </ion-grid> -->
+
+            </ion-card>
+          </ion-item>
+        </ion-list>
+
+      </ion-content>
+
+      <ion-footer color="danger">
+        <div class="btn-wrapper">
+              <ion-button  shape="round" fill="outline" [routerLink]="['/escapadas']">
+                <ion-label>Escapadas</ion-label>
+            </ion-button>
+         
+        </div>
+        <!-- <ion-toolbar color="danger" style="text-align:center"> 
             <ion-grid>
-              <ion-row>
-
-                <ion-col class="H-Mitte" size="4">
-                    <img src="../../../assets/{{ alojamiento.mainImage }}">                
-                </ion-col>
-
-                <ion-col size="2"></ion-col>
-
-                <ion-col size="6" class="H-Top">
-                  
-                  <div *ngFor="let feature of alojamiento.features">
-                    {{ feature.amount }} {{ feature.typ }}
-                  </div>
-
-                  <!-- <ul>
-                    <li *ngFor="let feature of alojamiento.features" lines="none">
-                      {{ feature.amount }} {{ feature.typ }} 
-                    </li>
-                  </ul>     -->
-
+              <ion-row class="ion-align-items-center">
+                <ion-col size="12" class="ion-text-center">
+                  <ion-buttons >
+                    <ion-button shape="round" fill="outline">
+                      <ion-label>Escapadas</ion-label>
+                    </ion-button>
+                  </ion-buttons>
                 </ion-col>
               </ion-row>
             </ion-grid>
-            
+        </ion-toolbar> -->
+      </ion-footer>
 
-            
-            
-          </ion-card>
-          
-          
-        </ion-item>
-      </ion-list>
     </super-tab>
 
     <!-- TAB  GASTRONOMIA -->
     <super-tab>
-      <ion-content></ion-content>
-        
-
-            
-            
-          
-      
+      <super-tab id="home">
+        <ion-content>
+          <ion-grid class="ion-no-padding">
+            <ion-row >
+              <ion-col >
+                <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
+              </ion-col>
+            </ion-row>
+  
+            <ion-row >
+              <ion-col >
+                <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
+              </ion-col>
+            </ion-row>
+  
+            <ion-row class="ion-padding" id="centro">
+  
+              <ion-col class="side">
+                <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
+                <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
+  
+              </ion-col>
+  
+              <ion-col size="7">
+                <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
+              </ion-col>
+  
+              <ion-col class="side">
+                <div id="wetterCont">
+                  <ion-img src="{{ iconUrl }}" id="wicon" class="top"></ion-img>
+                  <!-- <p id="temp">{{ temp }}</p>  -->
+                  <span id="temp">{{ temp }}</span>
+                </div>
+  
+                <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" class="bottom"></ion-img>
+  
+              </ion-col>
+            </ion-row>
+  
+          </ion-grid>
+        </ion-content>
+  
+        <ion-footer>
+          <ion-toolbar color="danger">
+  
+            <ion-fab horizontal="star" vertical="center" >
+              <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara" >
+                <ion-icon name="logo-facebook" ></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+  
+            <ion-fab horizontal="center" vertical="center" >
+              <ion-fab-button size="small" href="https://www.turismoarbancon.com">
+                <ion-icon name="earth-outline" ></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+  
+            <ion-fab horizontal="end" vertical="center" >
+              <ion-fab-button size="small" href="https://twitter.com/TurismoArbancon">
+                <ion-icon name="logo-twitter" ></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+  
+          </ion-toolbar>
+        </ion-footer>
+      </super-tab>
     </super-tab>
   </super-tabs-container>
 </super-tabs>

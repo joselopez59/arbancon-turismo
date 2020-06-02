@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'alojamiento-detail/:id',
     loadChildren: () => import('./alojamiento-detail/alojamiento-detail.module').then( m => m.AlojamientoDetailPageModule)
   },
+  {
+    path: 'escapadas',
+    loadChildren: () => import('./escapadas/escapadas.module').then( m => m.EscapadasPageModule)
+  },
   // {
   //   path: 'alojamientos',
   //   loadChildren: () => import('./alojamientos/alojamientos.module').then( m => m.AlojamientosPageModule)

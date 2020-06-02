@@ -1,0 +1,38 @@
+ion-card { 
+    width: 100%;
+    padding: 10px; 
+}
+
+ion-card .inCard {
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  
+img {
+    
+    border-radius: 4px;
+    height: 65px;
+}
+
+.imgInCard {
+    display: flex;
+    align-items: flex-end;
+}
+ion-card .card-right {
+    border: 1px solid red;
+display: flex;
+flex-direction: column;
+}
+
+ion-card-title {
+    font-size: 14px;
+}
+
+ion-card-content {
+padding: 0 0 0 14px;
+}
+
+ul {
+    margin-bottom: 0;
+}

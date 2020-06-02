@@ -23,13 +23,11 @@ export class AlojamientoDetailPage implements OnInit {
     console.log("id: " + id)
 
     this.alojamiento = this.alojamientosService.getAlojamiento(id);
-    console.log (this.alojamiento[0].id);
+    //console.log (this.alojamiento[0].id);
     
   }
 
   
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
 }
