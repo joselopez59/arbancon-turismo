@@ -32,14 +32,11 @@ export class HomePage implements OnInit {
   constructor(
     public wheaterService: WheaterService,
     public alojamientosService: AlojamientosService
-  ) {
-    //this.wheater = [];
-    this.alojamientos = this.alojamientosService.getAlojamientos();
-    //console.log(this.alojamientos[0].properties.id);
-  }
+  ) {}
 
   ngOnInit() {
-    this.getWheater()
+    this.getWheater();
+    this.alojamientos = this.alojamientosService.getAlojamientos();
   }
   
   // ionViewWillEnter() { 
