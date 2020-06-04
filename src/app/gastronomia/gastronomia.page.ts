@@ -15,12 +15,12 @@ gastronomia: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private gastronimiaService: GastronomiaService
+    private gastronomiaService: GastronomiaService
   ) { }
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
-    //this. gastronomia = this.gastronimiaService.getGastronomia(id);
+    this. gastronomia = this.gastronomiaService.getGastronomia(id)[0];
   }
 
 }

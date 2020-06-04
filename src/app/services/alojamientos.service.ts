@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Alojamiento } from '../interfaces/alojamiento';
+//import { Alojamiento } from '../interfaces/alojamiento';
 
 @Injectable({
   providedIn: 'root'
