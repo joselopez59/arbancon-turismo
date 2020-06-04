@@ -6,6 +6,7 @@ import { WheaterService } from './../services/wheater.service';
 
 //import { AlojamientosPage } from '../alojamientos/alojamientos.page';
 import { AlojamientosService } from './../services/alojamientos.service';
+import { GastronomiaService } from './../services/gastronomia.service';
 
 @Component({
   selector: 'app-home',
@@ -28,15 +29,18 @@ export class HomePage implements OnInit {
   iconUrl: any;
   
   public alojamientos: [];
+  public gastronomias: [];
 
   constructor(
     public wheaterService: WheaterService,
-    public alojamientosService: AlojamientosService
+    public alojamientosService: AlojamientosService,
+    public gastronomiaService: GastronomiaService
   ) {}
 
   ngOnInit() {
     this.getWheater();
     this.alojamientos = this.alojamientosService.getAlojamientos();
+    this.gastronomias = this.gastronomiaService.getGastronomias();
   }
   
   // ionViewWillEnter() { 

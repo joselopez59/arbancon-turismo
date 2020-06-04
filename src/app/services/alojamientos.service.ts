@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Alojamiento } from '../interfaces/alojamiento';
 
 @Injectable({
@@ -8,7 +7,7 @@ import { Alojamiento } from '../interfaces/alojamiento';
 
 export class AlojamientosService {
 
-  alojamiento: Alojamiento;
+  //alojamiento: Alojamiento;
 
   constructor() { }
 
@@ -276,7 +275,8 @@ export class AlojamientosService {
   }
 
   getAlojamiento(id) {
-    this.alojamiento = this.alojamientos.filter(d => d.id === id)
-    return this.alojamiento;
+    // this.alojamiento = this.alojamientos.filter(d => d.id === id)
+    // return this.alojamiento;
+    return this.alojamientos.filter(d => d.id === id)
   }
 }

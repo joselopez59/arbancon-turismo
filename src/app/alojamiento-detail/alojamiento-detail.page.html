@@ -3,18 +3,18 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ alojamiento[0].vendor }}</ion-title>
+    <ion-title>{{ alojamiento.vendor }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
 
-    <ion-img src="../../assets/{{ alojamiento[0].mainImage }}"></ion-img>
+    <ion-img src="../../assets/{{ alojamiento.mainImage }}"></ion-img>
 
-    <ion-item>{{ alojamiento[0].shortProfil }} </ion-item>
+    <ion-item>{{ alojamiento.shortProfil }} </ion-item>
 
 
-    <div *ngFor="let feature of alojamiento[0].features">
+    <div *ngFor="let feature of alojamiento.features">
       {{ feature.amount }} {{ feature.typ }}
     </div>
  

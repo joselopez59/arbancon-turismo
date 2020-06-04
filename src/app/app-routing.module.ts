@@ -19,6 +19,11 @@ const routes: Routes = [
     path: 'escapadas',
     loadChildren: () => import('./escapadas/escapadas.module').then( m => m.EscapadasPageModule)
   },
+  {
+    path: 'gastronomia/:id',
+    loadChildren: () => import('./gastronomia/gastronomia.module').then( m => m.GastronomiaPageModule)
+  },
+
   // {
   //   path: 'alojamientos',
   //   loadChildren: () => import('./alojamientos/alojamientos.module').then( m => m.AlojamientosPageModule)

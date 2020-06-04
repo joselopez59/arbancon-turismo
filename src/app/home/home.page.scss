@@ -3,6 +3,12 @@
   flex-direction: column;
 }
 
+img {
+  border-radius: 4px;
+  height: 65px;
+}
+
+/** HOME TAB **/
 #centro {
   justify-self: center;
 }
@@ -42,10 +48,7 @@ ion-card .inCard {
   grid-template-columns: 1fr 3fr;
 }
 
-#alojamientos img {
-  border-radius: 4px;
-  height: 65px;
-}
+
 
 ion-card .card-right {
   

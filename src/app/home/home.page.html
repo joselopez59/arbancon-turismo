@@ -1,4 +1,4 @@
-<super-tabs activeTabIndex="1">
+<super-tabs activeTabIndex="2">
 
   <super-tabs-toolbar slot="top">
     <super-tab-button>
@@ -120,8 +120,36 @@
     </super-tab>
 
     <!-- TAB  GASTRONOMIA -->
-    <super-tab>
-      
+    <super-tab id="gastronomia" class="tab">
+      <ion-content>
+        <ion-list>
+          <ion-item
+            *ngFor="let gastronomia of gastronomias"
+            [routerLink]="['/gastronomia/' + gastronomia.id]"
+            routerDirection="forward"
+            lines="none"
+          >
+            <ion-card>
+              <div class="inCard">
+                
+                <img src="../../../assets/{{ gastronomia.image }}">
+
+                <div class="card-right">
+                  <ion-card-title class="ion-text-end">
+                    {{ gastronomia.name }}
+                  </ion-card-title>
+                  <ion-card-content class="ion-text-end ion-text-end">
+                    <div *ngFor="let feature of gastronomia.features">
+                      {{ feature }}
+                    </div>
+
+                  </ion-card-content>
+                </div>
+              </div>
+            </ion-card>
+          </ion-item>
+        </ion-list>
+      </ion-content>
     </super-tab>
   </super-tabs-container>
 </super-tabs>

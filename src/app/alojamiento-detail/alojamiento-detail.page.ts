@@ -11,23 +11,26 @@ import { Alojamiento } from '../interfaces/alojamiento';
 })
 export class AlojamientoDetailPage implements OnInit {
 
-  alojamiento: Alojamiento;
+  //alojamiento: Alojamiento;
+  alojamiento: any;
+  //alojamientoItem: any;
   
   //public alojamiento: [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private alojamientosService: AlojamientosService
-  ) { 
+  ) {}
+  
+  ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log("id: " + id)
+    //console.log("id: " + id)
 
-    this.alojamiento = this.alojamientosService.getAlojamiento(id);
+    //this.alojamiento = this.alojamientosService.getAlojamiento(id);
     //console.log (this.alojamiento[0].id);
+    this.alojamiento = this.alojamientosService.getAlojamiento(id)[0];
+    //console.log (this.alojamientoItem.id);
     
   }
-
-  
-  ngOnInit() {}
 
 }
