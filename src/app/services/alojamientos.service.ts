@@ -154,7 +154,7 @@ export class AlojamientosService {
     },
     {
       id: "melquiades",
-      vendor: "Casa rural Melquiade",
+      vendor: "Casa rural Melquiades",
       name: "Melquiades",
       type: "Casa rural",
       shortProfil: "Diseñada para parejas o familias de hasta 6 personas ",
