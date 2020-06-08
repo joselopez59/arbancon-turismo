@@ -13,9 +13,21 @@ export class AlojamientoDetailPage implements OnInit {
 
   //alojamiento: Alojamiento;
   alojamiento: any;
-  //alojamientoItem: any;
-  
-  //public alojamiento: [];
+
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    autoplay: {
+      delay: 3000,
+    },
+    //loop: true,
+    //autoHeight: true,
+    //roundLengths: true,
+    //spaceBetween: 0,
+    //centeredSlides: true,
+    //centeredSlidesBounds: false
+
+  };
 
   constructor(
     private activatedRoute: ActivatedRoute,

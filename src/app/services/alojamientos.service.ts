@@ -49,7 +49,7 @@ export class AlojamientosService {
       urlContact: "http://www.tahonarural.es/contacto.html",
       mail: "correo@tahonarural.es",
       tel: "629 076 146",
-      mainImage: "images/casas/tahona/tahona01-120x.jpg",
+      mainImage: "images/casas/tahona/tahonaMain-100x.jpg",
       logo: "images/casas/tahona/logoTahona.png",
       slider: [
         "images/casas/tahona/tahona01-350x.jpg",

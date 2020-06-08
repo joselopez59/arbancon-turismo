@@ -80,7 +80,19 @@
   --st-base-color-active: white;
   --st-icon-color-inactive: rgb(200, 200, 200);
   --st-base-color-inactive: rgb(200, 200, 200);
+
+  /** green escudo **/
+  --ion-color-green: #26A767;
+  --ion-color-green-rgb: 38,167,103;
+  --ion-color-green-contrast: #ffffff;
+  --ion-color-green-contrast-rgb: 255,255,255;
+  --ion-color-green-shade: #5ca56c;
+  --ion-color-green-tint: #78c288;
+
+  --ion-color-background: #EFF0F1;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   /*
@@ -232,9 +244,6 @@
     --ion-tab-bar-background: #1f1f1f;
 
     
-  }
-  
-  ion-card { padding: 10px; }
-  
+  } 
 }
 

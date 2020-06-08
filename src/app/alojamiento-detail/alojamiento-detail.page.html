@@ -10,7 +10,15 @@
 
 <ion-content fullscreen>
 
-    <ion-img src="../../assets/{{ alojamiento.mainImage }}"></ion-img>
+    <!-- <ion-img src="../../assets/{{ alojamiento.mainImage }}"></ion-img> -->
+
+    <ion-slides pager="true" [options]="slideOpts">
+      
+      <ion-slide *ngFor="let slide of alojamiento.slider">
+        <ion-img src="../../assets/{{ slide }}"></ion-img>
+      </ion-slide>
+      
+    </ion-slides>
 
     <ion-item>{{ alojamiento.shortProfil }} </ion-item>
 

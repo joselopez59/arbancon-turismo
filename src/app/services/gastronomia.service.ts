@@ -32,8 +32,8 @@ export class GastronomiaService {
       "id": "terraza",
       "name": "Terraza de verano",
       "features": [
-        "Bar",
         "Terraza",
+        "Bar",  
         "Barbacoa"
       ],
       "profile": "Junto a las Piscinas de Verano de Arbancón y las zonas de recreo del Parque de la Zarzabala y zona deportiva se encuentra ubicada la Terraza de Verano. Un lugar amplio y fresco, perfecto para disfrutar de carnes a la brasa en nuestra barbacoa, y una zona inmejorable para disfrutar de una refrigerio durante las épocas estivales.",
@@ -124,7 +124,7 @@ export class GastronomiaService {
       "name": "Productos naturales Álvaro Cerrada",
       "description": "Productos naturales de la huerta de Arbancón",
       "features": [
-        "Huevos de gallinas felices",
+        "Huevos frescos",
         "Hortalizas de temporada"
       ],
       "href": "",

@@ -1,7 +1,7 @@
-<super-tabs activeTabIndex="2">
+<super-tabs activeTabIndex="">
 
   <super-tabs-toolbar slot="top">
-    <super-tab-button>
+    <super-tab-button class="special">
       <ion-icon name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </super-tab-button>
@@ -15,21 +15,40 @@
       <ion-icon name="home"></ion-icon>
       <ion-label>Gastronomia</ion-label>
     </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Patrimonio</ion-label>
+    </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Actividades </ion-label>
+    </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Eventos</ion-label>
+    </super-tab-button>
+
   </super-tabs-toolbar>
 
   <super-tabs-container>
-    <super-tab class="tab">
+    <super-tab id="home" class="tab">
       <ion-content>
-        <ion-grid class="ion-no-padding">
+
+        <ion-grid class="ion-no-padding headerImg">
           <ion-row >
-            <ion-col >
+            <ion-col>
               <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
             </ion-col>
           </ion-row>
+        </ion-grid>
 
-          <ion-row class="ion-padding" id="centro">
+        <ion-grid class="logos">
+          <ion-row>
 
-            <ion-col class="side">
+            <ion-col class="side ion-padding">
               <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
               <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
 
@@ -39,19 +58,20 @@
               <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
             </ion-col>
 
-            <ion-col class="side">
+            <ion-col class="side ion-padding">
               <div id="wetterCont">
                 <ion-img src="{{ iconUrl }}" id="wicon" class="top"></ion-img>
-                <!-- <p id="temp">{{ temp }}</p>  -->
-                <span id="temp">{{ temp }}</span>
+                <ion-label id="temp">{{ temp }}</ion-label> 
+                <!-- <span id="temp">{{ temp }}</span> -->
               </div>
 
               <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" class="bottom"></ion-img>
 
             </ion-col>
           </ion-row>
-
         </ion-grid>
+          
+
       </ion-content>
 
       <ion-footer>
@@ -92,10 +112,10 @@
             <ion-card>
 
               <div class="inCard">
-                <img src="../../../assets/{{ alojamiento.logo }}">
+                <img src="../../../assets/{{ alojamiento.mainImage }}">
 
                 <div class="card-right">
-                  <ion-card-title class="ion-text-end">
+                  <ion-card-title class="ion-text-end" color="green">
                     {{ alojamiento.vendor }}
                   </ion-card-title>
                   <ion-card-content class="ion-text-end ion-text-end">
@@ -138,18 +158,41 @@
                   <ion-card-title class="ion-text-end">
                     {{ gastronomia.name }}
                   </ion-card-title>
-                  <ion-card-content class="ion-text-end ion-text-end">
-                    <div *ngFor="let feature of gastronomia.features">
-                      {{ feature }}
-                    </div>
-
-                  </ion-card-content>
                 </div>
               </div>
+
+              <div class="card-right">
+                <ion-card-content class="ion-text-end">
+
+                  <ion-badge
+                    color="green" 
+                    *ngFor="let feature of gastronomia.features"
+                  >
+                    {{ feature }}
+                  </ion-badge>
+                  
+                </ion-card-content>
+              </div>
+    
             </ion-card>
           </ion-item>
         </ion-list>
       </ion-content>
+    </super-tab>
+
+    <!-- TAB  PATRIMONIO -->
+    <super-tab id="patrimonio" class="tab">
+
+    </super-tab>
+
+    <!-- TAB  NATURALEZA -->
+    <super-tab id="actividades" class="tab">
+
+    </super-tab>
+
+    <!-- TAB  EVENTOS -->
+    <super-tab id="eventos" class="tab">
+
     </super-tab>
   </super-tabs-container>
 </super-tabs>
