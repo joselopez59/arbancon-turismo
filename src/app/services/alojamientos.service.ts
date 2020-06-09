@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+
 //import { Alojamiento } from '../interfaces/alojamiento';
 
 @Injectable({
@@ -9,7 +12,7 @@ export class AlojamientosService {
 
   //alojamiento: Alojamiento;
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
   alojamientos: any = [
     {
@@ -271,7 +274,9 @@ export class AlojamientosService {
   ];
 
   getAlojamientos() {
-    return this.alojamientos;
+    //return this.alojamientos;
+    console.log(this.http.get("../../"));
+    return this.http.get("./../assets/data/alojamientos.json")
   }
 
   getAlojamiento(id) {
