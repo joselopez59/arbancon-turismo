@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>patrimonio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item 
+      *ngFor="let escapada of escapadas"
+      lines="none">
+      <ion-card class="ion-no-padding">
+
+        <div class="card-header">
+            <ion-card-title class="ion-text-start">
+              {{ escapada.name }}
+            </ion-card-title>
+        </div>
+      </ion-card>
+    </ion-item>
+    </ion-list>
+</ion-content>

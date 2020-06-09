@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  // {
+  //   path: 'alojamientos',
+  //   loadChildren: () => import('./alojamientos/alojamientos.module').then( m => m.AlojamientosPageModule)
+  // },
+  {
+    path: 'alojamientos',
+    loadChildren: () => import('./pages/alojamientos/alojamientos.module').then( m => m.AlojamientosPageModule)
+  },
+  {
+    path: 'alojamiento/:id',
+    loadChildren: () => import('./pages/alojamiento/alojamiento.module').then( m => m.AlojamientoPageModule)
+  },
   {
     path: 'alojamiento-detail/:id',
     loadChildren: () => import('./alojamiento-detail/alojamiento-detail.module').then( m => m.AlojamientoDetailPageModule)
@@ -23,11 +35,13 @@ const routes: Routes = [
     path: 'gastronomia/:id',
     loadChildren: () => import('./gastronomia/gastronomia.module').then( m => m.GastronomiaPageModule)
   },
+  {
+    path: 'patrimonio',
+    loadChildren: () => import('./patrimonio/patrimonio.module').then( m => m.PatrimonioPageModule)
+  },
+  
 
-  // {
-  //   path: 'alojamientos',
-  //   loadChildren: () => import('./alojamientos/alojamientos.module').then( m => m.AlojamientosPageModule)
-  // },
+  
 ];
 
 @NgModule({

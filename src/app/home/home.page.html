@@ -1,39 +1,41 @@
-<super-tabs activeTabIndex="">
+<super-tabs activeTabIndex="1">
 
   <super-tabs-toolbar slot="top">
     <super-tab-button class="special">
-      <ion-icon name="home"></ion-icon>
+      <ion-icon name="information-circle-outline"></ion-icon>
       <ion-label>Home</ion-label>
     </super-tab-button>
 
     <super-tab-button>
-      <ion-icon name="home"></ion-icon>
+      <ion-icon name="home-outline"></ion-icon>
       <ion-label>Alojamientos</ion-label>
     </super-tab-button>
 
     <super-tab-button>
-      <ion-icon name="home"></ion-icon>
+      <ion-icon name="restaurant-outline"></ion-icon>
       <ion-label>Gastronomia</ion-label>
     </super-tab-button>
 
     <super-tab-button>
-      <ion-icon name="home"></ion-icon>
+      <ion-icon name="image-outline"></ion-icon>
       <ion-label>Patrimonio</ion-label>
     </super-tab-button>
 
     <super-tab-button>
-      <ion-icon name="home"></ion-icon>
+      <ion-icon name="walk-outline"></ion-icon>
       <ion-label>Actividades </ion-label>
     </super-tab-button>
 
     <super-tab-button>
-      <ion-icon name="home"></ion-icon>
+      <ion-icon name="calendar-outline"></ion-icon>
       <ion-label>Eventos</ion-label>
     </super-tab-button>
 
   </super-tabs-toolbar>
 
   <super-tabs-container>
+
+    <!-- TAB  HOME -->
     <super-tab id="home" class="tab">
       <ion-content>
 
@@ -100,8 +102,10 @@
     </super-tab>
 
     <!-- TAB  ALOJAMIENTOS -->
-    <super-tab id="alojamientos" class="tab">
-      <ion-content>
+    <!-- <super-tab id="alojamientos" class="tab"> -->
+    <super-tab>
+      <ion-nav [root] = "alojamientos"></ion-nav>
+      <!-- <ion-content>
         <ion-list>
           <ion-item
             *ngFor="let alojamiento of alojamientos"
@@ -136,7 +140,7 @@
             </ion-button>
          
         </div>       
-      </ion-footer>
+      </ion-footer> -->
     </super-tab>
 
     <!-- TAB  GASTRONOMIA -->
@@ -181,7 +185,37 @@
     </super-tab>
 
     <!-- TAB  PATRIMONIO -->
-    <super-tab id="patrimonio" class="tab">
+    <!-- <super-tab id="patrimonio" class="tab"> -->
+    <super-tab>
+      <ion-nav [root] = "patrimonio"></ion-nav>
+      <!-- <ion-content fullscreen scroll-y="false">
+
+        <ion-slides>
+
+          <ion-slide>
+
+            <ion-img src="../../assets/images/patrimonio/iglesia01-400x.jpg"></ion-img>
+            <h2>What is Ionic?</h2>
+
+          </ion-slide>
+
+          <ion-slide>
+
+            <ion-img src="../../assets/images/patrimonio/iglesia01-400x.jpg"></ion-img>
+            <h2>What is Ionic?</h2>
+
+          </ion-slide>
+
+          <ion-slide>
+
+            <ion-img src="../../assets/images/patrimonio/vistaCoro-400x.jpg"></ion-img>
+            <h2>What is Ionic?</h2>
+
+          </ion-slide>
+
+        </ion-slides>
+
+      </ion-content> -->
 
     </super-tab>
 

@@ -1,0 +1,26 @@
+<ion-content class="tab">
+  <ion-list>
+    <ion-item
+      *ngFor="let alojamiento of alojamientosArray"
+      [routerLink]="['/alojamiento/' + alojamiento.id]"
+      routerDirection="forward"
+      lines="none"
+    >
+      <ion-card>
+
+        <div class="inCard">
+          <img src="../../../assets/{{ alojamiento.mainImage }}">
+
+          <div class="card-right">
+            <ion-card-title class="ion-text-end" color="green">
+              {{ alojamiento.vendor }}
+            </ion-card-title>
+            <ion-card-content class="ion-text-end ion-text-end">
+              {{ alojamiento.shortProfil }} 
+            </ion-card-content>
+          </div>
+        </div>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

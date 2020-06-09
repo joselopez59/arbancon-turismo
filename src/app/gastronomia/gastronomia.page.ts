@@ -21,6 +21,7 @@ gastronomia: any;
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
     this. gastronomia = this.gastronomiaService.getGastronomia(id)[0];
+    console.log(this.gastronomia);
   }
 
 }

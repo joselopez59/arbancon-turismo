@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>{{ alojamiento.vendor }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+    <!-- <ion-img src="../../assets/{{ alojamiento.mainImage }}"></ion-img> -->
+
+    <ion-slides pager="true" [options]="slideOpts">
+      
+      <ion-slide *ngFor="let slide of alojamiento.slider">
+        <ion-img src="../../assets/{{ slide }}"></ion-img>
+      </ion-slide>
+      
+    </ion-slides>
+
+    <ion-item>{{ alojamiento.shortProfil }} </ion-item>
+
+
+    <div *ngFor="let feature of alojamiento.features">
+      {{ feature.amount }} {{ feature.typ }}
+    </div>
+ 
+    
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="danger">
+
+    <ion-fab horizontal="star" vertical="center" >
+      <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara" >
+        <ion-icon name="logo-facebook" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
+    <ion-fab horizontal="end" vertical="center" >
+      <ion-fab-button size="small" href="https://www.turismoarbancon.com">
+        <ion-icon name="earth-outline" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    
+  </ion-toolbar>
+</ion-footer>

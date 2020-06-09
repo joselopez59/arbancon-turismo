@@ -4,9 +4,12 @@ import { SuperTabsConfig } from '@ionic-super-tabs/core';
 
 import { WheaterService } from './../services/wheater.service';
 
-//import { AlojamientosPage } from '../alojamientos/alojamientos.page';
+
 import { AlojamientosService } from './../services/alojamientos.service';
 import { GastronomiaService } from './../services/gastronomia.service';
+
+import { AlojamientosPage } from '../pages/alojamientos/alojamientos.page';
+import { PatrimonioPage} from '../patrimonio/patrimonio.page';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +21,9 @@ export class HomePage implements OnInit {
 
   //@ViewChild(SuperTabs, { static: false }) superTabs: SuperTabs;
 
-  //alojamientosPage = AlojamientosPage;
+  alojamientos = AlojamientosPage;
+  patrimonio = PatrimonioPage;
+
 
   config: SuperTabsConfig = {
     debug: true,
@@ -28,7 +33,7 @@ export class HomePage implements OnInit {
   temp: any;
   iconUrl: any;
   
-  public alojamientos: [];
+  //public alojamientos: [];
   public gastronomias: [];
 
   constructor(
@@ -39,13 +44,9 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.getWheater();
-    this.alojamientos = this.alojamientosService.getAlojamientos();
+    //this.alojamientos = this.alojamientosService.getAlojamientos();
     this.gastronomias = this.gastronomiaService.getGastronomias();
   }
-  
-  // ionViewWillEnter() { 
-  //   this.getWheater();
-  // }
   
   getWheater() {
     this.wheaterService.getWheater().subscribe(response => {

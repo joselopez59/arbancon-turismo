@@ -5,16 +5,6 @@
 }
 
 
-
-ion-card { 
-  width: 100%;
-}
-
-img {
-  border-radius: 4px;
-  
-}
-
 super-tabs-toolbar {
   height: 50px;
 
@@ -63,22 +53,7 @@ ion-button {
   --color: white;
 }
 
-ion-card .inCard {
-  
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-}
 
-ion-card .card-right {
-  
-  display: flex;
-  flex-direction: column;
-}
-
-#alojamientos ion-card-content {
-  
-  padding: 0 0 0 14px;
-}
 
 .btn-wrapper {
   text-align: center;
@@ -99,7 +74,15 @@ ion-badge {
   padding: 0 ;
 }
 
+/** TAB PATRIMONIO **/
 
+ion-slides {
+  //height: 100%;
+}
+
+.swiper-slide {
+  display: block;
+}
 
 
 

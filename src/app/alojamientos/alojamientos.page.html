@@ -1,31 +1,40 @@
 <ion-content>
-  <!-- <ion-list>
-    <ion-item *ngFor="let aloj of alojamientos">
-      Test
-    </ion-item>
-  </ion-list> -->
+  <ion-content>
+    <ion-list>
+      <ion-item
+        *ngFor="let alojamiento of alojamientos"
+        [routerLink]="['/alojamiento-detail/' + alojamiento.id]"
+        routerDirection="forward"
+        lines="none"
+      >
+        <ion-card>
+
+          <div class="inCard">
+            <img src="../../../assets/{{ alojamiento.mainImage }}">
+
+            <div class="card-right">
+              <ion-card-title class="ion-text-end" color="green">
+                {{ alojamiento.vendor }}
+              </ion-card-title>
+              <ion-card-content class="ion-text-end ion-text-end">
+                {{ alojamiento.shortProfil }} 
+              </ion-card-content>
+            </div>
+          </div>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+
+  <ion-footer color="danger">
+    <div class="btn-wrapper">
+          <ion-button  shape="round" fill="outline" [routerLink]="['/escapadas']">
+            <ion-label>Escapadas</ion-label>
+        </ion-button>
+     
+    </div>       
+  </ion-footer>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar >
 
-    <ion-fab horizontal="starr" vertical="center" >
-      <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara">
-        <ion-icon name="logo-facebook" ></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <ion-fab horizontal="center" vertical="center" >
-      <ion-fab-button size="small" href="https://www.turismoarbancon.com">
-        <ion-icon name="earth-outline" ></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <ion-fab horizontal="end" vertical="center" >
-      <ion-fab-button size="small" href="https://twitter.com/TurismoArbancon">
-        <ion-icon name="logo-twitter" ></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-  </ion-toolbar>
-</ion-footer>

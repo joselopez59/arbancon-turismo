@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlojamientosService } from './../services/alojamientos.service';
+import { AlojamientosService } from './../../services/alojamientos.service';
 
 @Component({
   selector: 'app-alojamientos',
@@ -8,16 +8,16 @@ import { AlojamientosService } from './../services/alojamientos.service';
 })
 
 export class AlojamientosPage implements OnInit {
-  
-  public alojamientos: [];
+
+  public alojamientosArray: [];
   
   constructor(
     public alojamientosService: AlojamientosService
   ) {}
 
   ngOnInit() {
-    this.alojamientos = this.alojamientosService.getAlojamientos();
-    console.log("this.alojamientos: " + this.alojamientos);
+    this.alojamientosArray = this.alojamientosService.getAlojamientos();
+    console.log("this.alojamientosArray: " + this.alojamientosArray);
   }
 
 }
