@@ -32,10 +32,16 @@ export class AlojamientoPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private alojamientosService: AlojamientosService
-  ) { }
+  ) {
+      this.alojamiento = "";
+   }
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
+
+    // this.alojamiento = this.alojamientosService.getAlojamiento(id)[0];
+    // console.log(this.alojamiento);
+    
     this.alojamientosService.getAlojamiento(id)
     .subscribe(data => {
       this.alojamiento = data;
