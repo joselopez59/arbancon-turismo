@@ -1,0 +1,28 @@
+<super-tabs>
+
+  <super-tabs-toolbar slot="top">
+
+    <super-tab-button class="special">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Alojamientos</ion-label>
+    </super-tab-button>
+
+  </super-tabs-toolbar>
+
+  <super-tabs-container>
+    <super-tab>
+      <ion-nav [root] = "homePage"></ion-nav>
+    </super-tab>
+
+    <!-- TAB  ALOJAMIENTOS -->
+    <!-- <super-tab id="alojamientos" class="tab"> -->
+      <super-tab>      
+        <ion-nav [root] = "alojamientosPage"></ion-nav>
+      </super-tab>
+  </super-tabs-container>
+</super-tabs>

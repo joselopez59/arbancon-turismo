@@ -9,15 +9,19 @@ import { AlojamientosService } from './../../services/alojamientos.service';
 
 export class AlojamientosPage implements OnInit {
 
-  public alojamientosArray: [];
+  public alojamientos;
   
   constructor(
     public alojamientosService: AlojamientosService
   ) {}
 
   ngOnInit() {
-    this.alojamientosArray = this.alojamientosService.getAlojamientos();
-    console.log("this.alojamientosArray: " + this.alojamientosArray);
+    this.alojamientosService.getAlojamientos()
+    .subscribe(data => {
+      this.alojamientos = data;
+      //console.log(this.alojamientos);
+    });
+    
   }
 
 }

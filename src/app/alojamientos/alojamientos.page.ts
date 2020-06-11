@@ -16,8 +16,8 @@ export class AlojamientosPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.alojamientos = this.alojamientosService.getAlojamientos();
-    console.log("this.alojamientos: " + this.alojamientos);
+    //this.alojamientos = this.alojamientosService.getAlojamientos();
+    //console.log("this.alojamientos: " + this.alojamientos);
   }
 
 }

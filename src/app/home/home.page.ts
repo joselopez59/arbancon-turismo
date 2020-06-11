@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
 
   //@ViewChild(SuperTabs, { static: false }) superTabs: SuperTabs;
 
-  alojamientos = AlojamientosPage;
+  //alojamientos = AlojamientosPage;
   patrimonio = PatrimonioPage;
 
 

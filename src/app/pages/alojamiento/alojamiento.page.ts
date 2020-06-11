@@ -13,7 +13,7 @@ import { AlojamientosService } from './../../services/alojamientos.service';
 export class AlojamientoPage implements OnInit {
 
   //alojamiento: Alojamiento;
-  alojamiento: any;
+  public alojamiento;
 
   slideOpts = {
     initialSlide: 0,
@@ -36,8 +36,12 @@ export class AlojamientoPage implements OnInit {
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.alojamiento = this.alojamientosService.getAlojamiento(id)[0];
-    //console.log (this.alojamientoItem.id);
+    this.alojamientosService.getAlojamiento(id)
+    .subscribe(data => {
+      this.alojamiento = data;
+      console.log(this.alojamiento);
+    });
+    
   }
 
 }
