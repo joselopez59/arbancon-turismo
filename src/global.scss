@@ -47,6 +47,21 @@ ion-card {
   --background: var(--ion-color-background);
 }
 
+ion-footer {
+  height: 50px;
+  background-color: var(--ion-color-danger);
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-gap: 20px;
+  ion-chip {
+    color: white;
+    
+  }
+  ion-icon {
+    color: white;
+  }
+}
 
 
 

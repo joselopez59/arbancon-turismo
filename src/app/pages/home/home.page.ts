@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
+import { WheaterService } from '../../services/wheater.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -8,11 +10,17 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 })
 export class HomePage implements OnInit {
 
+  temp: any;
+  iconUrl: any;
+
   constructor(
+    private wheaterService: WheaterService,
     private inAppBrowser: InAppBrowser,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getWheater();
+  }
 
   openExternalUrl(url: string) {
     this.inAppBrowser.create(
@@ -21,5 +29,12 @@ export class HomePage implements OnInit {
     );
   }
 
-
+  getWheater() {
+    this.wheaterService.getWheater().subscribe(response => {
+     
+      this.temp = Math.round(parseFloat(response.main.temp)) + '°';     
+      this.iconUrl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+      
+    })
+  }
 }

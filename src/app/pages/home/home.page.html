@@ -1,14 +1,15 @@
-<ion-content>
+<!-- <ion-content></ion-content> -->
 
-  <ion-grid class="ion-no-padding headerImg">
-    <ion-row >
+  <!-- <ion-grid class="ion-no-padding"></ion-grid> -->
+
+  <ion-grid class="logos" class="ion-no-padding">
+    
+    <ion-row id="logo">
       <ion-col>
         <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
       </ion-col>
     </ion-row>
-  </ion-grid>
 
-  <ion-grid class="logos">
     <ion-row>
 
       <ion-col class="side ion-padding">
@@ -33,9 +34,43 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-    
 
-</ion-content>
+<ion-footer color="primary">
+  <!-- <div class="inFooter"></div> -->
+    
+    <ion-chip  
+      outline = true
+      color= "white"
+      button (click)="openExternalUrl('https://twitter.com/')">
+      <ion-icon name="logo-facebook"></ion-icon>
+      <ion-label>Facebook</ion-label>
+    </ion-chip>
+
+    <ion-chip  
+      outline = true
+      color= "white"
+      button (click)="openExternalUrl('https://twitter.com/')">
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label>Instagram</ion-label>
+    </ion-chip>
+
+    <ion-chip  
+      outline = true
+      color= "white"
+      button (click)="openExternalUrl('https://github.com/ionic-team/ionic')">
+      <ion-icon name="globe-outline"></ion-icon>
+      <ion-label>Internet</ion-label>
+    </ion-chip>
+
+    <ion-chip  
+      outline = true
+      color= "white"
+      button (click)="openExternalUrl('https://instagram.com/ionicframework')">
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-label>Twitter</ion-label>
+    </ion-chip>
+  
+</ion-footer>
 
 <!-- <ion-footer>
   <div class="footer">
@@ -57,25 +92,6 @@
   </div>
 </ion-footer> -->
 
-<ion-footer>
-  <div class="ion-padding speaker-detail">
-    
-    <ion-chip color="twitter" button (click)="openExternalUrl('https://twitter.com/')">
-      <ion-icon name="logo-twitter"></ion-icon>
-      <ion-label>Twitter</ion-label>
-    </ion-chip>
-
-    <ion-chip color="dark" button (click)="openExternalUrl('https://github.com/ionic-team/ionic')">
-      <ion-icon name="logo-github"></ion-icon>
-      <ion-label>GitHub</ion-label>
-    </ion-chip>
-
-    <ion-chip color="instagram" button (click)="openExternalUrl('https://instagram.com/ionicframework')">
-      <ion-icon name="logo-instagram"></ion-icon>
-      <ion-label>Instagram</ion-label>
-    </ion-chip>
-  </div>
-</ion-footer>
 
 <!-- <ion-footer>
   <ion-toolbar color="danger">

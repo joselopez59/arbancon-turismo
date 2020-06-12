@@ -2,7 +2,7 @@
 
   <super-tabs-toolbar slot="top">
 
-    <super-tab-button class="special">
+    <super-tab-button>
       <ion-icon name="information-circle-outline"></ion-icon>
       <ion-label>Home</ion-label>
     </super-tab-button>
@@ -20,7 +20,7 @@
   </super-tabs-toolbar>
 
   <super-tabs-container>
-    <super-tab>
+    <super-tab noScroll="true">
       <ion-nav [root] = "homePage"></ion-nav>
     </super-tab>
 

@@ -1,3 +1,21 @@
-.footer {
-    justify-content: center;
+#logo {
+    margin-bottom: 50px;
 }
+
+.side { display: grid; }
+
+.top { align-self: flex-start;}
+
+.bottom { align-self: flex-end;}
+
+#wetterCont { 
+    position: relative; 
+  }
+  
+  #temp {
+    font-size: 12px;
+    color: rgb(115, 115, 115);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
