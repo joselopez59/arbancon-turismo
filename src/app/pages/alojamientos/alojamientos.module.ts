@@ -17,4 +17,5 @@ import { AlojamientosPage } from './alojamientos.page';
   ],
   declarations: [AlojamientosPage]
 })
+
 export class AlojamientosPageModule {}

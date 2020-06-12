@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GastronomiaService {
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
   gastronomias: any = [
     {
@@ -133,11 +135,18 @@ export class GastronomiaService {
   ];
 
   getGastronomias() {
-    return this.gastronomias;
+    //return this.gastronomias;
+    // console.log("getGastronomias()" + 
+    //   this.http.get("./../assets/data/gastronomias.json"));
+    return this.http.get("./../assets/data/gastronomias.json")
   }
 
-  getGastronomia(id) {
-    return this.gastronomias.filter(d => d.id === id)
-  }
+  // getGastronomia(id) {
+  //   //return this.gastronomias.filter(d => d.id === id)
+  //   return this.http.get("./../assets/data/gastronomias.json")
+  //   .pipe(
+  //     map((response: any) => response.find(elem => elem.id == id))
+  //   );
+  // }
 
 }

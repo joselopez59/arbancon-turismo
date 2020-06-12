@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GastronomiaService } from './../../services/gastronomia.service';
 
 @Component({
   selector: 'app-gastronomia',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GastronomiaPage implements OnInit {
 
-  constructor() { }
+  public gastronomias;
+
+  constructor(
+    public gastronomiaService: GastronomiaService
+  ) { }
 
   ngOnInit() {
+
+    // this.gastronomias = this.gastronomiaService.getGastronomias();
+    // console.log(this.gastronomias)
+
+    this.gastronomiaService.getGastronomias()
+    .subscribe(data => {
+      // this.gastronomias = data;
+      // console.log("this.gastronomias: " + this.gastronomias);
+    });
   }
 
 }

@@ -45,7 +45,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.getWheater();
     //this.alojamientos = this.alojamientosService.getAlojamientos();
-    this.gastronomias = this.gastronomiaService.getGastronomias();
+    //this.gastronomias = this.gastronomiaService.getGastronomias();
   }
   
   getWheater() {
