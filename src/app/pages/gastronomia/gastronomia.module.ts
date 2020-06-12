@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AlojamientosPageRoutingModule } from './alojamientos-routing.module';
+import { GastronomiaPageRoutingModule } from './gastronomia-routing.module';
 
-import { AlojamientosPage } from './alojamientos.page';
+import { GastronomiaPage } from './gastronomia.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AlojamientosPageRoutingModule
+    GastronomiaPageRoutingModule
   ],
-  declarations: [AlojamientosPage]
+  declarations: [GastronomiaPage]
 })
-
-export class AlojamientosPageModule {}
+export class GastronomiaPageModule {}

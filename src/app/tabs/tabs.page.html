@@ -12,6 +12,11 @@
       <ion-label>Alojamientos</ion-label>
     </super-tab-button>
 
+    <super-tab-button>
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Gastronomia</ion-label>
+    </super-tab-button>
+
   </super-tabs-toolbar>
 
   <super-tabs-container>
@@ -19,10 +24,14 @@
       <ion-nav [root] = "homePage"></ion-nav>
     </super-tab>
 
-    <!-- TAB  ALOJAMIENTOS -->
-    <!-- <super-tab id="alojamientos" class="tab"> -->
-      <super-tab>      
-        <ion-nav [root] = "alojamientosPage"></ion-nav>
-      </super-tab>
+    <super-tab>      
+      <ion-nav [root] = "alojamientosPage"></ion-nav>
+    </super-tab>
+
+    <super-tab>      
+      <ion-nav [root] = "gastronomiaPage"></ion-nav>
+    </super-tab>
+
+      
   </super-tabs-container>
 </super-tabs>

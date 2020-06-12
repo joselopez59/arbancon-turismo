@@ -4,6 +4,7 @@ import { SuperTabsConfig } from '@ionic-super-tabs/core';
 
 import { HomePage } from './../pages/home/home.page';
 import { AlojamientosPage } from './../pages/alojamientos/alojamientos.page';
+import { GastronomiaPage } from '../pages/gastronomia/gastronomia.page';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class TabsPage implements OnInit {
 
   homePage = HomePage;
   alojamientosPage = AlojamientosPage;
+  gastronomiaPage = GastronomiaPage;
   
   constructor() { }
 
