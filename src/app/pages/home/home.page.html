@@ -37,7 +37,47 @@
 
 </ion-content>
 
+<!-- <ion-footer>
+  <div class="footer">
+    
+    <ion-chip color="twitter" outline button href="https://www.facebook.com/arbancon.guadalajara">
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-label>Twitter</ion-label>
+    </ion-chip>
+
+    <ion-chip color="dark" button >
+      <ion-icon name="logo-github"></ion-icon>
+      <ion-label>GitHub</ion-label>
+    </ion-chip>
+
+    <ion-chip color="instagram" button >
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label>Instagram</ion-label>
+    </ion-chip>
+  </div>
+</ion-footer> -->
+
 <ion-footer>
+  <div class="ion-padding speaker-detail">
+    
+    <ion-chip color="twitter" button (click)="openExternalUrl('https://twitter.com/')">
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-label>Twitter</ion-label>
+    </ion-chip>
+
+    <ion-chip color="dark" button (click)="openExternalUrl('https://github.com/ionic-team/ionic')">
+      <ion-icon name="logo-github"></ion-icon>
+      <ion-label>GitHub</ion-label>
+    </ion-chip>
+
+    <ion-chip color="instagram" button (click)="openExternalUrl('https://instagram.com/ionicframework')">
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label>Instagram</ion-label>
+    </ion-chip>
+  </div>
+</ion-footer>
+
+<!-- <ion-footer>
   <ion-toolbar color="danger">
 
     <ion-fab horizontal="star" vertical="center" >
@@ -59,4 +99,4 @@
     </ion-fab>
 
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->
