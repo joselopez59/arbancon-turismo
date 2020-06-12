@@ -15,14 +15,11 @@ export class AlojamientosService {
   constructor(private http : HttpClient) { }
 
   getAlojamientos() {
-    //return this.alojamientos;
-    //console.log(this.http.get("../../"));
+    
     return this.http.get("./../assets/data/alojamientos.json")
   }
 
   getAlojamiento(id) {
-    // return this.alojamiento;
-    //return this.alojamientos.filter(d => d.id === id)
     
     return this.http.get("./../assets/data/alojamientos.json")
     .pipe(

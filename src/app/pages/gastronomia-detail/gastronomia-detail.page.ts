@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GastronomiaService } from './../../services/gastronomia.service';
+
 
 @Component({
   selector: 'app-gastronomia-detail',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GastronomiaDetailPage implements OnInit {
 
-  constructor() { }
+  public gastronomia;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private gastronomiaService: GastronomiaService
+  ) {
+    this.gastronomia = "";
+   }
 
   ngOnInit() {
+
+    let id = this.activatedRoute.snapshot.paramMap.get('id');
+
+    this.gastronomiaService.getGastronomia(id)
+    .subscribe(data => {
+      this.gastronomia = data;
+      console.log(this.gastronomia);
+    });
   }
 
 }

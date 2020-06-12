@@ -19,7 +19,7 @@ export class AlojamientosPage implements OnInit {
     this.alojamientosService.getAlojamientos()
     .subscribe(data => {
       this.alojamientos = data;
-      console.log(this.alojamientos);
+      //console.log(this.alojamientos);
     });
     
   }

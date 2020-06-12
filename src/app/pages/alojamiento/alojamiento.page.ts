@@ -45,7 +45,7 @@ export class AlojamientoPage implements OnInit {
     this.alojamientosService.getAlojamiento(id)
     .subscribe(data => {
       this.alojamiento = data;
-      console.log(this.alojamiento);
+      //console.log(this.alojamiento);
     });
     
   }
