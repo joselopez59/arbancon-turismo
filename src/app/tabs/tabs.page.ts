@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SuperTabs } from '@ionic-super-tabs/angular';
 import { SuperTabsConfig } from '@ionic-super-tabs/core';
 
-import { HomePage } from './../pages/home/home.page';
-import { AlojamientosPage } from './../pages/alojamientos/alojamientos.page';
+import { HomePage } from '../pages/home/home.page';
+import { AlojamientosPage } from '../pages/alojamientos/alojamientos.page';
 import { GastronomiaPage } from '../pages/gastronomia/gastronomia.page';
 
 
