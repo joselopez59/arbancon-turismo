@@ -48,25 +48,8 @@ ion-card {
 }
 
 ion-footer {
-  //height: 50px;
   background-color: var(--ion-color-danger);
-  //padding: 5px;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  ion-chip {
-    display: grid;
-    grid-template-columns: 30% auto ;
-    color: white;  
-  }
-  ion-icon {
-    color: white;  
-  }
-
-  ion-label {
-    font-size: 11px;
-  }
-}
+ }
 
 
 

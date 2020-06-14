@@ -1,21 +1,46 @@
 #logo {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
-.side { display: grid; }
+.side {
+  display: grid;
+}
 
-.top { align-self: flex-start;}
+.top {
+  align-self: flex-start;
+}
 
-.bottom { align-self: flex-end;}
+.bottom {
+  align-self: flex-end;
+}
 
-#wetterCont { 
-    position: relative; 
+#wetterCont {
+  position: relative;
+}
+
+#temp {
+  font-size: 12px;
+  color: rgb(115, 115, 115);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+ion-footer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+
+  ion-chip {
+    color: white;
+    border: 2px;
+
+    ion-icon {
+      color: white;
+    }
+    
+    ion-label {
+      font-size: 11px;
+    }
   }
-  
-  #temp {
-    font-size: 12px;
-    color: rgb(115, 115, 115);
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
+}
