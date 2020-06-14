@@ -9,17 +9,15 @@ import { EscapadasService } from '../services/escapadas.service';
 
 export class PatrimonioPage implements OnInit {
 
-  public escapadas: [];
+  public escapadas;
 
   constructor(
     public escapadasService: EscapadasService
-  ) {
-    
-   }
+  ) {}
 
   ngOnInit() {
-    this.escapadas = this.escapadasService.getEscapadas();
-    console.log(this.escapadas);
+    // this.escapadas = this.escapadasService.getEscapadas();
+    // console.log(this.escapadas);
   }
 
 }

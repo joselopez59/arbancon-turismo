@@ -1,11 +1,9 @@
 <ion-content class="tab">
   <ion-list>
-    <ion-item
-      *ngFor="let alojamiento of alojamientos"
+    <ion-item 
+      *ngFor="let alojamiento of alojamientos" 
       [routerLink]="['/alojamiento/' + alojamiento.id]"
-      routerDirection="forward"
-      lines="none"
-    >
+      routerDirection="forward" lines="none">
       <ion-card>
 
         <div class="inCard">
@@ -16,7 +14,7 @@
               {{ alojamiento.vendor }}
             </ion-card-title>
             <ion-card-content class="ion-text-end ion-text-end">
-              {{ alojamiento.shortProfil }} 
+              {{ alojamiento.shortProfil }}
             </ion-card-content>
           </div>
         </div>
@@ -26,12 +24,13 @@
 </ion-content>
 
 <ion-footer class="ion-justify-content-center">
-  
-  <ion-button  
-    fill = "outline"
-    size = "small"
-    color= "light"
-  >
+
+  <ion-button 
+  [routerLink]="['/escapadas/']"
+    shape="round" 
+    fill="outline" 
+    size="small" 
+    color="light">
     <ion-label>Escapadas</ion-label>
   </ion-button>
 
@@ -41,5 +40,5 @@
   >
     <ion-label>Escapadas</ion-label>
   </ion-chip> -->
-    
+
 </ion-footer>

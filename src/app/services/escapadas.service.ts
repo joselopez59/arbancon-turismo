@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EscapadasService {
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
   escapadas: any = [
     {
@@ -69,6 +70,7 @@ export class EscapadasService {
   ]
 
   getEscapadas() {
-    return this.escapadas;
+    //return this.escapadas;
+    return this.http.get("./../assets/data/escapadas.json")
   }
 }

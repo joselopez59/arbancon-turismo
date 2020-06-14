@@ -36,6 +36,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/alojamiento/alojamiento.module').then( m => m.AlojamientoPageModule)
   },
   {
+    path: 'escapadas',
+    loadChildren: () => import('./pages/escapadas/escapadas.module').then( m => m.EscapadasPageModule)
+  },
+  {
     path: 'gastronomia',
     loadChildren: () => import('./pages/gastronomia/gastronomia.module').then( m => m.GastronomiaPageModule)
   },
@@ -47,10 +51,10 @@ const routes: Routes = [
   //   path: 'alojamiento-detail/:id',
   //   loadChildren: () => import('./alojamiento-detail/alojamiento-detail.module').then( m => m.AlojamientoDetailPageModule)
   // },
-  {
-    path: 'escapadas',
-    loadChildren: () => import('./escapadas/escapadas.module').then( m => m.EscapadasPageModule)
-  },
+  // {
+  //   path: 'escapadas',
+  //   loadChildren: () => import('./escapadas/escapadas.module').then( m => m.EscapadasPageModule)
+  // },
   // {
   //   path: 'gastronomia/:id',
   //   loadChildren: () => import('./gastronomia/gastronomia.module').then( m => m.GastronomiaPageModule)
@@ -59,10 +63,8 @@ const routes: Routes = [
     path: 'patrimonio',
     loadChildren: () => import('./patrimonio/patrimonio.module').then( m => m.PatrimonioPageModule)
   },
-  {
-    path: 'gastronomia',
-    loadChildren: () => import('./pages/gastronomia/gastronomia.module').then( m => m.GastronomiaPageModule)
-  },
+  
+
 
   
 
