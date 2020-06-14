@@ -34,7 +34,15 @@ const routes: Routes = [
   {
     path: 'gastronomia/:id',
     loadChildren: () => import('./pages/gastronomia-detail/gastronomia-detail.module').then( m => m.GastronomiaDetailPageModule)
+  },  {
+    path: 'patrimonio',
+    loadChildren: () => import('./pages/patrimonio/patrimonio.module').then( m => m.PatrimonioPageModule)
   },
+  {
+    path: 'actividades',
+    loadChildren: () => import('./pages/actividades/actividades.module').then( m => m.ActividadesPageModule)
+  },
+
   
 ];
 
