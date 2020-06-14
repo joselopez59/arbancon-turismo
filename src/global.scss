@@ -33,6 +33,10 @@
   --ion-color-shade: var(--ion-color-green-shade);
   --ion-color-tint: var(--ion-color-green-tint);
 }
+ion-text { 
+  color: var(--ion-color-text);
+  font-size: 14px;
+}
 
 img { border-radius: 4px; }
 
@@ -42,13 +46,32 @@ img { border-radius: 4px; }
 // }
 
 ion-card {
-  padding: 10px;
+  
   width: 100%;
   --background: var(--ion-color-background);
+  
+  ion-card-content {
+    display: flex;
+}
+
+  ion-card-title {
+    font-size: 18px;
+    --color: var(--ion-color-green);
+  }
+
+  img {   //TO DO: imágenes 100x100
+    max-height: 100px;
+    max-width: 100px;
+    margin-right: 10px;
+  }
 }
 
 ion-footer {
   background-color: var(--ion-color-danger);
+  
+  display: flex;
+  justify-content: center;
+
  }
 
 

@@ -1,23 +1,29 @@
-<ion-content class="tab">
+<ion-content >
   <ion-list>
     <ion-item 
-      *ngFor="let alojamiento of alojamientos" 
-      [routerLink]="['/alojamiento/' + alojamiento.id]"
-      routerDirection="forward" lines="none">
-      <ion-card>
+    *ngFor="let alojamiento of alojamientos" 
+    [routerLink]="['/alojamiento/' + alojamiento.id]"
+    routerDirection="forward" 
+    lines="none">
 
-        <div class="inCard">
+      <ion-card class="ion-no-padding">
+
+        <ion-card-content>
+          
           <img src="../../../assets/{{ alojamiento.mainImage }}">
-
-          <div class="card-right">
-            <ion-card-title class="ion-text-end" color="green">
+          
+          <div>
+            <ion-card-title class="ion-text-end">
               {{ alojamiento.vendor }}
             </ion-card-title>
-            <ion-card-content class="ion-text-end ion-text-end">
+            
+
+            <ion-card-subtitle class="ion-text-end">
               {{ alojamiento.shortProfil }}
-            </ion-card-content>
+            </ion-card-subtitle>
+
           </div>
-        </div>
+        </ion-card-content>      
       </ion-card>
     </ion-item>
   </ion-list>
@@ -31,14 +37,7 @@
     fill="outline" 
     size="small" 
     color="light">
+
     <ion-label>Escapadas</ion-label>
   </ion-button>
-
-  <!-- <ion-chip  
-    outline = true
-    color= "white"
-  >
-    <ion-label>Escapadas</ion-label>
-  </ion-chip> -->
-
 </ion-footer>

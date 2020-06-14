@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="ion-padding">
 
     <ion-slides pager="true" [options]="slideOpts">
       
@@ -18,13 +18,17 @@
       
     </ion-slides>
 
-    <ion-item>{{ alojamiento.shortProfil }} </ion-item>
+    <div>
+      
+      <ion-badge 
+      color="green"
+      *ngFor="let feature of alojamiento.features">
+        {{ feature.amount }} {{ feature.typ }}</ion-badge>
 
-
-    <div *ngFor="let feature of alojamiento.features">
-      {{ feature.amount }} {{ feature.typ }}
     </div>
- 
+
+    <ion-text color="text">{{ alojamiento.profil }}</ion-text>
+
     
 </ion-content>
 

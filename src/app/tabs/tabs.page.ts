@@ -7,6 +7,7 @@ import { AlojamientosPage } from '../pages/alojamientos/alojamientos.page';
 import { GastronomiaPage } from '../pages/gastronomia/gastronomia.page';
 import { PatrimonioPage } from '../pages/patrimonio/patrimonio.page';
 import { ActividadesPage } from '../pages/actividades/actividades.page';
+import { EventosPage } from './../pages/eventos/eventos.page';
 
 @Component({
   selector: 'app-tabs',
@@ -25,7 +26,8 @@ export class TabsPage implements OnInit {
   alojamientosPage = AlojamientosPage;
   gastronomiaPage = GastronomiaPage;
   patrimonioPage = PatrimonioPage;
-  actividadesPage = ActividadesPage
+  actividadesPage = ActividadesPage;
+  eventosPage = EventosPage
   
   constructor() { }
 

@@ -4,16 +4,45 @@
     <ion-item
     *ngFor="let gastronomia of gastronomias"
     [routerLink]="['/gastronomia/' + gastronomia.id]"
-      routerDirection="forward"
+    routerDirection="forward"
     lines="none">
-    <ion-card>
-      
-    {{ gastronomia.name }}
-    </ion-card>
+
+      <ion-card class="ion-no-padding">
+
+        <ion-card-content>
+
+          <img src="../../../assets/{{ gastronomia.mainImage }}">
+
+          <div>
+
+            <ion-card-title class="ion-text-end">
+            {{ gastronomia.name }}
+            </ion-card-title>
+            
+            <div *ngFor="let feature of gastronomia.features">
+              {{ feature }}
+            </div>
+
+          </div>
+          
+
+        </ion-card-content>
+     
+      </ion-card>
     
     </ion-item>
-  
-
   </ion-list>
-
 </ion-content>
+
+<ion-footer class="ion-justify-content-center">
+
+  <ion-button 
+  [routerLink]="['/escapadas/']"
+    shape="round" 
+    fill="outline" 
+    size="small" 
+    color="light">
+
+    <ion-label>Ofertas</ion-label>
+  </ion-button>
+</ion-footer>

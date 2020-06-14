@@ -34,7 +34,8 @@ const routes: Routes = [
   {
     path: 'gastronomia/:id',
     loadChildren: () => import('./pages/gastronomia-detail/gastronomia-detail.module').then( m => m.GastronomiaDetailPageModule)
-  },  {
+  },
+  {
     path: 'patrimonio',
     loadChildren: () => import('./pages/patrimonio/patrimonio.module').then( m => m.PatrimonioPageModule)
   },
@@ -42,8 +43,10 @@ const routes: Routes = [
     path: 'actividades',
     loadChildren: () => import('./pages/actividades/actividades.module').then( m => m.ActividadesPageModule)
   },
-
-  
+  {
+    path: 'eventos',
+    loadChildren: () => import('./pages/eventos/eventos.module').then( m => m.EventosPageModule)
+  },
 ];
 
 @NgModule({

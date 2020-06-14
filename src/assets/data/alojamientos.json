@@ -5,7 +5,7 @@
       "name": "La Tahona",
       "type": "Casa rural",
       "shortProfil": "Ideal para grupos de hasta 12 personas",
-      "profil": "Casona típica de la Sierra de Guadalajara especialmente acomodada para grupos o familias de hasta 12 personas. Dispone de 6 habitaciones dobles y 4 cuartos de baño, cocina completamente equipada ademas de un amplio patio con barbacoa. Ideal para encuentros familiares y reuniones de amigos.",
+      "profil": "Casona típica de la Sierra de Guadalajara especialmente acomodada para grupos o familias de hasta 12 personas. Dispone de 6 habitaciones dobles y 4 cuartos de baño, cocina completamente y un amplio patio cerrado con barbacoa. Ideal para encuentros familiares y reuniones de amigos.",
       "features": [
         {
           "typ": "personas",
@@ -20,8 +20,7 @@
           "amount": 4
         },
         {
-          "typ": "patio cerrado",
-          "amount": ""
+          "typ": "patio cerrado"
         },
         {
           "typ": "barbacoa",
