@@ -1,7 +1,4 @@
 ion-footer {
-    grid-template-columns: auto auto auto;
-    
-    ion-label {
-      
-    }
-  }
+    display: flex;
+    justify-content: center;
+}
