@@ -8,10 +8,13 @@
          "Terraza de verano"
       ],
       "profil":"Basado en la gastronomía mas tradicional de la zona, destacando los platos de cuchara especialmente el Cocido de la Sierra, o los Guisos de Puchero como las Judías de Arbancón, carnes a la brasa, asados, torreznos y platos de temporada complementan una carta pensada para disfrutar de la buena mesa junto a la chimenea en los meses de otoño e invierno y de terraza de verano durante las épocas estivales.",
-      "url":"https://elrefugiodelabuelo.wixsite.com/elrefugiodelabuelo",
+      "url":"www.elrefugiodelabuelo.wixsite.com/elrefugiodelabuelo",
       "urlContact":"elrefugiodelabueloarbancon@gmail.com",
       "mail":"elrefugiodelabueloarbancon@gmail.com",
       "tel":"+34 642 880 944",
+      "calle": "Calle Eloy Guijarro s/n",
+      "localidad": "19237 Arbancón",
+      "provincia": "Guadalajara",
       "mainImage":"images/gastro/refugio/refugio01.webp",
       "slider":[
          "images/gastro/refugio/refugio01-x300.jpg",
@@ -24,13 +27,14 @@
       "features":[
          "Bar",
          "Terraza",
-         "Barbacoa"
+         "Barbacoa"  
       ],
       "profil":"Junto a las Piscinas de Verano de Arbancón y las zonas de recreo del Parque de la Zarzabala y zona deportiva se encuentra ubicada la Terraza de Verano. Un lugar amplio y fresco, perfecto para disfrutar de carnes a la brasa en nuestra barbacoa, y una zona inmejorable para disfrutar de una refrigerio durante las épocas estivales.",
       "url":"https://elrefugiodelabuelo.wixsite.com/elrefugiodelabuelo",
       "urlContact":"elrefugiodelabueloarbancon@gmail.com",
       "mail":"elrefugiodelabueloarbancon@gmail.com",
       "tel":"+34 642 880 944",
+      "direccion": "Calle Eloy Guijarro s/n, 19237 Arbancón, Guadalajara",
       "mainImage":"images/gastro/terraza/terraza01-150x.jpg",
       "slider":[
          "images/gastro/terraza/terraza02.webp",

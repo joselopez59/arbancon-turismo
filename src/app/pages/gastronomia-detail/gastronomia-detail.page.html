@@ -1,7 +1,16 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref=""></ion-back-button>
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons *ngIf="gastronomia" slot="end">
+      <ion-button (click)="openContact(gastronomia)">
+        <ion-icon slot="icon-only" name="information-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openSpeakerShare(gastronomia)">
+        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
 
     <ion-title>{{ gastronomia.name }}</ion-title>
@@ -11,4 +20,37 @@
 
 <ion-content>
 
+  <ion-slides pager="true" [options]="slideOpts">
+      
+    <ion-slide *ngFor="let slide of gastronomia.slider">
+      <ion-img src="../../assets/{{ slide }}"></ion-img>
+    </ion-slide>
+    
+  </ion-slides>
+
+  <div *ngFor="let feature of gastronomia.features">
+    {{ feature }}
+  </div>
+
+  <ion-item>{{ gastronomia.profil }} </ion-item>
+  
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="danger">
+
+    <ion-fab horizontal="star" vertical="center" >
+      <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara" >
+        <ion-icon name="logo-facebook" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
+    <ion-fab horizontal="end" vertical="center" >
+      <ion-fab-button size="small" href="https://www.turismoarbancon.com">
+        <ion-icon name="earth-outline" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    
+  </ion-toolbar>
+</ion-footer>

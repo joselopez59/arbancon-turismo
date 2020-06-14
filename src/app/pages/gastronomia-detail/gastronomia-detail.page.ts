@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ActionSheetController } from '@ionic/angular';
+
 import { GastronomiaService } from './../../services/gastronomia.service';
 
 
@@ -12,9 +14,18 @@ export class GastronomiaDetailPage implements OnInit {
 
   public gastronomia;
 
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    autoplay: {
+      delay: 3000,
+    },
+  }
+
   constructor(
     private activatedRoute: ActivatedRoute,
-    private gastronomiaService: GastronomiaService
+    private gastronomiaService: GastronomiaService,
+    public actionSheetCtrl: ActionSheetController
   ) {
     this.gastronomia = "";
    }
@@ -29,5 +40,57 @@ export class GastronomiaDetailPage implements OnInit {
       console.log(this.gastronomia);
     });
   }
+
+  async openContact(gastronomia: any) {
+    const mode = 'ios'; // this.config.get('mode');
+    const actionSheet = await this.actionSheetCtrl.create({
+      
+      buttons: [
+        {
+          text: gastronomia.calle,
+          icon: "home-outline",
+        },
+        {
+          text: gastronomia.localidad,
+          icon: null,
+          handler: () => {
+            //window.open('tel:' + gastronomia.tel )
+          }
+        },
+        {
+          text: gastronomia.tel,
+          icon: "call-outline",
+          handler: () => {
+            window.open('tel:' + gastronomia.tel )
+          }
+        },
+        {
+          text: `${gastronomia.mail}`,
+          icon: "mail-outline",
+          handler: () => {
+            window.open('mailto:' + gastronomia.mail)
+          }
+        },
+        {
+          text: `${gastronomia.mail}`,
+          icon: "mail-outline",
+          handler: () => {
+            window.open('mailto:' + gastronomia.mail)
+          }
+        },
+        {
+          text: `${gastronomia.url}`,
+          icon: "home-outline",
+          handler: () => {
+            window.open(gastronomia.url)
+          }
+        }
+      ]
+    });
+
+    await actionSheet.present();
+  }
+
+  openSpeakerShare(){}
 
 }
