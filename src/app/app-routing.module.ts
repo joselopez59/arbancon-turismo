@@ -40,6 +40,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/patrimonio/patrimonio.module').then( m => m.PatrimonioPageModule)
   },
   {
+    path: 'patrimonio/:id',
+    loadChildren: () => import('./pages/patrimonio-detail/patrimonio-detail.module').then( m => m.PatrimonioDetailPageModule)
+  },
+  {
     path: 'actividades',
     loadChildren: () => import('./pages/actividades/actividades.module').then( m => m.ActividadesPageModule)
   },
@@ -47,6 +51,8 @@ const routes: Routes = [
     path: 'eventos',
     loadChildren: () => import('./pages/eventos/eventos.module').then( m => m.EventosPageModule)
   },
+  
+
 ];
 
 @NgModule({

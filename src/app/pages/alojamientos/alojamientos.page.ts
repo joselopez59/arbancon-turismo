@@ -20,8 +20,6 @@ export class AlojamientosPage implements OnInit {
     .subscribe(data => {
       this.alojamientos = data;
       //console.log(this.alojamientos);
-    });
-    
+    });   
   }
-
 }

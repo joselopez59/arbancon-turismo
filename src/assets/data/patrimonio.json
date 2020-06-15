@@ -1,0 +1,63 @@
+[
+    {
+        "id": "historia",
+        "title": "Historia",
+        "name": "Antecedentes históricos",
+        "text": "Arbancón perteneció desde la reconquita al pequeño alfoz o Tierra de Cogolludo, bajo cuya jurisdicción quedó, usando sus fueros. Arbancón estuvo bajo el señorío de la Orden de Calatrava, y posteriormente bajo el admirado D. Diego Hurtado de Mendoza y su hija doña Aldonza, pasando definitivamente, en los finales del siglo XV, a la casa ducal de Medinaceli, en la que permaneció hasta 1721, cuando recibió el titulo de villa de Felipe V. Dice la tradición del pueblo que aquí se asentó unos días Cristóbal Colon, cuando viajó a Cogolludo a visitar al duque, y aquí en Arbancón probó el cordero que tan ricamente condimentaban sus naturales. Con un simple paseo por sus callejas y plazas, se puede comprobar que este municipio, gozó de especiales privilegios en el pasado, la estampa de cualquiera de sus calles grises, el saliente de los aleros en sus callejones estrechos, la maravillosa Iglesia renacentista de San Benito Abad, etc.",
+        "cardImage": "images/patrimonio/calles01-400x.jpg"
+    },
+    {
+        "id": "iglesia",
+        "title": "Iglesia parroquial",
+        "name": "Iglesia parroquial de San Benito Abad",
+        "text": "Iglesia parroquial de San Benito Abad",
+        "description": "Magnifica obra aquitectonica del siglo XVI, un bello ejemplar renacentista en su periodo de clásica severidad. En su aspecto exterior destaca la portada orientada a medio día. A los pies del tempo se alza la torre, acabada en 1660. El interior consta de tres naves, separadas por pilares cilíndricos de los que arrancan las bóvedas de crucería de traza gótica y con relieves renacentistas en el resto.",
+        "cardImage": "images/patrimonio/iglesia01-400x.jpg",
+        "buttons": [
+            { "icon": "ion-ios-book", "text": "Visitas guiadas" },
+            { "icon": "ion-camera", "text": "Fotografías" },
+            { "icon": "ion-aperture", "text": "Visita virtual" }
+        ]
+    },
+    {
+        "id": "retablo",
+        "title": "Retablo Mayor",
+        "name": "Retablo Mayor",
+        "text": "Iglesia parroquial de San Benito Abad",
+        "description": "Sin lugar a dudas, si destaca la Iglesia de San Benito Abad, es por su magnífico retablo mayor, obra de talla y pintura compuesta en 1656. Sus autores fueron el pintor Matías Jimeno y el ensamblador Pedro Castillejo. Sus composiciones pictóricas presentan escenas de la Historia Sagrada, entre las que destacan especialmente algunas mostrando milagros y hechos sagrados tales como, Santiago en la Batalla de Clavijo o la Conversión de San Pablo, junto a figuras de los cuatro evangelistas tales como, Santiago en la Batalla de Clavijo o la Conversión de San Pablo, junto a figuras de los cuatro evangelistas, Juan el Bautista, la Magdalena (desaparecida en 1936) y la Asunción. Y en su remate semicircular la Trinidad. Este retablo de este templo es la mejor joya patrimonial que el municipio conserva.",
+        "cardImage": "images/patrimonio/vistaCoro-400x.jpg",
+        "buttons": [
+            { "icon": "ion-ios-book", "text": "Visitas guiadas" },
+            { "icon": "ion-camera", "text": "Fotografías" },
+            { "icon": "ion-aperture", "text": "Visita virtual" }
+        ]
+    },
+    {
+        "id": "museo",
+        "title": "Museo",
+        "name": "Museo de historia y costumbres",
+        "text": "Iglesia parroquial de San Benito Abad",
+        "description": "Este museo se alberga en el antiguo edificio de las escuelas, donde se repasa las tradiciones y la historia de este municipio. El museo se distribuye en dos salas. En la planta baja se encuentra la sala museo de la Botarga, donde se expone el origen de las Botargas de la provincia de Guadalajara para centrarse en la tradición de las Candelas y en la Botarga de Arbancón. En la muestra se exponen numerosas mascaras de botargas del artesano local Hermenegildo Alonso. En la segunda planta se ubica la sal Jushep Hidalgo, con una muestra de diferentes legajos y pergaminos desde 1448 que muestran la historia de Arbancón (Esta muestra se puede visitar cada mes de Junio, en las Jornadas del Privilegio de Villa). Junto con esta muestra de dispone de una zona dedicada a exposiciones itinerantes.",
+        "cardImage": "images/patrimonio/museo01-400x.jpg",
+        "buttons": [
+            { "icon": "ion-ios-book", "text": "visitas Guiadas" },
+            { "icon": "ion-camera", "text": "fotografías" }
+        ]
+    },
+    {
+        "id": "plazamayor",
+        "title": "Plaza Mayor",
+        "name": "Plaza Mayor de los Cuatro Caños",
+        "text": "Iglesia parroquial de San Benito Abad",
+        "description": "También merece una especial visita su plaza mayor, ámbito de planta irregular en la que destaca el edifico concejil, con torre de reloj y torrecilla metálica. Esta plaza se encuentra presidida por una gran fuente de piedra tallada, de cuatro caños, rematada en airosos pináculo. En sus orígenes, esta fuente, y según consta en diferentes documentos del Archivo Histórico Municipal, fue Picota, como la que preside otras tantas plazas de pueblos de España, y donde se colocaban los diferentes comunicados a los vecinos de la villa.",
+        "cardImage": "images/patrimonio/cuatrocanos01-400x.jpg"
+    },
+    {
+        "id": "jardin",
+        "title": "Jardín del Recuerdo",
+        "name": "Jardín del Recuerdo",
+        "text": "Iglesia parroquial de San Benito Abad",
+        "description": "Antiguo cementerio de la iglesia, reciéntemente habilitado como parque, un lugar tranquilo, excelente para relajarse y disfrutar de las vistas al arroyo de la Salceda, a la vega del Sotillo y a la Sierra Gorda",
+        "cardImage": "images/patrimonio/recuerdo01.jpg"
+    }
+]
