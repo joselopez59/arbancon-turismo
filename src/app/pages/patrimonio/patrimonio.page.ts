@@ -10,36 +10,31 @@ import { PatrimonioService } from './../../services/patrimonio.service';
 export class PatrimonioPage implements OnInit {
 
   public patrimonios;
-  public items: any = [];
+  public expanded = false;
 
   constructor(
     private patrimonioService: PatrimonioService
-  ) {
-    this.items  = [
-      { expanded: false }
-    ];
+  ) {}
+
+  expandHeader() {
+    console.log("expandHeader()");
+    if (this.expanded) {
+      this.expanded = false;
+    } else {    
+      this.expanded = !this.expanded;   
+    }
   }
 
-  expandItem(item): void {
-    if (item.expanded) {
-      item.expanded = false;
-    } else {
-      this.items.map(listItem => {
-        if (item == listItem) {
-          listItem.expanded = !listItem.expanded;
-        } else {
-          listItem.expanded = false;
-        }
-        return listItem;
-      });
-    }
+  scroll(event) {
+    //console.log('scroll event detail', event.detail);
+    //console.log('scroll event scrollTop', event.detail.scrollTop);
   }
 
   ngOnInit() {
     this.patrimonioService.getPatrimonios()
     .subscribe(data => {
       this.patrimonios = data;
-      console.log("this.patrimonios: " + this.patrimonios);
+      //console.log("this.patrimonios: " + this.patrimonios);
     });
   }
 
