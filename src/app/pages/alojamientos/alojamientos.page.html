@@ -1,4 +1,13 @@
 <ion-content >
+  <ion-header class="ion-padding" color="green">
+    <ion-text>
+      <h4 class="ion-text-uppercase">Patrimonio</h4>
+      <p>
+        Arbancón dispone del alojamiento adecuado para cada necesidad. Desde habitaciones individuales en hostal hasta cabañas para grupos de hasta 40 personas, pasando por apartamentos y casas rurales, todos ellos perfectamente equipados.
+      </p>  
+    </ion-text>
+  </ion-header>
+
   <ion-list>
     <ion-item 
     *ngFor="let alojamiento of alojamientos" 
@@ -12,7 +21,7 @@
           
           <img 
             src="../../../assets/{{ alojamiento.mainImage }}"
-            class="list"
+            class="list-card"
           >
           
           <div>

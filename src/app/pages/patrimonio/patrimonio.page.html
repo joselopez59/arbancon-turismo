@@ -1,20 +1,31 @@
-<ion-header class="ion-padding" color="green">
-  <ion-text>
-    <p>
-      Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes.
-    </p>  
-  </ion-text>
-</ion-header>
+
 
 <ion-content>
-  <ion-grid>
+  <ion-header class="ion-padding" color="green">
+    <ion-text>
+      <h4 class="ion-text-uppercase">Alojamientos</h4>
+      <p>
+        Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes.
+      </p>  
+    </ion-text>
+  </ion-header>
+
+  <ion-grid >
     <ion-row>
-      <ion-col size="6" *ngFor="let patrimonio of patrimonios">
+      <ion-col 
+        size="6" 
+        
+        *ngFor="let patrimonio of patrimonios"
+      >
 
         <ion-card [routerLink]="['/patrimonio/' + patrimonio.id]">
-          {{ patrimonio.title }}
-          <img src = "../../../assets/{{ patrimonio.cardImage }}" />
-         
+          
+          <img 
+          src = "../../../assets/{{ patrimonio.cardImage }}" 
+          class="grid-card"
+          />
+         {{ patrimonio.title }}
+
         </ion-card>
       </ion-col>
     </ion-row>
