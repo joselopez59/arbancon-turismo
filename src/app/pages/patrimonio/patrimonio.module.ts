@@ -7,14 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { PatrimonioPageRoutingModule } from './patrimonio-routing.module';
 
 import { PatrimonioPage } from './patrimonio.page';
+import { ExpandableComponent } from './../../components/expandable/expandable.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+  
+  CommonModule,
     FormsModule,
     IonicModule,
     PatrimonioPageRoutingModule
   ],
-  declarations: [PatrimonioPage]
+  declarations: [PatrimonioPage, ExpandableComponent]
 })
+
 export class PatrimonioPageModule {}

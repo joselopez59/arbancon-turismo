@@ -1,10 +1,12 @@
 <ion-content >
-  <ion-header class="ion-padding" color="green">
+  <ion-header class="ion-padding" color="green" (click)="expandItem(item)" *ngFor="let item of items">
     <ion-text>
       <h4 class="ion-text-uppercase">Patrimonio</h4>
-      <p>
+      <app-expandable expandHeight="150px" [expanded]="item.expanded">
+        <p>
         Arbancón dispone del alojamiento adecuado para cada necesidad. Desde habitaciones individuales en hostal hasta cabañas para grupos de hasta 40 personas, pasando por apartamentos y casas rurales, todos ellos perfectamente equipados.
       </p>  
+      </app-expandable>   
     </ion-text>
   </ion-header>
 
