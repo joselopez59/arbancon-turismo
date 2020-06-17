@@ -65,13 +65,13 @@ ion-content {
 }
 
 
-img { border-radius: 4px; }
-
 // ion-content,
 // ion-item {
 //   //--background: var(--ion-color-background);
 // }
-
+ion-list, ion-card {
+  img { border-radius: 4px; }
+}
 
 ion-card {
   

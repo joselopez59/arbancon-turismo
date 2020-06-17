@@ -3,10 +3,15 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ patrimonio.title }}</ion-title>
+    <ion-title>{{ patrimonio.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <img src="../../assets/{{ patrimonio.detailImage }}">
+  <ion-text >
+    <p class="ion-padding ion-text-justify">
+      {{ patrimonio.text }}
+    </p>
+  </ion-text>
 </ion-content>
