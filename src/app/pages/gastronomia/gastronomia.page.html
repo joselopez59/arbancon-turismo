@@ -11,7 +11,7 @@
       </h6>
       <app-expandable expandHeight="150px" [expanded]= expanded>
         <p>
-        Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes.
+        Los restaurantes de Arbancón preparan especialidades de la cocina serrana tienda de ultramarinos para el abastecimiento diario y venta de productos naturales de la huerta local.
       </p>  
       </app-expandable>    
     </ion-text>
@@ -24,24 +24,23 @@
     routerDirection="forward"
     lines="none">
 
-      <ion-card class="ion-no-padding">
+      <ion-card>
 
         <ion-card-content>
 
-          <img
-            src="../../../assets/{{ gastronomia.mainImage }}"
-            class="list-card"
-          >
+          <img src="../../../assets/{{ gastronomia.mainImage }}">
 
           <div>
 
-            <ion-card-title class="ion-text-end">
+            <ion-card-title>
             {{ gastronomia.name }}
             </ion-card-title>
             
-            <div *ngFor="let feature of gastronomia.features">
+            <ion-card-subtitle 
+            class="ion-text-end"
+            *ngFor="let feature of gastronomia.features">
               {{ feature }}
-            </div>
+            </ion-card-subtitle>
 
           </div>
           

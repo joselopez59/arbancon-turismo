@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs"></ion-back-button>
     </ion-buttons>
@@ -8,10 +8,32 @@
 </ion-header>
 
 <ion-content>
-  <img src="../../assets/{{ patrimonio.detailImage }}">
+  <img src="../../assets/{{ patrimonio.cardImage }}">
   <ion-text >
     <p class="ion-padding ion-text-justify">
       {{ patrimonio.text }}
     </p>
   </ion-text>
 </ion-content>
+
+<ion-footer class="ion-justify-content-center">
+
+  <ion-chip  
+  *ngFor="let button of patrimonio.buttons"
+    outline = true
+    color= "white"
+  >
+    <ion-icon name= "{{ button.icon }}"></ion-icon>
+    <ion-label>{{ button.text }}</ion-label>
+  </ion-chip>
+<!-- <ion-button *ngFor="let button of patrimonio.buttons"
+  
+  shape="round" 
+  fill="outline" 
+  size="small" 
+  color="light">
+
+  <ion-label>{{ button.text }}</ion-label>
+</ion-button> -->
+
+</ion-footer>

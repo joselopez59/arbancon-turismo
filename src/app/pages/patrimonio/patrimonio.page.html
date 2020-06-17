@@ -22,17 +22,16 @@
   <ion-grid >
     <ion-row>
       <ion-col 
-        size="6" 
-        
+        size="6"     
         *ngFor="let patrimonio of patrimonios"
       >
-
         <ion-card [routerLink]="['/patrimonio/' + patrimonio.id]">
           
           <img 
           src = "../../../assets/{{ patrimonio.cardImage }}" 
           class="grid-card"
           />
+
          {{ patrimonio.title }}
 
         </ion-card>
@@ -40,3 +39,16 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer class="ion-justify-content-center">
+
+  <ion-button 
+  
+    shape="round" 
+    fill="outline" 
+    size="small" 
+    color="light">
+
+    <ion-label>Visitas guiadas</ion-label>
+  </ion-button>
+</ion-footer>

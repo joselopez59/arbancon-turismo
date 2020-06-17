@@ -5,8 +5,10 @@
         "name": "Antecedentes históricos",
         "text": "Arbancón perteneció desde la reconquista al pequeño alfoz o Tierra de Cogolludo, bajo cuya jurisdicción quedó, usando sus fueros. Arbancón estuvo bajo el señorío de la Orden de Calatrava, y posteriormente bajo el admirado D. Diego Hurtado de Mendoza y su hija doña Aldonza, pasando definitivamente, en los finales del siglo XV, a la casa ducal de Medinaceli, en la que permaneció hasta 1721, cuando recibió el titulo de villa de Felipe V. Dice la tradición del pueblo que aquí se asentó unos días Cristóbal Colon, cuando viajó a Cogolludo a visitar al duque, y aquí en Arbancón probó el cordero que tan ricamente condimentaban sus naturales. Con un simple paseo por sus callejas y plazas, se puede comprobar que este municipio, gozó de especiales privilegios en el pasado, la estampa de cualquiera de sus calles grises, el saliente de los aleros en sus callejones estrechos, la maravillosa Iglesia renacentista de San Benito Abad, etc.",
         "listImage": "images/patrimonio/calles01-400x.jpg",
-        "cardImage": "images/patrimonio/historia01-150x.jpg"
-        
+        "cardImage": "images/patrimonio/historia01-150x.jpg",
+        "buttons": [
+            { "icon": "book-outline", "text": "Visitas guiadas" }
+        ]
     },
     {
         "id": "iglesia",
@@ -16,9 +18,9 @@
         "listImage": "images/patrimonio/calles01-400x.jpg",
         "cardImage": "images/patrimonio/iglesia01-400x.jpg",
         "buttons": [
-            { "icon": "ion-ios-book", "text": "Visitas guiadas" },
-            { "icon": "ion-camera", "text": "Fotografías" },
-            { "icon": "ion-aperture", "text": "Visita virtual" }
+            { "icon": "book-outline", "text": "Visitas guiadas" },
+            { "icon": "camera-outline", "text": "Fotografías" },
+            { "icon": "expand-outline", "text": "Visita virtual" }
         ]
     },
     {
@@ -29,9 +31,9 @@
         "listImage": "images/patrimonio/calles01-400x.jpg",
         "cardImage": "images/patrimonio/vistaCoro-400x.jpg",
         "buttons": [
-            { "icon": "ion-ios-book", "text": "Visitas guiadas" },
-            { "icon": "ion-camera", "text": "Fotografías" },
-            { "icon": "ion-aperture", "text": "Visita virtual" }
+            { "icon": "book-outline", "text": "Visitas guiadas" },
+            { "icon": "camera-outline", "text": "Fotografías" },
+            { "icon": "expand-outline", "text": "Visita virtual"}
         ]
     },
     {
@@ -42,8 +44,7 @@
         "listImage": "images/patrimonio/calles01-400x.jpg",
         "cardImage": "images/patrimonio/museo01-400x.jpg",
         "buttons": [
-            { "icon": "ion-ios-book", "text": "visitas Guiadas" },
-            { "icon": "ion-camera", "text": "fotografías" }
+            { "icon": "book-outline", "text": "Visitas guiadas" }
         ]
     },
     {
@@ -52,7 +53,10 @@
         "name": "Plaza Mayor de los Cuatro Caños",
         "text": "También merece una especial visita su plaza mayor, ámbito de planta irregular en la que destaca el edifico concejil, con torre de reloj y torrecilla metálica. Esta plaza se encuentra presidida por una gran fuente de piedra tallada, de cuatro caños, rematada en airosos pináculo. En sus orígenes, esta fuente, y según consta en diferentes documentos del Archivo Histórico Municipal, fue Picota, como la que preside otras tantas plazas de pueblos de España, y donde se colocaban los diferentes comunicados a los vecinos de la villa.",
         "listImage": "images/patrimonio/calles01-400x.jpg",
-        "cardImage": "images/patrimonio/cuatrocanos01-400x.jpg"
+        "cardImage": "images/patrimonio/cuatrocanos01-400x.jpg",
+        "buttons": [
+            { "icon": "book-outline", "text": "Visitas guiadas" }
+        ]
     },
     {
         "id": "jardin",
@@ -61,5 +65,8 @@
         "text": "Antiguo cementerio de la iglesia, reciéntemente habilitado como parque, un lugar tranquilo, excelente para relajarse y disfrutar de las vistas al arroyo de la Salceda, a la vega del Sotillo y a la Sierra Gorda",
         "cardImage": "images/patrimonio/recuerdo01.jpg",
         "listImage": "images/patrimonio/calles01-400x.jpg",
+        "buttons": [
+            { "icon": "book-outline", "text": "Visitas guiadas" }
+        ]
     }
 ]
