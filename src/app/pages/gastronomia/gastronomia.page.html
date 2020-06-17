@@ -1,5 +1,22 @@
 <ion-content>
   
+  <ion-header 
+    color="green" 
+    (click)="expandHeader()">
+    <ion-text>
+      <h6 class="ion-text-uppercase">
+        Gastronomia
+        <span *ngIf="expanded" >&#9650;</span>
+        <span *ngIf="!expanded">&#9660;</span>
+      </h6>
+      <app-expandable expandHeight="150px" [expanded]= expanded>
+        <p>
+        Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes.
+      </p>  
+      </app-expandable>    
+    </ion-text>
+  </ion-header>
+
   <ion-list>
     <ion-item
     *ngFor="let gastronomia of gastronomias"

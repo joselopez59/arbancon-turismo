@@ -9,6 +9,7 @@ import { GastronomiaService } from './../../services/gastronomia.service';
 export class GastronomiaPage implements OnInit {
 
   public gastronomias;
+  public expanded = false;
   
   constructor(
     public gastronomiaService: GastronomiaService
@@ -20,5 +21,14 @@ export class GastronomiaPage implements OnInit {
     .subscribe(data => {
       this.gastronomias = data;
     });
+  }
+
+  expandHeader() {
+    console.log("expandHeader()");
+    if (this.expanded) {
+      this.expanded = false;
+    } else {    
+      this.expanded = !this.expanded;   
+    }
   }
 }

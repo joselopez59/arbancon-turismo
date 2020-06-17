@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosPage implements OnInit {
 
+  public expanded = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  expandHeader() {
+    //console.log("expandHeader()");
+    if (this.expanded) {
+      this.expanded = false;
+    } else {    
+      this.expanded = !this.expanded;   
+    }
   }
 
 }

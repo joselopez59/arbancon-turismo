@@ -10,28 +10,18 @@ import { AlojamientosService } from './../../services/alojamientos.service';
 export class AlojamientosPage implements OnInit {
 
   public alojamientos;
-  public items: any = [];
+  public expanded = false;
   
   constructor(
     public alojamientosService: AlojamientosService
-  ) {
-    this.items  = [
-      { expanded: false }
-    ];
-  }
+  ) {}
 
-  expandItem(item): void {
-    if (item.expanded) {
-      item.expanded = false;
-    } else {
-      this.items.map(listItem => {
-        if (item == listItem) {
-          listItem.expanded = !listItem.expanded;
-        } else {
-          listItem.expanded = false;
-        }
-        return listItem;
-      });
+  expandHeader() {
+    //console.log("expandHeader()");
+    if (this.expanded) {
+      this.expanded = false;
+    } else {    
+      this.expanded = !this.expanded;   
     }
   }
 

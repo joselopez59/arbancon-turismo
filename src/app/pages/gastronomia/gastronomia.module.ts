@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { GastronomiaPageRoutingModule } from './gastronomia-routing.module';
 
 import { GastronomiaPage } from './gastronomia.page';
+import { ExpandableComponent } from './../../components/expandable/expandable.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { GastronomiaPage } from './gastronomia.page';
     IonicModule,
     GastronomiaPageRoutingModule
   ],
-  declarations: [GastronomiaPage]
+  declarations: [GastronomiaPage, ExpandableComponent]
 })
 export class GastronomiaPageModule {}

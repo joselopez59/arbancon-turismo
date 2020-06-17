@@ -16,19 +16,10 @@ export class PatrimonioPage implements OnInit {
     private patrimonioService: PatrimonioService
   ) {}
 
-  expandHeader() {
-    console.log("expandHeader()");
-    if (this.expanded) {
-      this.expanded = false;
-    } else {    
-      this.expanded = !this.expanded;   
-    }
-  }
-
-  scroll(event) {
-    //console.log('scroll event detail', event.detail);
-    //console.log('scroll event scrollTop', event.detail.scrollTop);
-  }
+  // scroll(event) {
+  //   //console.log('scroll event detail', event.detail);
+  //   //console.log('scroll event scrollTop', event.detail.scrollTop);
+  // }
 
   ngOnInit() {
     this.patrimonioService.getPatrimonios()
@@ -38,20 +29,12 @@ export class PatrimonioPage implements OnInit {
     });
   }
 
-
-// export class PatrimonioPage implements OnInit {
-
-//   public patrimonios;
-//   constructor(
-//     private patrimonioService: PatrimonioService
-//   ) {}
-
-//   ngOnInit() {
-//     this.patrimonioService.getPatrimonios()
-//     .subscribe(data => {
-//       this.patrimonios = data;
-//       console.log("this.patrimonios: " + this.patrimonios);
-//     });
-//   }
-
+  expandHeader() {
+    console.log("expandHeader()");
+    if (this.expanded) {
+      this.expanded = false;
+    } else {    
+      this.expanded = !this.expanded;   
+    }
+  }
 }
