@@ -20,12 +20,12 @@ export class PatrimonioDetailPage implements OnInit {
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log("id: " + id)
+    console.log("id: " + id);
     this.patrimonioService.getPatrimonio(id)
-    .subscribe(data => {
-      this.patrimonio = data;
-      console.log(this.patrimonio);
-    });
+      .subscribe(data => {
+        this.patrimonio = data;
+        console.log(this.patrimonio);
+      });
   }
 
 }

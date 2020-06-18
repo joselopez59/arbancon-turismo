@@ -48,9 +48,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/actividades/actividades.module').then( m => m.ActividadesPageModule)
   },
   {
+    path: 'actividad/:id',
+    loadChildren: () => import('./pages/actividad/actividad.module').then( m => m.ActividadPageModule)
+  },
+  {
     path: 'eventos',
     loadChildren: () => import('./pages/eventos/eventos.module').then( m => m.EventosPageModule)
-  },
+  }
+
   
 
 ];

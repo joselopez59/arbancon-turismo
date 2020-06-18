@@ -18,4 +18,5 @@ import { ExpandableComponent } from './../../components/expandable/expandable.co
   ],
   declarations: [ActividadesPage, ExpandableComponent]
 })
+
 export class ActividadesPageModule {}

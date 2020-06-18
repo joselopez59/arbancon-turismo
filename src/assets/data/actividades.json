@@ -1,26 +1,33 @@
 [
     {
-        "id": "naturaleza",
-        "title": "Naturaleza",
-        "name": "Naturaleza",
-        "text": ""
-    },
-    {
-        "id": "senderismo",
-        "title": "Senderismo",
-        "name": "Senderismo",
-        "text": ""
-    },
-    {
-        "id": "deporte",
-        "title": "Deporte",
-        "name": "Deporte",
-        "text": ""
-    },
-    {
-        "id": "excursiones",
-        "title": "Excursiones",
-        "name": "Excursiones",
-        "text": ""
+        "categoria": "actividades",
+        "text": "Arbancon  actividades",
+        "items":
+        [
+            {
+                "id": "naturaleza",
+                "title": "Naturaleza",
+                "name": "Naturaleza",
+                "text": ""
+            },
+            {
+                "id": "senderismo",
+                "title": "Senderismo",
+                "name": "Senderismo",
+                "text": ""
+            },
+            {
+                "id": "deporte",
+                "title": "Deporte",
+                "name": "Deporte",
+                "text": ""
+            },
+            {
+                "id": "excursiones",
+                "title": "Excursiones",
+                "name": "Excursiones",
+                "text": ""
+            }
+        ]
     }
 ]
