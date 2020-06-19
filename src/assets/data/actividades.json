@@ -27,7 +27,20 @@
                 "title": "Excursiones",
                 "name": "Excursiones",
                 "text": ""
+            },
+            {
+                "id": "cultura",
+                "title": "Cultura",
+                "name": "Cultura",
+                "text": ""
+            },
+            {
+                "id": "cultura",
+                "title": "Cultura",
+                "name": "Cultura",
+                "text": ""
             }
+
         ]
     }
 ]
