@@ -13,7 +13,11 @@
     <ion-row>
 
       <ion-col class="side ion-padding">
-        <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
+        
+        <a href="https://www.google.com/maps?daddr=Arbanc%C3%B3n,+Spanien">
+          <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
+        </a>
+        
         <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
 
       </ion-col>
@@ -24,12 +28,20 @@
 
       <ion-col class="side ion-padding">
         <div id="wetterCont">
-          <ion-img src="{{ iconUrl }}" id="wicon" class="top"></ion-img>
+          <ion-img 
+            (click)="openExternalUrl('https://openweathermap.org/city/3129813')"
+            src="{{ iconUrl }}" 
+            id="wicon" 
+            class="top"></ion-img>
           <ion-label id="temp">{{ temp }}</ion-label> 
           <!-- <span id="temp">{{ temp }}</span> -->
         </div>
 
-        <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" class="bottom"></ion-img>
+        <ion-img 
+          src="../../../assets/images/home/ayuntamientoArbancon.png" 
+          button (click)="openExternalUrl('http://www.arbancon.es/')"
+          class="bottom">
+        </ion-img>
 
       </ion-col>
     </ion-row>
@@ -41,7 +53,7 @@
     <ion-chip  
       outline = true
       color= "white"
-      button (click)="openExternalUrl('https://twitter.com/')">
+      button (click)="openExternalUrl('https://www.facebook.com/arbancon.guadalajara')">
       <ion-icon name="logo-facebook"></ion-icon>
       <ion-label>Facebook</ion-label>
     </ion-chip>
@@ -49,7 +61,7 @@
     <ion-chip  
       outline = true
       color= "white"
-      button (click)="openExternalUrl('https://twitter.com/')">
+      button (click)="openExternalUrl('https://www.instagram.com/turismoarbancon/')">
       <ion-icon name="logo-instagram"></ion-icon>
       <ion-label>Instagram</ion-label>
     </ion-chip>
@@ -57,7 +69,7 @@
     <ion-chip  
       outline = true
       color= "white"
-      button (click)="openExternalUrl('https://github.com/ionic-team/ionic')">
+      button (click)="openExternalUrl('https://www.turismoarbancon.com/')">
       <ion-icon name="globe-outline"></ion-icon>
       <ion-label>Internet</ion-label>
     </ion-chip>
@@ -65,7 +77,7 @@
     <ion-chip  
       outline = true
       color= "white"
-      button (click)="openExternalUrl('https://instagram.com/ionicframework')">
+      button (click)="openExternalUrl('https://twitter.com/TurismoArbancon')">
       <ion-icon name="logo-twitter"></ion-icon>
       <ion-label>Twitter</ion-label>
     </ion-chip>
