@@ -37,7 +37,7 @@ export class GastronomiaDetailPage implements OnInit {
     this.gastronomiaService.getGastronomia(id)
     .subscribe(data => {
       this.gastronomia = data;
-      console.log(this.gastronomia);
+      //console.log(this.gastronomia);
     });
   }
 

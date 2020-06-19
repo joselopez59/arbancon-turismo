@@ -1,10 +1,17 @@
-div {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
+// div {
+//     display: flex;
+//     justify-content: space-between;
+//     margin: 20px 0;
+// }
+
+
+
+ion-col {
+  text-align: center;
+  padding: 0;
 }
 
-  ion-badge {
-    font-size: 10px;
-    font-weight: 100;
-  }
+ion-badge {
+  font-size: 10px;
+  font-weight: 300;
+}

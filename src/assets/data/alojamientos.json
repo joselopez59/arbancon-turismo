@@ -1,11 +1,15 @@
-[
+{
+  "categoria": "Alojamientos",
+  "headerText": "Arbancón dispone del alojamiento adecuado para cada necesidad. Desde habitaciones individuales en hostal hasta cabañas para grupos de hasta 40 personas, pasando por apartamentos y casas rurales, todos ellos perfectamente equipados.",
+  "items": 
+  [
     {
       "id": "tahona",
       "vendor": "Casa rural la Tahona",
       "name": "La Tahona",
       "type": "Casa rural",
       "shortProfil": "Ideal para grupos de hasta 12 personas",
-      "profil": "Casona típica de la Sierra de Guadalajara especialmente acomodada para grupos o familias de hasta 12 personas. Dispone de 6 habitaciones dobles y 4 cuartos de baño, cocina completamente y un amplio patio cerrado con barbacoa. Ideal para encuentros familiares y reuniones de amigos.",
+      "profil": "Casona típica de la Sierra de Guadalajara especialmente acomodada para grupos o familias de hasta 12 personas. Dispone de 6 habitaciones dobles y 4 cuartos de baño, cocina completamente equipada y amplio patio cerrado con barbacoa. Ideal para encuentros familiares y reuniones de amigos.",
       "features": [
         {
           "typ": "personas",
@@ -46,7 +50,6 @@
         "images/casas/tahona/tahona06-350x.jpg",
         "images/casas/tahona/tahona07-350x.jpg"
       ]
-
     },
     {
       "id": "albertas",
@@ -255,3 +258,4 @@
       ]
     }
   ]
+}

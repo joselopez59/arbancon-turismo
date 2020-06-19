@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/tabs"></ion-back-button>
     </ion-buttons>
 
-    <ion-buttons *ngIf="gastronomia" slot="end">
+    <ion-buttons slot="end">
       <ion-button (click)="openContact(gastronomia)">
         <ion-icon slot="icon-only" name="information-outline"></ion-icon>
       </ion-button>
@@ -32,11 +32,11 @@
     {{ feature }}
   </div>
 
-  <ion-item>{{ gastronomia.profil }} </ion-item>
+  {{ gastronomia.profil }}
   
 </ion-content>
 
-<ion-footer>
+<!-- <ion-footer>
   <ion-toolbar color="danger">
 
     <ion-fab horizontal="star" vertical="center" >
@@ -53,4 +53,4 @@
 
     
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->

@@ -6,29 +6,37 @@
     
     <ion-title>{{ alojamiento.vendor }}</ion-title>
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content fullscreen class="ion-padding">
-
-    <ion-slides pager="true" [options]="slideOpts">
+<ion-content fullscreen>
+  <ion-slides pager="true" [options]="slideOpts" class="ion-no-padding">
       
-      <ion-slide *ngFor="let slide of alojamiento.slider">
-        <ion-img src="../../assets/{{ slide }}"></ion-img>
-      </ion-slide>
+    <ion-slide *ngFor="let slide of alojamiento.slider">
+      <ion-img src="../../assets/{{ slide }}"></ion-img>
+    </ion-slide>
+    
+  </ion-slides>
+  
+  <section class="ion-padding">
+    <ion-grid>
+      <ion-row >
+        <ion-col 
+          size="4"
+          *ngFor="let feature of alojamiento.features">
+          <ion-badge color="green">
+            {{ feature.amount }} {{ feature.typ }}
+          </ion-badge>
+        </ion-col>
+      </ion-row>
       
-    </ion-slides>
+    </ion-grid>
+    
 
-    <div>
-      
-      <ion-badge 
-      color="green"
-      *ngFor="let feature of alojamiento.features">
-        {{ feature.amount }} {{ feature.typ }}</ion-badge>
+  
 
-    </div>
-
-    <ion-text color="text">{{ alojamiento.profil }}</ion-text>
-
+  <ion-text color="text">{{ alojamiento.profil }}</ion-text>
+  </section>
     
 </ion-content>
 

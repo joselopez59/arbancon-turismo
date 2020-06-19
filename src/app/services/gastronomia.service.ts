@@ -17,7 +17,7 @@ export class GastronomiaService {
     
     return this.http.get("./../assets/data/gastronomias.json")
     .pipe(
-      map((response: any) => response.find(elem => elem.id == id))
+      map((response: any) => response.items.find(elem => elem.id == id))
     );
   }
 
