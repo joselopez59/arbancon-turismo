@@ -10,12 +10,6 @@ export class ActividadesService {
 
 
   constructor( private http : HttpClient ) { }
-
-  // getCategoria() {
-  //   return this.http.get("./../assets/data/actividades.json")
-  //   .pipe(
-  //     map((response: any) => response[0]))
-  // }
   
   getactividades() {
     return this.http.get("./../assets/data/actividades.json")
@@ -25,8 +19,6 @@ export class ActividadesService {
     
     return this.http.get("./../assets/data/actividades.json")
     .pipe(
-     // map((response: any) => response[0].find(elem => elem.id == id))
-      //map((response: any) => response[0].items.find(elem => elem.id == id))
       map((response: any) => response.items.find(elem => elem.id == id))
     ); 
   }

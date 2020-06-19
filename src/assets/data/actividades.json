@@ -1,7 +1,8 @@
 {
     "categoria": "Actividades",
     "text": "Arbancon  actividades",
-    "items": [
+    "items": 
+    [
         {
             "id": "naturaleza",
             "title": "Naturaleza",
