@@ -24,8 +24,7 @@ export class ActividadPage implements OnInit {
     this.actividadesService.getActividad(id)
       .subscribe(data => {
         this.actividad = data;
-        console.log("this.actividad", this.actividad);
-        console.log("this.actividad.item.name", this.actividad.name);
+        
       });
   }
 }

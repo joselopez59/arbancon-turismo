@@ -10,25 +10,25 @@ import { throwIfEmpty } from 'rxjs/operators';
 export class ActividadesPage implements OnInit {
 
   public expanded = false;
-  public headerTitle;
-  public headerText;
+  // public headerTitle;
+  // public headerText;
   public actividades;
-  
 
   constructor(
-    public actividadesService: ActividadesService
+    private actividadesService: ActividadesService
   ) { }
 
   ngOnInit() {
-    
+    //console.log("ngOnInit()");
     this.actividadesService.getactividades()
     .subscribe(data => {
-      this.headerTitle = data[0].categoria;
-      console.log(this.headerTitle);
-      this.headerText = data[0].text;
-      console.log(this.headerText);
-      this.actividades = data[0].items;
-      console.log(this.actividades);
+      // this.headerTitle = data[0].categoria;
+      // console.log(this.headerTitle);
+      // this.headerText = data[0].text;
+      // console.log(this.headerText);
+      this.actividades = data;
+      console.log("this.actividades", this.actividades);
+      console.log("this.actividades.categoria", this.actividades.categoria);
     });  
     
     // this.actividadesService.getCategoria()

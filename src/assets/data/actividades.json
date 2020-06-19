@@ -1,46 +1,42 @@
-[
-    {
-        "categoria": "actividades",
-        "text": "Arbancon  actividades",
-        "items":
-        [
-            {
-                "id": "naturaleza",
-                "title": "Naturaleza",
-                "name": "Naturaleza",
-                "text": ""
-            },
-            {
-                "id": "senderismo",
-                "title": "Senderismo",
-                "name": "Senderismo",
-                "text": ""
-            },
-            {
-                "id": "deporte",
-                "title": "Deporte",
-                "name": "Deporte",
-                "text": ""
-            },
-            {
-                "id": "excursiones",
-                "title": "Excursiones",
-                "name": "Excursiones",
-                "text": ""
-            },
-            {
-                "id": "cultura",
-                "title": "Cultura",
-                "name": "Cultura",
-                "text": ""
-            },
-            {
-                "id": "cultura",
-                "title": "Cultura",
-                "name": "Cultura",
-                "text": ""
-            }
-
-        ]
-    }
-]
+{
+    "categoria": "Actividades",
+    "text": "Arbancon  actividades",
+    "items": [
+        {
+            "id": "naturaleza",
+            "title": "Naturaleza",
+            "name": "Naturaleza",
+            "text": ""
+        },
+        {
+            "id": "senderismo",
+            "title": "Senderismo",
+            "name": "Senderismo",
+            "text": ""
+        },
+        {
+            "id": "deporte",
+            "title": "Deporte",
+            "name": "Actividades deportivas",
+            "text": ""
+        },
+        {
+            "id": "excursiones",
+            "title": "Excursiones",
+            "name": "Excursiones",
+            "text": ""
+        },
+        {
+            "id": "cultura",
+            "title": "Cultura",
+            "name": "Cultura",
+            "text": ""
+        },
+        {
+            "id": "cultura",
+            "title": "Cultura",
+            "name": "Cultura",
+            "text": ""
+        }
+    ]
+}

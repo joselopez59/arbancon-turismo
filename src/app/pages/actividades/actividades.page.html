@@ -4,13 +4,13 @@
     (click)="expandHeader()">
     <ion-text>
       <h6 class="ion-text-uppercase">
-        {{ headerTitle }}
+        {{ actividades.categoria }}
         <span *ngIf="expanded" >&#9650;</span>
         <span *ngIf="!expanded">&#9660;</span>
       </h6>
       <app-expandable expandHeight="150px" [expanded]= expanded>
         <p>
-          {{ headerText }}
+          {{ actividades.text }}
         </p>  
       </app-expandable>    
     </ion-text>
@@ -20,7 +20,7 @@
     <ion-row>
       <ion-col 
         size="6"     
-        *ngFor="let actividad of actividades"
+        *ngFor="let actividad of actividades.items"
       >
         <ion-card [routerLink]="['/actividad/' + actividad.id]">
           
