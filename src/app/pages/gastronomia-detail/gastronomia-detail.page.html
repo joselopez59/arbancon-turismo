@@ -18,7 +18,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
 
   <ion-slides pager="true" [options]="slideOpts">
       
@@ -28,12 +28,23 @@
     
   </ion-slides>
 
-  <div *ngFor="let feature of gastronomia.features">
-    {{ feature }}
-  </div>
+  <section class="ion-padding">
+    <ion-grid>
+      <ion-row >
+        <ion-col 
+          size="4"
+          *ngFor="let feature of gastronomia.features">
+          <ion-badge color="green">
+            {{ feature}}
+          </ion-badge>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  {{ gastronomia.profil }}
-  
+    <ion-text color="text">{{ gastronomia.profil }}</ion-text>
+    
+  </section>
+
 </ion-content>
 
 <!-- <ion-footer>

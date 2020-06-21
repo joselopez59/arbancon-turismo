@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EscapadasPageRoutingModule } from './escapadas-routing.module';
 
 import { EscapadasPage } from './escapadas.page';
+import { ExpandableComponent } from './../../components/expandable/expandable.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { EscapadasPage } from './escapadas.page';
     IonicModule,
     EscapadasPageRoutingModule
   ],
-  declarations: [EscapadasPage]
+  declarations: [EscapadasPage, ExpandableComponent]
 })
 export class EscapadasPageModule {}
