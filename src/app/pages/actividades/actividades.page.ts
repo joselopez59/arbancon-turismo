@@ -27,8 +27,8 @@ export class ActividadesPage implements OnInit {
       // this.headerText = data[0].text;
       // console.log(this.headerText);
       this.actividades = data;
-      console.log("this.actividades", this.actividades);
-      console.log("this.actividades.categoria", this.actividades.categoria);
+      //console.log("this.actividades", this.actividades);
+      //console.log("this.actividades.categoria", this.actividades.categoria);
     });  
     
     // this.actividadesService.getCategoria()

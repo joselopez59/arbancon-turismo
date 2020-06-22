@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild, Inject, LOCALE_ID } from '@angular/core';
-import { CalendarComponent } from 'ionic2-calendar/calendar';
-import { AlertController } from '@ionic/angular';
-import { formatDate } from '@angular/common';
+import { Component, OnInit} from '@angular/core';
+import { CalendarComponentOptions, DayConfig } from 'ion2-calendar'
+
 
 @Component({
   selector: 'app-calendar',
@@ -10,66 +9,44 @@ import { formatDate } from '@angular/common';
 })
 export class CalendarPage implements OnInit {
 
-  event = {
-    title: '',
-    desc: '',
-    startTime: '',
-    endTime: '',
-    allDay: false
+  date: string;
+  type: string;
+
+  _daysConfig: DayConfig[] = [];
+    
+  
+  constructor() {
+    this.date = "";
+    this.type = "";
+
+    // for (let i = 0; i < 31; i++) {
+    //   this._daysConfig.push({
+    //     date: new Date(2020, 5, i + 1),
+    //     title: 'est',
+    //     subTitle: `test`,
+        
+    //   })
+    // }
+    
+  }
+
+  ngOnInit() {}
+
+  options: CalendarComponentOptions = {
+    monthFormat: 'MMMM YYYY',
+    weekdays: ['D', 'L', 'M', 'Mi', 'J', 'V', 'S'],
+    weekStart: 1,
+    showToggleButtons: true,
+    daysConfig: this._daysConfig
   };
 
-  minDate = new Date().toISOString();
-
-  eventSource = [];
-  viewTitle;
-
-  calendar = {
-    mode: 'month',
-    currentDate: new Date(),
-    locale: 'es-ES'
-  };
-
-  @ViewChild(CalendarComponent) myCal: CalendarComponent;
-
-  constructor(
-    private alertCtrl: AlertController, 
-    @Inject(LOCALE_ID) private locale: string
-  ) {}
-
-  ngOnInit() {
-    this.resetEvent();
+  onChange(event) {
+    console.log("onChange ", event);
   }
 
-  resetEvent() {
-    this.event = {
-      title: '',
-      desc: '',
-      startTime: new Date().toISOString(),
-      endTime: new Date().toISOString(),
-      allDay: false
-    };
+  onSelect(event) {
+    console.log("onSelect", event);
   }
-
-  addEvent() {
-    let eventCopy = {
-      title: this.event.title,
-      startTime:  new Date(this.event.startTime),
-      endTime: new Date(this.event.endTime),
-      allDay: this.event.allDay,
-      desc: this.event.desc
-    }
- 
-    if (eventCopy.allDay) {
-      let start = eventCopy.startTime;
-      let end = eventCopy.endTime;
- 
-      eventCopy.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
-      eventCopy.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() + 1));
-    }
- 
-    this.eventSource.push(eventCopy);
-    this.myCal.loadEvents();
-    this.resetEvent();
-  }
+  
 
 }
