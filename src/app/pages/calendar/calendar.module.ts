@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { CalendarPage } from './calendar.page';
 import { CalendarPageRoutingModule } from './calendar-routing.module';
 
-import { NgCalendarModule  } from 'ionic2-calendar';
 import localeEs from '@angular/common/locales/es';
 import localeEsExtra from '@angular/common/locales/extra/es';
 import { registerLocaleData } from '@angular/common';
@@ -18,8 +17,7 @@ registerLocaleData(localeEs, localeEsExtra);
     CommonModule,
     FormsModule,
     IonicModule,
-    CalendarPageRoutingModule,
-    NgCalendarModule
+    CalendarPageRoutingModule
   ],
   declarations: [CalendarPage],
   providers: [
