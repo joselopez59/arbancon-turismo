@@ -13,6 +13,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+
+FullCalendarModule.registerPlugins(
+  [ dayGridPlugin ]
+)
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +28,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     IonicModule.forRoot(), 
     AppRoutingModule,
     SuperTabsModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FullCalendarModule
   ],
   providers: [
     StatusBar,
