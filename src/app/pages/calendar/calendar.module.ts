@@ -8,7 +8,11 @@ import { CalendarPage } from './calendar.page';
 import { CalendarPageRoutingModule } from './calendar-routing.module';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
+//import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 
+// FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+//   interactionPlugin
+// ]);
 
 @NgModule({
   imports: [

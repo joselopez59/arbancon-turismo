@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CalendarOptions } from '@fullcalendar/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FullCalendarComponent, CalendarOptions } from '@fullcalendar/angular';
 //import dayGridPlugin from '@fullcalendar/daygrid'; 
 
 @Component({
@@ -10,16 +10,25 @@ import { CalendarOptions } from '@fullcalendar/angular';
 
 export class CalendarPage implements OnInit {
 
-  calendarVisible = true;
+  @ViewChild('calendar') calendarComponent: FullCalendarComponent;
+
+  //calendarVisible = true;
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
+    aspectRatio: .85,
+    //weekNumbers: true,
+    //dateClick: this.handleDateClick.bind(this),
     events: [
-      { title: 'event 1', date: '2020-07-01' },
-      { title: 'event 2', date: '2020-07-05' }
+      { title: 'event 1', date: '2020-08-01' },
+      { title: 'event 2', date: '2020-08-05' }
     ]
   };
 
+
   constructor() {}
 
-  ngOnInit(){}
+  ngOnInit(){
+    // var calendarEl = document.getElementById('calendario');
+    // console.log("calendar", calendarEl )
+  }
 }
