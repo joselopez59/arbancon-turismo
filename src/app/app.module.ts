@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +20,10 @@ FullCalendarModule.registerPlugins(
   [ dayGridPlugin ]
 )
 
+import es from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(es);
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -35,7 +39,8 @@ FullCalendarModule.registerPlugins(
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    InAppBrowser
+    InAppBrowser,
+    { provide:LOCALE_ID, useValue: "es-ES" }
   ],
   bootstrap: [AppComponent]
 })

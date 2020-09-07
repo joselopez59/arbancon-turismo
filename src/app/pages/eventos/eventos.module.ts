@@ -18,4 +18,5 @@ import { ExpandableComponent } from './../../components/expandable/expandable.co
   ],
   declarations: [EventosPage, ExpandableComponent]
 })
+
 export class EventosPageModule {}

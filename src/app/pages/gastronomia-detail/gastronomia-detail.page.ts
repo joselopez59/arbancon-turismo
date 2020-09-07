@@ -27,7 +27,7 @@ export class GastronomiaDetailPage implements OnInit {
     private gastronomiaService: GastronomiaService,
     public actionSheetCtrl: ActionSheetController
   ) {
-    this.gastronomia = "";
+      this.gastronomia = "";
    }
 
   ngOnInit() {

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FullCalendarComponent, CalendarOptions } from '@fullcalendar/angular';
+import esLocale from '@fullcalendar/core/locales/es';
 // import googleCalendarPlugin from '@fullcalendar/google-calendar';
 //import dayGridPlugin from '@fullcalendar/daygrid'; 
 import { EventosService } from './../../services/eventos.service';
@@ -13,18 +14,23 @@ import { EventosService } from './../../services/eventos.service';
 export class CalendarPage implements OnInit {
 
   public eventos;
-  public eventosArray = [
-    { title: 'event 1', date: '2020-08-01' },
-    { title: 'event 2', date: '2020-08-05' }
-  ];
-    
-  public eventosArray2;
-
+  
   // @ViewChild('calendar') calendarComponent: FullCalendarComponent;
 
   calendarOptions: CalendarOptions = {
+    locale: esLocale,
     initialView: 'dayGridMonth',
+    views: {
+      dayGridMonth: {
+        titleFormat: { year: 'numeric', month: 'long'}
+      }
+    },
     aspectRatio: .85,
+    headerToolbar: {
+      left: 'prev',
+      center: 'title',
+      right: 'next'
+    },
     //weekNumbers: true,
     //dateClick: this.handleDateClick.bind(this),
     eventSources: [ 
@@ -37,17 +43,14 @@ export class CalendarPage implements OnInit {
 
   constructor(
     private eventosService: EventosService
-  ) {
-      this.eventosArray2 = [];
-  }
+  ) { }
 
   ngOnInit() {
 
     this.eventosService.getEventos()
     .subscribe(data => {
       this.eventos = data;
-      // console.log("this.eventos", this.eventos);
-
+      console.log("this.eventos", this.eventos.items);
       this.calendarOptions.events = this.eventos.items;
       
     });

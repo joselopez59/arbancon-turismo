@@ -2,19 +2,63 @@
   <ion-header 
     color="green" 
     (click)="expandHeader()">
+
     <ion-text>
       <h6 class="ion-text-uppercase">
         Eventos
         <span *ngIf="expanded" >&#9650;</span>
         <span *ngIf="!expanded">&#9660;</span>
       </h6>
+      
       <app-expandable expandHeight="150px" [expanded]= expanded>
-        <p>
-        Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes.
-      </p>  
+        <ion-label class="ion-text-wrap">
+          Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes.
+        </ion-label>  
       </app-expandable>    
     </ion-text>
   </ion-header>
+
+  <ion-item lines="none">
+    <ion-label>
+      Próximos eventos:
+    </ion-label>
+  </ion-item>
+
+  <ion-list>
+    <ion-item 
+    lines="none"
+      *ngFor="let evento of eventos.items"
+    >
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+
+            <ion-label>
+              <ion-text class="datum">
+                {{ evento.start | date:'fullDate'}} 
+                <br/>
+                {{ evento.end | date:'fullDate'}}
+              </ion-text>
+            </ion-label>
+            
+            <ion-label class="ion-text-wrap">
+              <h2>{{ evento.title }}</h2>
+            </ion-label>
+
+            <ion-label class="ion-text-wrap">
+              <ion-text color="text">
+                {{ evento.descr }}
+              </ion-text>
+              
+            </ion-label>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-item>
+  </ion-list>
+  
 </ion-content>
 
 <ion-footer class="ion-justify-content-center">
