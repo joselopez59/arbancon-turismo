@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { EscapadasService } from '../../services/escapadas.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-escapadas',
@@ -9,6 +11,7 @@ import { EscapadasService } from '../../services/escapadas.service';
 
 export class EscapadasPage implements OnInit {
 
+  env = environment;
   public escapadas;
   public expanded = false;
 
@@ -22,12 +25,11 @@ export class EscapadasPage implements OnInit {
     this.escapadasService.getEscapadas()
     .subscribe(data => {
       this.escapadas = data;
-      //console.log("this.escapadas: " + this.escapadas);
+      console.log("this.escapadas: " + this.escapadas);
     });
   }
 
   expandHeader() {
-    //console.log("expandHeader()");
     if (this.expanded) {
       this.expanded = false;
     } else {    

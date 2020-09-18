@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { environment } from '../../../environments/environment';
 import { PatrimonioService } from './../../services/patrimonio.service';
 
 @Component({
@@ -9,7 +11,9 @@ import { PatrimonioService } from './../../services/patrimonio.service';
 })
 export class PatrimonioDetailPage implements OnInit {
 
+  env = environment;
   public patrimonio;
+  public imgURL;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -24,7 +28,8 @@ export class PatrimonioDetailPage implements OnInit {
     this.patrimonioService.getPatrimonio(id)
       .subscribe(data => {
         this.patrimonio = data;
-        console.log(this.patrimonio);
+        //console.log("this.patrimonio", this.patrimonio);
+        this.imgURL = this.patrimonio.cardImage.url;
       });
   }
 

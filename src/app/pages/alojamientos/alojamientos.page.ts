@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlojamientosService } from './../../services/alojamientos.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-alojamientos',
@@ -9,6 +10,7 @@ import { AlojamientosService } from './../../services/alojamientos.service';
 
 export class AlojamientosPage implements OnInit {
 
+  env = environment;
   public alojamientos;
   public expanded = false;
   
@@ -28,8 +30,9 @@ export class AlojamientosPage implements OnInit {
   ngOnInit() {
     this.alojamientosService.getAlojamientos()
     .subscribe(data => {
+      
       this.alojamientos = data;
-      //console.log(this.alojamientos);
+      
     });   
   }
 }

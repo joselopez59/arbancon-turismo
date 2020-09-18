@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EscapadasPageRoutingModule } from './escapadas-routing.module';
+import { OfertasPageRoutingModule } from './ofertas-routing.module';
 
-import { EscapadasPage } from './escapadas.page';
+import { OfertasPage } from './ofertas.page';
 import { ExpandableComponent } from './../../components/expandable/expandable.component';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ExpandableComponent } from './../../components/expandable/expandable.co
     CommonModule,
     FormsModule,
     IonicModule,
-    EscapadasPageRoutingModule
+    OfertasPageRoutingModule
   ],
-  declarations: [EscapadasPage, ExpandableComponent]
+  declarations: [OfertasPage, ExpandableComponent]
 })
 
-export class EscapadasPageModule {}
+export class OfertasPageModule {}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GastronomiaService } from './../../services/gastronomia.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-gastronomia',
@@ -8,6 +9,7 @@ import { GastronomiaService } from './../../services/gastronomia.service';
 })
 export class GastronomiaPage implements OnInit {
 
+  env = environment;
   public gastronomias;
   public expanded = false;
   

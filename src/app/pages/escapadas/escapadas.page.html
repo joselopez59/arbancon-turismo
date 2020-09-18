@@ -28,29 +28,30 @@
 </ion-header> -->
 <ion-header 
     color="primary" 
-      (click)="expandHeader()">
+    (click)="expandHeader()">
     
-    <!--  -->
     <ion-toolbar color="green" >
+
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/"></ion-back-button>
       </ion-buttons>
       
+      <ion-text>
+        <h6 class="ion-text-uppercase">
+          <!-- {{ escapadas.categoria }} -->
+          Escapadas
+          <span *ngIf="expanded" >&#9650;</span>
+          <span *ngIf="!expanded">&#9660;</span>
+        </h6>
+        <app-expandable expandHeight="150px" [expanded]= expanded>
+          <p>
+            <!-- {{ escapadas.headerText }} -->
+            Hemos preparado paquetes de ofertas especiales para un fin de semana rural. Para detalles, consultar a los propietarios
+          </p>  
+        </app-expandable>    
+      </ion-text>
 
-    <ion-text>
-      <h6 class="ion-text-uppercase">
-        {{ escapadas.categoria }}
-        <span *ngIf="expanded" >&#9650;</span>
-        <span *ngIf="!expanded">&#9660;</span>
-      </h6>
-      <app-expandable expandHeight="150px" [expanded]= expanded>
-        <p>
-          {{ escapadas.headerText }}         
-        </p>  
-      </app-expandable>    
-    </ion-text>
     </ion-toolbar>
-    
   </ion-header>
 
 <ion-content>
@@ -58,7 +59,7 @@
 
   <ion-list>
     <ion-item 
-      *ngFor="let escapada of escapadas.items"
+      *ngFor="let escapada of escapadas"
       lines="none">
       <ion-card class="ion-no-padding">
 
@@ -80,7 +81,7 @@
         <div class="inCard">
           
           <div class="imgInCard">
-            <img src="../../../assets/{{ escapada.image }}">
+            <img src="{{env.cmsURL}}{{ escapada.image.url }}">
           </div>
           
             <ion-card-content >

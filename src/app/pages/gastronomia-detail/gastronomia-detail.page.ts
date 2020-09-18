@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 
 import { GastronomiaService } from './../../services/gastronomia.service';
-
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-gastronomia-detail',
@@ -12,6 +12,7 @@ import { GastronomiaService } from './../../services/gastronomia.service';
 })
 export class GastronomiaDetailPage implements OnInit {
 
+  env = environment;
   public gastronomia;
 
   slideOpts = {

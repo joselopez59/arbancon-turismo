@@ -20,9 +20,7 @@ export class EventosPage implements OnInit {
     this.eventosService.getEventos()
     .subscribe(data => {
       this.eventos = data;
-      console.log("this.eventos", this.eventos.items);
-      // this.calendarOptions.events = this.eventos.items;
-      
+      //console.log("this.eventos", this.eventos);
     });
   }
 

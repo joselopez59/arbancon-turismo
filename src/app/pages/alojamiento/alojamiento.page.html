@@ -1,61 +1,82 @@
 <ion-header>
   <ion-toolbar color="primary">
+
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs"></ion-back-button>
     </ion-buttons>
     
+    <ion-buttons slot="end">
+      <ion-button (click)="openContact(alojamiento)">
+        <ion-icon slot="icon-only" name="information-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openSpeakerShare(gastronomia)">
+        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-title>{{ alojamiento.vendor }}</ion-title>
+
   </ion-toolbar>
   
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-slides pager="true" [options]="slideOpts" class="ion-no-padding">
+  <ion-slides pager="true" [options]="slideOpts" >
       
     <ion-slide *ngFor="let slide of alojamiento.slider">
-      <ion-img src="../../assets/{{ slide }}"></ion-img>
+      <ion-img src="{{ env.cmsURL }}{{ slide.url }}"></ion-img>
     </ion-slide>
     
   </ion-slides>
   
-  <section class="ion-padding">
-    <ion-grid>
-      <ion-row >
-        <ion-col 
-          size="4"
-          *ngFor="let feature of alojamiento.features">
-          <ion-badge color="green">
-            {{ feature.amount }} {{ feature.typ }}
-          </ion-badge>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-grid class="subSlider">
+    <ion-row >
+      <ion-col 
+      size="4"
+      *ngFor="let feature of alojamiento.features"
+      >
+        <ion-label >
+          {{ feature.amount }} {{ feature.typ }}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    <div class="ion-text-justify">
-      <ion-text color="text">
-        {{ alojamiento.profil }}
-      </ion-text>
-    </div>
-    
-  </section>
+  <div class="ion-text-justify ion-padding">
+    <ion-text >
+      {{ alojamiento.profil }}
+    </ion-text>
+  </div>
     
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar color="danger">
+<ion-footer >
+  
+  <ion-chip *ngIf="alojamiento.fbURL"
+    outline = true
+    color= "white"
+    button (click)="openExternalUrl(alojamiento.fbURL)"
+  >
+    <ion-icon name="logo-facebook"></ion-icon>
+    <ion-label>Facebook</ion-label>
+  </ion-chip>
 
-    <ion-fab horizontal="star" vertical="center" >
-      <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara" >
-        <ion-icon name="logo-facebook" ></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-    
-    <ion-fab horizontal="end" vertical="center" >
-      <ion-fab-button size="small" href="https://www.turismoarbancon.com">
-        <ion-icon name="earth-outline" ></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  <ion-chip *ngIf="alojamiento.url" 
+    outline = true
+    color= "white"
+    button (click)="openExternalUrl(alojamiento.url)"
+  >
+    <ion-icon name="globe-outline"></ion-icon>
+    <ion-label>Internet</ion-label>
+  </ion-chip>
 
-    
-  </ion-toolbar>
+  <ion-chip *ngIf="alojamiento.InstagURL" 
+    outline = true
+    color= "white"
+    button (click)="openExternalUrl(alojamiento.InstagURL)"
+  >
+    <ion-icon name="logo-instagram"></ion-icon>
+    <ion-label>Instagram</ion-label>
+  </ion-chip>
+  
 </ion-footer>

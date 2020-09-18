@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { PatrimonioService } from './../../services/patrimonio.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-patrimonio',
@@ -9,11 +11,12 @@ import { PatrimonioService } from './../../services/patrimonio.service';
 
 export class PatrimonioPage implements OnInit {
 
+  env = environment;
   public patrimonios;
   public expanded = false;
 
   constructor(
-    private patrimonioService: PatrimonioService
+    public patrimonioService: PatrimonioService
   ) {}
 
   // scroll(event) {
@@ -25,7 +28,7 @@ export class PatrimonioPage implements OnInit {
     this.patrimonioService.getPatrimonios()
     .subscribe(data => {
       this.patrimonios = data;
-      //console.log("this.patrimonios: " + this.patrimonios);
+      //console.log("this.patrimonios: ", this.patrimonios);
     });
   }
 

@@ -4,13 +4,14 @@
     (click)="expandHeader()">
     <ion-text>
       <h6 class="ion-text-uppercase">
-        {{ actividades.categoria }}
+
+        Actividades
         <span *ngIf="expanded" >&#9650;</span>
         <span *ngIf="!expanded">&#9660;</span>
       </h6>
       <app-expandable expandHeight="150px" [expanded]= expanded>
         <p>
-          {{ actividades.text }}
+          Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes.
         </p>  
       </app-expandable>    
     </ion-text>
@@ -20,11 +21,12 @@
     <ion-row>
       <ion-col 
         size="6"     
-        *ngFor="let actividad of actividades.items"
+        *ngFor="let actividad of actividades"
       >
+        <!-- <ion-card [routerLink]="['/actividad/' + actividad.idName]"> -->
         <ion-card [routerLink]="['/actividad/' + actividad.id]">
           
-          <img src = "../../../assets/images/patrimonio/cuatrocanos01-400x.jpg"/>
+          <img src = "{{ env.cmsURL }}{{ actividad.listImage.url }}"/>
 
           {{ actividad.title }}
 
@@ -33,3 +35,15 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer class="ion-justify-content-center">
+
+  <ion-button 
+  shape="round" 
+  fill="outline" 
+  size="small" 
+  color="light">
+    <ion-label>Mapa interactivo</ion-label>
+  </ion-button>
+  
+</ion-footer>

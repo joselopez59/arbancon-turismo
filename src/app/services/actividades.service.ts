@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +9,16 @@ import { map } from 'rxjs/operators';
 
 export class ActividadesService {
 
-
+  env = environment;
+  
   constructor( private http : HttpClient ) { }
   
   getactividades() {
-    return this.http.get("./../assets/data/actividades.json")
+    return this.http.get(this.env.cmsURL + "/actividades")
   }
 
-  getActividad(id) {
-    
-    return this.http.get("./../assets/data/actividades.json")
-    .pipe(
-      map((response: any) => response.items.find(elem => elem.id == id))
-    ); 
+  getActividad(id) {  
+    return this.http.get(this.env.cmsURL + "/actividades/" + id)
   }
 }
 

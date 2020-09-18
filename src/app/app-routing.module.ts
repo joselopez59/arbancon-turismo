@@ -58,7 +58,12 @@ const routes: Routes = [
   {
     path: 'calendar',
     loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'ofertas',
+    loadChildren: () => import('./pages/ofertas/ofertas.module').then( m => m.OfertasPageModule)
   }
+
 ];
 
 @NgModule({
@@ -67,4 +72,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

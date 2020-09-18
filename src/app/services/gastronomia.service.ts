@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GastronomiaService {
 
+  env = environment;
+  
   constructor(private http : HttpClient) { }
 
   getGastronomias() {
-    return this.http.get("./../assets/data/gastronomias.json")
+    return this.http.get(this.env.cmsURL + "/gastronomias/")
   }
 
-  getGastronomia(id) {
-    
-    return this.http.get("./../assets/data/gastronomias.json")
-    .pipe(
-      map((response: any) => response.items.find(elem => elem.id == id))
-    );
+  getGastronomia(id) { 
+    return this.http.get(this.env.cmsURL + "/gastronomias/" + id)
   }
 
 }

@@ -3,10 +3,31 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ actividad.title }}</ion-title>
+    <ion-title>{{ actividad.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  {{ actividad.name }}
+  <img src="{{ env.cmsURL }}{{ imgURL }}">
+ 
+  <ion-text >
+    <p class="ion-padding ion-text-justify"
+    [innerHTML]="actividad.text"
+    >
+      
+    </p>
+  </ion-text>
 </ion-content>
+
+<ion-footer class="ion-justify-content-center">
+
+  <ion-chip  
+  *ngFor="let button of actividad.buttons"
+    outline = true
+    color= "white"
+  >
+    <ion-icon name= "{{ button.icon }}"></ion-icon>
+    <ion-label>{{ button.text }}</ion-label>
+  </ion-chip>
+
+</ion-footer>
