@@ -4,13 +4,15 @@
     (click)="expandHeader()">
     <ion-text>
       <h6 class="ion-text-uppercase">
-        {{ alojamientos.categoria}}
+        <!-- {{ alojamientos.categoria}} -->
+        Alojamientos
         <span *ngIf="expanded" >&#9650;</span>
         <span *ngIf="!expanded">&#9660;</span>
       </h6>
       <app-expandable expandHeight="150px" [expanded]=expanded>
         <p>
-          {{ alojamientos.headerText}}
+          <!-- {{ alojamientos.headerText}} -->
+          Arbancón dispone del alojamiento adecuado para cada necesidad. Desde habitaciones individuales en hostal hasta cabañas para grupos de hasta 40 personas, pasando por apartamentos y casas rurales, todos ellos perfectamente equipados.
         </p>  
       </app-expandable>   
     </ion-text>
@@ -18,16 +20,17 @@
 
   <ion-list>
     <ion-item 
-    *ngFor="let alojamiento of alojamientos.items" 
-    [routerLink]="['/alojamiento/' + alojamiento.id]"
+    *ngFor="let alojamiento of alojamientos" 
+    [routerLink]="['/alojamiento/' + alojamiento.idName]"
     routerDirection="forward" 
     lines="none">
 
       <ion-card >
 
-        <ion-card-content>
+        <ion-card-content class="ion-no-padding">
           
-          <img src="../../../assets/{{ alojamiento.mainImage }}">
+          <!-- <img src="../../../assets/{{ alojamiento.mainImage }}"> -->
+          <img src= "{{ env.cmsURL }}{{ alojamiento.mainImage.url }}">
           
           <div>
             <ion-card-title >
