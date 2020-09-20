@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ActionSheetController } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { ModalController } from '@ionic/angular';
+// import { ActionSheetController } from '@ionic/angular';
 
 import { GastronomiaService } from './../../services/gastronomia.service';
 import { environment } from '../../../environments/environment';
+import { ModalPage } from './../../modal/modal.page';
 
 @Component({
   selector: 'app-gastronomia-detail',
@@ -26,7 +29,8 @@ export class GastronomiaDetailPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private gastronomiaService: GastronomiaService,
-    public actionSheetCtrl: ActionSheetController
+    private inAppBrowser: InAppBrowser,
+    public modalController: ModalController
   ) {
       this.gastronomia = "";
    }
@@ -42,56 +46,30 @@ export class GastronomiaDetailPage implements OnInit {
     });
   }
 
-  async openContact(gastronomia: any) {
-    const mode = 'ios'; // this.config.get('mode');
-    const actionSheet = await this.actionSheetCtrl.create({
-      
-      buttons: [
-        {
-          text: gastronomia.calle,
-          icon: "home-outline",
-        },
-        {
-          text: gastronomia.localidad,
-          icon: null,
-          handler: () => {
-            //window.open('tel:' + gastronomia.tel )
-          }
-        },
-        {
-          text: gastronomia.tel,
-          icon: "call-outline",
-          handler: () => {
-            window.open('tel:' + gastronomia.tel )
-          }
-        },
-        {
-          text: `${gastronomia.mail}`,
-          icon: "mail-outline",
-          handler: () => {
-            window.open('mailto:' + gastronomia.mail)
-          }
-        },
-        {
-          text: `${gastronomia.mail}`,
-          icon: "mail-outline",
-          handler: () => {
-            window.open('mailto:' + gastronomia.mail)
-          }
-        },
-        {
-          text: `${gastronomia.url}`,
-          icon: "home-outline",
-          handler: () => {
-            window.open(gastronomia.url)
-          }
-        }
-      ]
+  async openModal() {
+
+    const modal = await this.modalController.create({
+      component: ModalPage,
+      componentProps: {
+        "title": this.gastronomia.name,
+        "calle": this.gastronomia.calle,
+        "localidad": this.gastronomia.localidad,
+        "provincia": this.gastronomia.provincia,
+        "gmapsURL": this.gastronomia.gmapsURL,
+        "tel": this.gastronomia.tel,
+        "mail": this.gastronomia.mail,
+        "url": this.gastronomia.url,
+      }
     });
 
-    await actionSheet.present();
+    return await modal.present();
   }
 
-  openSpeakerShare(){}
+  openExternalUrl(url: string) {
+    this.inAppBrowser.create(
+      url,
+      '_blank'
+    );
+  }
 
 }

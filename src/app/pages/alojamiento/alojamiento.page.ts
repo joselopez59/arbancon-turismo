@@ -5,7 +5,7 @@ import { ModalController } from '@ionic/angular';
 
 import { AlojamientosService } from './../../services/alojamientos.service';
 import { environment } from '../../../environments/environment';
-//import { Alojamiento } from '../../interfaces/alojamiento';
+import { ModalPage } from './../../modal/modal.page';
 
 @Component({
   selector: 'app-alojamiento',
@@ -18,7 +18,7 @@ export class AlojamientoPage implements OnInit {
   //alojamiento: Alojamiento;
   env = environment;
   public alojamiento;
-
+  
   slideOpts = {
     initialSlide: 0,
     speed: 400,
@@ -43,21 +43,34 @@ export class AlojamientoPage implements OnInit {
    }
 
   ngOnInit() {
-    console.log("alojamiento-page ngOnInit");
+    //onsole.log("alojamiento-page ngOnInit");
     let id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.alojamientosService.getAlojamiento(id)
     .subscribe(data => {
       this.alojamiento = data;
-      console.log("this.alojamiento", this.alojamiento);
+      //console.log("this.alojamiento", this.alojamiento);
     });
   }
 
-  async openContact(alojamiento: any) {
+  async openModal() {
 
+    const modal = await this.modalController.create({
+      component: ModalPage,
+      componentProps: {
+        "title": this.alojamiento.vendor,
+        "calle": this.alojamiento.calle,
+        "localidad": this.alojamiento.localidad,
+        "provincia": this.alojamiento.provincia,
+        "gmapsURL": this.alojamiento.gmapsURL,
+        "tel": this.alojamiento.tel,
+        "mail": this.alojamiento.mail,
+        "url": this.alojamiento.url,
+      }
+    });
+
+    return await modal.present();
   }
-
-  openSpeakerShare(){}
 
   openExternalUrl(url: string) {
     this.inAppBrowser.create(

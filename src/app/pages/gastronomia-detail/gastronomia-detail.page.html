@@ -1,16 +1,17 @@
 <ion-header>
   <ion-toolbar color="primary">
+
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs"></ion-back-button>
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button (click)="openContact(gastronomia)">
+      <ion-button (click)="openModal(gastronomia)">
         <ion-icon slot="icon-only" name="information-outline"></ion-icon>
       </ion-button>
-      <ion-button (click)="openSpeakerShare(gastronomia)">
+      <!-- <ion-button (click)="openSpeakerShare(gastronomia)">
         <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
-      </ion-button>
+      </ion-button> -->
     </ion-buttons>
 
     <ion-title>{{ gastronomia.name }}</ion-title>
@@ -51,21 +52,33 @@
 
 </ion-content>
 
-<!-- <ion-footer>
-  <ion-toolbar color="danger">
+<ion-footer >
+  
+  <ion-chip *ngIf="gastronomia.fbURL"
+    outline = true
+    color= "white"
+    button (click)="openExternalUrl(gastronomia.fbURL)"
+  >
+    <ion-icon name="logo-facebook"></ion-icon>
+    <ion-label>Facebook</ion-label>
+  </ion-chip>
 
-    <ion-fab horizontal="star" vertical="center" >
-      <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara" >
-        <ion-icon name="logo-facebook" ></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-    
-    <ion-fab horizontal="end" vertical="center" >
-      <ion-fab-button size="small" href="https://www.turismoarbancon.com">
-        <ion-icon name="earth-outline" ></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  <ion-chip *ngIf="gastronomia.url" 
+    outline = true
+    color= "white"
+    button (click)="openExternalUrl(gastronomia.url)"
+  >
+    <ion-icon name="globe-outline"></ion-icon>
+    <ion-label>Internet</ion-label>
+  </ion-chip>
 
-    
-  </ion-toolbar>
-</ion-footer> -->
+  <ion-chip *ngIf="gastronomia.InstagURL" 
+    outline = true
+    color= "white"
+    button (click)="openExternalUrl(gastronomia.InstagURL)"
+  >
+    <ion-icon name="logo-instagram"></ion-icon>
+    <ion-label>Instagram</ion-label>
+  </ion-chip>
+  
+</ion-footer>
