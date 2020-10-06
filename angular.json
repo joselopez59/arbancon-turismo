@@ -42,9 +42,16 @@
               },
               {
                 "input": "src/global.scss"
+              },
+              {
+                "input": "lib/leaflet-mapkey-icon/dist/L.Icon.Mapkey.css"
               }
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "lib/leaflet-mapkey-icon/dist/L.Icon.Mapkey.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -103,8 +110,16 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
-            "scripts": [],
+            "styles": [
+              {
+                "input": "lib/leaflet-mapkey-icon/dist/L.Icon.Mapkey.css"
+              }
+            ],
+            "scripts": [
+              {
+                "input": "lib/leaflet-mapkey-icon/dist/L.Icon.Mapkey.js"
+              }
+            ],
             "assets": [
               {
                 "glob": "favicon.ico",

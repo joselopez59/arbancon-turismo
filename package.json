@@ -36,6 +36,7 @@
     "cordova-plugin-inappbrowser": "^3.2.0",
     "intl": "^1.2.5",
     "ion2-calendar": "^3.0.0-rc.0",
+    "leaflet": "^1.7.1",
     "moment": "^2.27.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
