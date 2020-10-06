@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-3.11552, 40.96384]
+      },
+      "properties": {
+        "name": "Tahona Tural"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-3.11357, 40.96448]
+      },
+      "properties": {
+        "name": "Refugio Abuelo"
+      }
+    }
+  ]
+  
+}

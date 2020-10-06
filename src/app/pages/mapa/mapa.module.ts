@@ -8,10 +8,7 @@ import { MapaPageRoutingModule } from './mapa-routing.module';
 
 import { MapaPage } from './mapa.page';
 
-// import { MarkerService } from 'src/app/services/mapa/marker.service';
-
 @NgModule({
-  // providers: [MarkerService],
   imports: [
     CommonModule,
     FormsModule,

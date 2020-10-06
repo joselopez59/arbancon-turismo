@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import * as L from 'leaflet';
+import { MarkerService } from './../../services/mapa/marker.service';
+
 
 @Component({
   selector: 'app-mapa',
@@ -11,12 +13,12 @@ export class MapaPage {
   
   map: L.Map;
 
-  constructor() { }
+  constructor( private markerService: MarkerService ) { }
 
   ionViewDidEnter() {
     this.initMap();
+    this.markerService.makePoisMarkers(this.map);
   }
-
 
   initMap() {
 
@@ -64,7 +66,7 @@ export class MapaPage {
     //   shadowUrl: '/marker-shadow.png'
     //  });
 
-    //const marker = L.marker([40.96404, -3.11249], icon).addTo(this.map);
+    //const marker = L.marker([40.96404, -3.11249]).addTo(this.map);
 
     // L.marker(
     //   [ 40.96404, -3.11249 ],
