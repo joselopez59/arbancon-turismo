@@ -5,7 +5,7 @@ import { MapaPageModule } from 'src/app/pages/mapa/mapa.module';
 // import { environment } from '../../../environments/environment';
 import * as L from 'leaflet';
 import { PopUpService } from './pop-up.service';
-import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class MarkerService {
 
   constructor( 
     private http: HttpClient,
-    private PopUpService
+    //private PopUpService
   ) {}
 
   makePoisMarkers(map: L.map): void {
@@ -29,7 +29,7 @@ export class MarkerService {
       
       
       for (const c of res.features) {
-        console.log(c);
+        console.log(c.properties.name);
         const lat = c.geometry.coordinates[0];
         //console.log("lat", lat);
         const lon = c.geometry.coordinates[1];
@@ -37,12 +37,17 @@ export class MarkerService {
 
         const marker = L.marker([lon, lat]);
 
-        //marker.bindPopup(this.PopUpService.makePopup(c));
+        marker.bindPopup(this.makePopup(c.properties.name));
 
-        //marker.addTo(map);
+        marker.addTo(map);
 
       }
 
     });
+  }
+
+  makePopup(data: any): string {
+    return "" + 
+      "<div>" + data + "</div>"
   }
 }

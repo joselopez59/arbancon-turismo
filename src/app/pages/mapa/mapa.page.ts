@@ -17,7 +17,7 @@ export class MapaPage {
 
   ionViewDidEnter() {
     this.initMap();
-    //this.markerService.makePoisMarkers(this.map);
+    this.markerService.makePoisMarkers(this.map);
   }
 
   initMap() {
