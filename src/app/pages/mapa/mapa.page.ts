@@ -61,7 +61,7 @@ export class MapaPage {
     // topografico.addTo(this.map);
     L.control.scale({imperial:false}).addTo(this.map);
 
-    const baselayers = {
+    const baseLayers  = {
       "Callejero": callejero,
       "Topográfico": topografico,
       "Satélite": satelite
@@ -70,14 +70,14 @@ export class MapaPage {
     const layerPois = this.createLayer().addTo(this.map);
     const layerPoisTur = this.createLayer().addTo(this.map);
     
-    const overlayers = {
+    const overlays = {
       "<span id='poiName'>Puntos de interés</span>": layerPois,
       "<span id='poiTurismoName'>Puntos de interés</span>": layerPoisTur
     }
     
     
     
-    const controlLayers = L.control.layers( baselayers, overlayers, { collapsed: false } );
+    const controlLayers = L.control.layers( baseLayers , overlays, { collapsed: false } );
     
     controlLayers.addTo(this.map);
 
