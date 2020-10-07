@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   // cmsURL: "http://localhost:1337"
-  cmsURL: "http://h2522373.stratoserver.net:1337"
+  cmsURL: "http://h2522373.stratoserver.net:1337",
+  poisURL: "http://localhost:1337"
 };
 
 /*
