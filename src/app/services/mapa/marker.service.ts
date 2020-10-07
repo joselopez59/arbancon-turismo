@@ -12,46 +12,19 @@ export class MarkerService {
 
   env = environment;
   
-  responde():void {
-    console.log("MarkerService");
-  }
+  // responde():void {
+  //   console.log("MarkerService");
+  // }
 
   // pois: string = '/assets/map/pois2.json';
   // pois: string = this.env.poisURL + "/pois";
   pois: string = this.env.cmsURL + "/pois";
   
-  constructor( 
-    private http: HttpClient,
-    
-  ) {}
+  constructor( private http: HttpClient ) {}
 
-  makePoisMarkers(map: L.map): void {
-    console.log(this.pois);
-
-    this.http.get(this.pois).subscribe ((res: any) => {
-      //console.log(res);
-      for (const c of res) {
-        // console.log(c.geometry.coordinates.lat);
-        // console.log(c.geometry.coordinates.lon);
-        
-        const marker = L.marker(
-          [
-            c.geometry.coordinates.lat, 
-            c.geometry.coordinates.lon
-          ]
-        );
-
-        marker.bindPopup(this.makePopup(c.properties.name));
-
-        marker.addTo(map);
-
-      }
-
-    });
+  getPois() {
+    return this.http.get(this.env.cmsURL + "/pois/")
   }
 
-  makePopup(data: any): string {
-    return "" + 
-      "<div>" + data + "</div>"
-  }
+   
 }

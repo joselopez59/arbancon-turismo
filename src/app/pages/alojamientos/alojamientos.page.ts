@@ -10,9 +10,9 @@ import { environment } from '../../../environments/environment';
 
 export class AlojamientosPage implements OnInit {
 
-  env = environment;
+  private env = environment;
   public alojamientos;
-  public expanded = false;
+  private expanded = false;
   
   constructor(
     public alojamientosService: AlojamientosService
