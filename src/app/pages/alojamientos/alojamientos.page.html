@@ -4,14 +4,12 @@
     (click)="expandHeader()">
     <ion-text>
       <h6 class="ion-text-uppercase">
-        <!-- {{ alojamientos.categoria}} -->
         Alojamientos
         <span *ngIf="expanded" >&#9650;</span>
         <span *ngIf="!expanded">&#9660;</span>
       </h6>
       <app-expandable expandHeight="150px" [expanded]=expanded>
         <p>
-          <!-- {{ alojamientos.headerText}} -->
           Arbancón dispone del alojamiento adecuado para cada necesidad. Desde habitaciones individuales en hostal hasta cabañas para grupos de hasta 40 personas, pasando por apartamentos y casas rurales, todos ellos perfectamente equipados.
         </p>  
       </app-expandable>   
