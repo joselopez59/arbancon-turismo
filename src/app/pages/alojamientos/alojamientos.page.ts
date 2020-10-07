@@ -28,6 +28,7 @@ export class AlojamientosPage implements OnInit {
   }
 
   ngOnInit() {
+    
     this.alojamientosService.getAlojamientos()
     .subscribe(data => {
       
@@ -35,4 +36,5 @@ export class AlojamientosPage implements OnInit {
       
     });   
   }
+
 }
