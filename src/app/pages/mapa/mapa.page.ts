@@ -1,7 +1,8 @@
+import { IvyParser } from '@angular/compiler';
 import { Component } from '@angular/core';
 import * as L from 'leaflet';
 import { MarkerService } from './../../services/mapa/marker.service';
-
+// import * from "../../../assets/icon/"
 
 @Component({
   selector: 'app-mapa',
@@ -67,8 +68,9 @@ export class MapaPage {
       "Satélite": satelite
     }
     
-    const layerPois = this.createLayer("pois").addTo(this.map);
     const layerPoisTur = this.createLayer("poisturismos").addTo(this.map);
+    const layerPois = this.createLayer("pois").addTo(this.map);
+    
     
     const overlays = {
       "<span id='poiName'>Puntos de interés</span>": layerPois,
@@ -85,8 +87,6 @@ export class MapaPage {
         console.log("overlayadd");
       }
     });
-    
-
   }
 
   createLayer(layerName: string) {
@@ -104,6 +104,16 @@ export class MapaPage {
             poi.geometry.coordinates.lon
           ]
         );
+
+        if (poi.properties.mapicon) {
+          console.log("if", poi.properties.mapicon);
+          const icon = L.icon({
+            iconUrl: "../../../assets/icon/map/" + poi.properties.mapicon,
+            className: "mapicon"
+          });
+
+          marker.setIcon(icon);
+        }
 
         marker.bindPopup(this.makePopup(poi.properties.name));
         
