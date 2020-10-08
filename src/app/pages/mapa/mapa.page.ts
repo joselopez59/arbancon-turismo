@@ -72,17 +72,19 @@ export class MapaPage {
     
     const overlays = {
       "<span id='poiName'>Puntos de interés</span>": layerPois,
-      "<span id='poiTurismoName'>Puntos de interés</span>": layerPoisTur
+      "<span id='poiTurismoName'>Servicios turísticos</span>": layerPoisTur
     }
     
-    
-    
     const controlLayers = L.control.layers( baseLayers , overlays, { collapsed: false } );
-    
+    this.map.removeLayer(layerPoisTur);
+
     controlLayers.addTo(this.map);
 
+    
     this.map.on ({
-
+      overlayadd: function(e) {
+        console.log("overlayadd");
+      }
     });
     
 
