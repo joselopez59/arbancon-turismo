@@ -67,8 +67,8 @@ export class MapaPage {
       "Satélite": satelite
     }
     
-    const layerPois = this.createLayer().addTo(this.map);
-    const layerPoisTur = this.createLayer().addTo(this.map);
+    const layerPois = this.createLayer("pois").addTo(this.map);
+    const layerPoisTur = this.createLayer("poisturismos").addTo(this.map);
     
     const overlays = {
       "<span id='poiName'>Puntos de interés</span>": layerPois,
@@ -79,7 +79,6 @@ export class MapaPage {
     this.map.removeLayer(layerPoisTur);
 
     controlLayers.addTo(this.map);
-
     
     this.map.on ({
       overlayadd: function(e) {
@@ -90,11 +89,11 @@ export class MapaPage {
 
   }
 
-  createLayer() {
+  createLayer(layerName: string) {
 
     const layer = L.layerGroup();
 
-    this.markerService.getPois()
+    this.markerService.getPois(layerName)
     .subscribe((data: any) => {
       
       for (const poi of data) {

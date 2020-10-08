@@ -22,8 +22,8 @@ export class MarkerService {
   
   constructor( private http: HttpClient ) {}
 
-  getPois() {
-    return this.http.get(this.env.cmsURL + "/pois/")
+  getPois(layer: string) {
+    return this.http.get(this.env.cmsURL + "/" + layer + "/")
   }
 
    
