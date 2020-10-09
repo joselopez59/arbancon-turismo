@@ -54,7 +54,6 @@ export class MapaPage {
       maxZoom:25
     });
 
-
     this.map = new L.Map('mapId').setView([40.965, -3.115], 16);
     //this.map = new L.Map('mapId').setView([40.96404, -3.11249 ], 19);
 
@@ -78,7 +77,7 @@ export class MapaPage {
     }
     
     const controlLayers = L.control.layers( baseLayers , overlays, { collapsed: false } );
-    this.map.removeLayer(layerPoisTur);
+    //this.map.removeLayer(layerPoisTur);
 
     controlLayers.addTo(this.map);
     
@@ -87,6 +86,19 @@ export class MapaPage {
         console.log("overlayadd");
       }
     });
+
+    const iconTest = L.icon({
+      iconUrl: "../../../assets/icon/map/escudoArbancon.png",
+      className: "mapicon mapiconPng"
+    });
+
+    const markerTest = L.marker(
+      [
+        40.966,
+        -3.113823
+      ],
+      {icon: iconTest}
+    ).addTo(this.map)
   }
 
   createLayer(layerName: string) {
