@@ -12,7 +12,7 @@ export class AlojamientosPage implements OnInit {
 
   private env = environment;
   public alojamientos;
-  private expanded = false;
+  public expanded = false;
   
   constructor(
     public alojamientosService: AlojamientosService

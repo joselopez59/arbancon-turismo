@@ -1,6 +1,9 @@
 import { IvyParser } from '@angular/compiler';
 import { Component } from '@angular/core';
+
 import * as L from 'leaflet';
+
+import { environment } from '../../../environments/environment';
 import { MarkerService } from './../../services/mapa/marker.service';
 // import * from "../../../assets/icon/"
 
@@ -14,7 +17,7 @@ export class MapaPage {
   
   map: L.Map;
 
-  //private pois;
+  private env = environment;
 
   constructor( private markerService: MarkerService ) { }
 
@@ -67,9 +70,9 @@ export class MapaPage {
       "Satélite": satelite
     }
     
-    const layerPoisTur = this.createLayer("poisturismos").addTo(this.map);
-    const layerPois = this.createLayer("pois").addTo(this.map);
     
+    const layerPois = this.createLayer("pois").addTo(this.map);
+    const layerPoisTur = this.createLayer("poisturismos").addTo(this.map);
     
     const overlays = {
       "<span id='poiName'>Puntos de interés</span>": layerPois,
@@ -87,18 +90,20 @@ export class MapaPage {
       }
     });
 
-    const iconTest = L.icon({
-      iconUrl: "../../../assets/icon/map/escudoArbancon.png",
-      className: "mapicon mapiconPng"
-    });
+    // const iconTest = L.icon({
+    //   iconUrl: "../../../assets/icon/map/escudoArbancon.png",
+    //   className: "mapicon mapiconPng"
+    // });
 
-    const markerTest = L.marker(
-      [
-        40.966,
-        -3.113823
-      ],
-      {icon: iconTest}
-    ).addTo(this.map)
+    // const markerTest = L.marker(
+    //   [
+    //     40.966,
+    //     -3.113823
+    //   ],
+    //   {icon: iconTest}
+    // ).addTo(this.map)
+
+
   }
 
   createLayer(layerName: string) {
@@ -117,16 +122,17 @@ export class MapaPage {
           ]
         );
 
-        if (poi.properties.mapicon) {
-          console.log("if", poi.properties.mapicon);
+        if (poi.properties.iconMap) {
+          //console.log(poi.properties.iconMap.url);
+
           const icon = L.icon({
-            iconUrl: "../../../assets/icon/map/" + poi.properties.mapicon,
+            iconUrl: this.env.cmsURL + poi.properties.iconMap.url,
             className: "mapicon"
           });
 
           marker.setIcon(icon);
         }
-
+          
         marker.bindPopup(this.makePopup(poi.properties.name));
         
         marker.addTo(layer);
