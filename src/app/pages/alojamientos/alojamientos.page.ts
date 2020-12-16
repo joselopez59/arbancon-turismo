@@ -13,28 +13,28 @@ export class AlojamientosPage implements OnInit {
   private env = environment;
   public alojamientos;
   public expanded = false;
-  
+
   constructor(
     public alojamientosService: AlojamientosService
   ) {}
 
   expandHeader() {
-    //console.log("expandHeader()");
+    // console.log("expandHeader()");
     if (this.expanded) {
       this.expanded = false;
-    } else {    
-      this.expanded = !this.expanded;   
+    } else {
+      this.expanded = !this.expanded;
     }
   }
 
   ngOnInit() {
-    
+
     this.alojamientosService.getAlojamientos()
     .subscribe(data => {
-      
+
       this.alojamientos = data;
-      
-    });   
+
+    });
   }
 
 }

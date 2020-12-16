@@ -5,7 +5,7 @@ import * as L from 'leaflet';
 
 import { environment } from '../../../environments/environment';
 import { MarkerService } from './../../services/mapa/marker.service';
-// import * from "../../../assets/icon/"
+// import * from '../../../assets/icon/'
 
 @Component({
   selector: 'app-mapa',
@@ -14,7 +14,7 @@ import { MarkerService } from './../../services/mapa/marker.service';
 })
 
 export class MapaPage {
-  
+
   map: L.Map;
 
   private env = environment;
@@ -22,9 +22,9 @@ export class MapaPage {
   constructor( private markerService: MarkerService ) { }
 
   ionViewDidEnter() {
-    
+
     this.initMap();
-    //this.markerService.makePoisMarkers(this.map);
+    // this.markerService.makePoisMarkers(this.map);
   }
 
   initMap() {
@@ -43,7 +43,7 @@ export class MapaPage {
       format: 'image/png',
       transparent: false,
       continuousWorld : true,
-      attribution: '©Instituto Geográfico Nacional', 
+      attribution: '©Instituto Geográfico Nacional',
       maxZoom: 20
     });
 
@@ -54,54 +54,53 @@ export class MapaPage {
       transparent: false,
       continuousWorld : true,
       attribution: 'PNOA cedido por © <a href="http://www.ign.es/ign/main/index.do" target="_blank">Instituto Geográfico Nacional de España</a>',
-      maxZoom:25
+      maxZoom: 25
     });
 
     this.map = new L.Map('mapId').setView([40.965, -3.115], 16);
-    //this.map = new L.Map('mapId').setView([40.96404, -3.11249 ], 19);
+    // this.map = new L.Map('mapId').setView([40.96404, -3.11249 ], 19);
 
     callejero.addTo(this.map);
     // topografico.addTo(this.map);
-    L.control.scale({imperial:false}).addTo(this.map);
+    L.control.scale({imperial: false}).addTo(this.map);
 
     const baseLayers  = {
-      "Callejero": callejero,
-      "Topográfico": topografico,
-      "Satélite": satelite
-    }
-    
-    
-    const layerPois = this.createLayer("pois").addTo(this.map);
-    const layerPoisTur = this.createLayer("poisturismos").addTo(this.map);
-    
+      Callejero: callejero,
+      Topográfico: topografico,
+      Satélite: satelite
+    };
+
+    const layerPois = this.createLayer('pois').addTo(this.map);
+    const layerPoisTur = this.createLayer('poisturismos').addTo(this.map);
+
     const overlays = {
-      "<span id='poiName'>Puntos de interés</span>": layerPois,
-      "<span id='poiTurismoName'>Servicios turísticos</span>": layerPoisTur
-    }
-    
+      '<span id="poiName">Puntos de interés</span>': layerPois,
+      '<span id="poiTurismoName">Servicios turísticos</span>': layerPoisTur
+    };
+
     const controlLayers = L.control.layers( baseLayers , overlays, { collapsed: false } );
-    //this.map.removeLayer(layerPoisTur);
+    // this.map.removeLayer(layerPoisTur);
 
     controlLayers.addTo(this.map);
-    
+
     this.map.on ({
-      overlayadd: function(e) {
-        console.log("overlayadd");
+      overlayadd: () => {
+        console.log('overlayadd');
       }
     });
 
-    // const iconTest = L.icon({
-    //   iconUrl: "../../../assets/icon/map/escudoArbancon.png",
-    //   className: "mapicon mapiconPng"
-    // });
+    const iconTest = L.icon({
+      iconUrl: '../../../assets/icon/g109.png',
+      className: 'mapicon'
+    });
 
-    // const markerTest = L.marker(
-    //   [
-    //     40.966,
-    //     -3.113823
-    //   ],
-    //   {icon: iconTest}
-    // ).addTo(this.map)
+    const markerTest = L.marker(
+      [
+        40.966,
+        -3.113823
+      ],
+      {icon: iconTest}
+    ).addTo(this.map);
 
 
   }
@@ -112,29 +111,29 @@ export class MapaPage {
 
     this.markerService.getPois(layerName)
     .subscribe((data: any) => {
-      
+
       for (const poi of data) {
 
         const marker = L.marker(
           [
-            poi.geometry.coordinates.lat, 
+            poi.geometry.coordinates.lat,
             poi.geometry.coordinates.lon
           ]
         );
 
         if (poi.properties.iconMap) {
-          //console.log(poi.properties.iconMap.url);
+          // console.log(poi.properties.iconMap.url);
 
           const icon = L.icon({
             iconUrl: this.env.cmsURL + poi.properties.iconMap.url,
-            className: "mapicon"
+            className: 'mapicon'
           });
 
           marker.setIcon(icon);
         }
-          
+
         marker.bindPopup(this.makePopup(poi.properties.name));
-        
+
         marker.addTo(layer);
       }
 
@@ -144,12 +143,12 @@ export class MapaPage {
   }
 
   makePopup(data: any): string {
-    return "" + 
-      "<div>" + data + "</div>"
+    return '' +
+      '<div>' + data + '</div>';
   }
 
   ionViewWillLeave() {
-    console.log("ionViewWillLeave");
+    console.log('ionViewWillLeave');
     this.map.remove();
   }
 
