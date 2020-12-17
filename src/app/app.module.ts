@@ -18,7 +18,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 
 FullCalendarModule.registerPlugins(
   [ dayGridPlugin ]
-)
+);
 
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
@@ -28,8 +28,8 @@ registerLocaleData(es);
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
+    BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     SuperTabsModule.forRoot(),
     HttpClientModule,
@@ -40,7 +40,7 @@ registerLocaleData(es);
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     InAppBrowser,
-    { provide:LOCALE_ID, useValue: "es-ES" }
+    { provide: LOCALE_ID, useValue: 'es-ES' }
   ],
   bootstrap: [AppComponent]
 })

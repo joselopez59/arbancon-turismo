@@ -1,4 +1,4 @@
-import { IvyParser } from '@angular/compiler';
+// import { IvyParser } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 import * as L from 'leaflet';
@@ -29,13 +29,21 @@ export class MapaPage {
 
   initMap() {
 
-    const callejero = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={ accessToken }',
-    {
-      attribution: 'Map data ©OpenStreetMap, Imagery ©Mapbox',
-      maxZoom: 25,
-      id: 'mapbox.streets',
-      accessToken: 'pk.eyJ1Ijoiam9zZWxvcGV6IiwiYSI6ImNqdTJyenVqczBlYm4zeXFjaWJ5cmNjNXQifQ.GHte88RjI_B38NJc0df3dg'
-    });
+    // const callejero = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={ accessToken }',
+    // {
+    //   attribution: 'Map data ©OpenStreetMap, Imagery ©Mapbox',
+    //   maxZoom: 25,
+    //   id: 'mapbox.streets',
+    //   accessToken: 'pk.eyJ1Ijoiam9zZWxvcGV6IiwiYSI6ImNqdTJyenVqczBlYm4zeXFjaWJ5cmNjNXQifQ.GHte88RjI_B38NJc0df3dg'
+    // });
+    const callejero = L.tileLayer(
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 25,
+        id: 'mapbox.streets'
+      }
+    );
 
     // Cartografía raster del Instituto Geográfico Nacional.
     const topografico = L.tileLayer.wms('http://www.ign.es/wms-inspire/mapa-raster', {
@@ -85,7 +93,7 @@ export class MapaPage {
 
     this.map.on ({
       overlayadd: () => {
-        console.log('overlayadd');
+        // console.log('overlayadd');
       }
     });
 

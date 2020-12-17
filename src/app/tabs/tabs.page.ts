@@ -27,8 +27,8 @@ export class TabsPage implements OnInit {
   gastronomiaPage = GastronomiaPage;
   patrimonioPage = PatrimonioPage;
   actividadesPage = ActividadesPage;
-  eventosPage = EventosPage
-  
+  eventosPage = EventosPage;
+
   constructor() { }
 
   ngOnInit() {
