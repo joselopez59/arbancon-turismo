@@ -1,31 +1,3 @@
-<!-- <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title >{{ escapadas.categoria }}</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
-<!-- <ion-header>
-  <ion-toolbar color="green" >
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-text slot="end">
-      <h6 class="ion-text-uppercase" color>
-        {{ escapadas.categoria }}
-        <span *ngIf="expanded" >&#9650;</span>
-        <span *ngIf="!expanded">&#9660;</span>
-      </h6>
-      <app-expandable expandHeight="150px" [expanded]= expanded>
-        <p>
-          {{ escapadas.headerText }}         
-        </p>  
-      </app-expandable>    
-    </ion-text>
-  </ion-toolbar>
-</ion-header> -->
 <ion-header 
     color="primary" 
     (click)="expandHeader()">
@@ -36,30 +8,24 @@
         <ion-back-button defaultHref="/"></ion-back-button>
       </ion-buttons>
       
-      <ion-text>
-        <h6 class="ion-text-uppercase">
-          <!-- {{ escapadas.categoria }} -->
+        <ion-title class="ion-text-uppercase">
           Escapadas
-          <span *ngIf="expanded" >&#9650;</span>
-          <span *ngIf="!expanded">&#9660;</span>
-        </h6>
-        <app-expandable expandHeight="150px" [expanded]= expanded>
+          <!-- <span *ngIf="expanded" >&#9650;</span>
+          <span *ngIf="!expanded">&#9660;</span> -->
+        </ion-title>
+        <!-- <app-expandable expandHeight="150px" [expanded]= expanded>
           <p>
-            <!-- {{ escapadas.headerText }} -->
             Hemos preparado paquetes de ofertas especiales para un fin de semana rural. Para detalles, consultar a los propietarios
           </p>  
-        </app-expandable>    
-      </ion-text>
-
+        </app-expandable>     -->
+      
     </ion-toolbar>
   </ion-header>
 
 <ion-content>
-  
 
   <ion-list>
-    <ion-item 
-      *ngFor="let escapada of escapadas"
+    <ion-item *ngFor="let escapada of escapadas"
       lines="none">
       <ion-card class="ion-no-padding">
 
@@ -74,7 +40,7 @@
             </ion-card-subtitle>
 
             <div class="precio">
-              {{ escapada.price }} <br /><span>€</span>
+              {{ escapada.price }} €
             </div>
         </div>
         
@@ -93,15 +59,10 @@
               </ion-badge>
             </ion-card-content>
               
-                        
-           
-          
-        </div>
-       
-      </ion-card>
-        
+        </div>   
+      </ion-card>    
     </ion-item>
+    
   </ion-list>
- 
 </ion-content>
 

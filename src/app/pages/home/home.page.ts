@@ -31,10 +31,10 @@ export class HomePage implements OnInit {
 
   getWheater() {
     this.wheaterService.getWheater().subscribe(response => {
-      
-      this.temp = Math.round(parseFloat(response.main.temp)) + '°';     
-      this.iconUrl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-      
-    })
+
+      this.temp = Math.round(parseFloat(response.main.temp)) + '°';
+      this.iconUrl = 'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png';
+
+    });
   }
 }

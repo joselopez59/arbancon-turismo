@@ -10,6 +10,7 @@ import { ModalController, NavParams  } from '@ionic/angular';
 export class ModalPage implements OnInit {
 
   title: string;
+  propietario: string;
   calle: string;
   localidad: string;
   provincia: string;
@@ -24,8 +25,9 @@ export class ModalPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    //console.table(this.navParams);
+    // console.table(this.navParams);
     this.title = this.navParams.data.title;
+    this.propietario = this.navParams.data.propietario;
     this.calle = this.navParams.data.calle;
     this.localidad = this.navParams.data.localidad;
     this.provincia = this.navParams.data.provincia;
@@ -33,16 +35,15 @@ export class ModalPage implements OnInit {
     this.tel = this.navParams.data.tel;
     this.mail = this.navParams.data.mail;
     this.url = this.navParams.data.url;
-    
+
   }
 
   openWindow(method: string, target: string) {
     console.log(method + target);
     window.open(method + target);
   }
-  
   async closeModal() {
-    //console.log("closeModal");
+    // console.log("closeModal");
     await this.modalController.dismiss();
   }
 }

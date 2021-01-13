@@ -11,18 +11,20 @@
   <!-- <img src="{{ env.cmsURL }}{{ patrimonio.cardImage.url }}" /> -->
   <ion-img src="{{ env.cmsURL }}{{ imgURL }}"></ion-img>
   <ion-text >
-    <p class="ion-padding ion-text-justify"
-    [innerHTML]="patrimonio.text"
-    >
-      
+    <!-- <p class="ion-padding ion-text-justify"
+    [innerHTML]="patrimonio.text"></p> -->
+    <p class="ion-padding ion-text-justify">
+      {{ patrimonio.text }}
     </p>
   </ion-text>
+  
 </ion-content>
 
 <ion-footer class="ion-justify-content-center">
 
   <ion-chip  
-  *ngFor="let button of patrimonio.buttons"
+    *ngFor="let button of patrimonio.buttons"
+    button (click)="openExternalUrl(button.url)"
     outline = true
     color= "white"
   >

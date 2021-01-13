@@ -15,22 +15,17 @@ import { ModalPage } from './../../modal/modal.page';
 
 export class AlojamientoPage implements OnInit {
 
-  //alojamiento: Alojamiento;
+  // alojamiento: Alojamiento;
   env = environment;
-  public alojamiento;
-  
+  public alojamiento: any = '';
+
   slideOpts = {
     initialSlide: 0,
     speed: 400,
     autoplay: {
       delay: 3000,
     },
-    //loop: true,
-    //autoHeight: true,
-    //roundLengths: true,
-    //spaceBetween: 0,
-    //centeredSlides: true,
-    //centeredSlidesBounds: false
+
   };
 
   constructor(
@@ -39,17 +34,17 @@ export class AlojamientoPage implements OnInit {
     private inAppBrowser: InAppBrowser,
     public modalController: ModalController
   ) {
-      this.alojamiento = "";
+      // this.alojamiento = '';
    }
 
   ngOnInit() {
-    //onsole.log("alojamiento-page ngOnInit");
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
+    // console.log("alojamiento-page ngOnInit");
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.alojamientosService.getAlojamiento(id)
     .subscribe(data => {
       this.alojamiento = data;
-      //console.log("this.alojamiento", this.alojamiento);
+      // console.log("this.alojamiento", this.alojamiento);
     });
   }
 
@@ -58,14 +53,15 @@ export class AlojamientoPage implements OnInit {
     const modal = await this.modalController.create({
       component: ModalPage,
       componentProps: {
-        "title": this.alojamiento.vendor,
-        "calle": this.alojamiento.calle,
-        "localidad": this.alojamiento.localidad,
-        "provincia": this.alojamiento.provincia,
-        "gmapsURL": this.alojamiento.gmapsURL,
-        "tel": this.alojamiento.tel,
-        "mail": this.alojamiento.mail,
-        "url": this.alojamiento.url,
+        title: this.alojamiento.vendor,
+        propietario: this.alojamiento.propietario,
+        calle: this.alojamiento.calle,
+        localidad: this.alojamiento.localidad,
+        provincia: this.alojamiento.provincia,
+        gmapsURL: this.alojamiento.gmapsURL,
+        tel: this.alojamiento.tel,
+        mail: this.alojamiento.mail,
+        url: this.alojamiento.url,
       }
     });
 

@@ -2,26 +2,25 @@
   <ion-toolbar color="primary">
 
     <ion-buttons slot="start">
-      <ion-button 
-        (click)="closeModal()"
-      >
+      <ion-button (click)="closeModal()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <ion-title>{{ title }}</ion-title>
+    <ion-title>{{ title }} info</ion-title>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen class="ion-padding">
   <ion-text>
-    <ion-row class="ion-align-items-center">
+    <ion-row *ngIf="propietario"
+      class="ion-align-items-center">
       <ion-col size="3">
         <ion-label>Propietario:</ion-label>
       </ion-col>
       <ion-col size="9">
-        <ion-label>nombre</ion-label>
+        <ion-label>{{ propietario }}</ion-label>
       </ion-col>
     </ion-row>
 

@@ -10,7 +10,7 @@ import { environment } from '../../../environments/environment';
 
 export class AlojamientosPage implements OnInit {
 
-  private env = environment;
+  public env = environment;
   public alojamientos;
   public expanded = false;
 

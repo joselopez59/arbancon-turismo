@@ -21,8 +21,8 @@ export class OfertasPage implements OnInit {
   expandHeader() {
     if (this.expanded) {
       this.expanded = false;
-    } else {    
-      this.expanded = !this.expanded;   
+    } else {
+      this.expanded = !this.expanded;
     }
   }
 

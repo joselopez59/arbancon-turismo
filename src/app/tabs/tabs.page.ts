@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SuperTabs } from '@ionic-super-tabs/angular';
+import { Component } from '@angular/core';
 import { SuperTabsConfig } from '@ionic-super-tabs/core';
 
 import { HomePage } from '../pages/home/home.page';
@@ -15,7 +14,7 @@ import { EventosPage } from './../pages/eventos/eventos.page';
   styleUrls: ['./tabs.page.scss'],
 })
 
-export class TabsPage implements OnInit {
+export class TabsPage {
 
   config: SuperTabsConfig = {
     debug: true,
@@ -28,10 +27,5 @@ export class TabsPage implements OnInit {
   patrimonioPage = PatrimonioPage;
   actividadesPage = ActividadesPage;
   eventosPage = EventosPage;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }
