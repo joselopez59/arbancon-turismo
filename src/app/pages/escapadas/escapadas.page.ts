@@ -40,7 +40,7 @@ export class EscapadasPage implements OnInit {
       }
       return 0;
     });
-    console.log(this.escapadas);
+    // console.log(this.escapadas);
   }
 
   expandHeader() {
