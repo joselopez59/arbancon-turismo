@@ -10,8 +10,8 @@ import { ModalPage } from './../../modal/modal.page';
 
 @Component({
   selector: 'app-gastronomia-detail',
-  templateUrl: './gastronomia-detail.page.html',
-  styleUrls: ['./gastronomia-detail.page.scss'],
+  templateUrl: './gastronomia-detail.component.html',
+  styleUrls: ['./gastronomia-detail.component.scss'],
 })
 export class GastronomiaDetailPage implements OnInit {
 
@@ -24,7 +24,7 @@ export class GastronomiaDetailPage implements OnInit {
     autoplay: {
       delay: 3000,
     },
-  }
+  };
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,17 +32,17 @@ export class GastronomiaDetailPage implements OnInit {
     private inAppBrowser: InAppBrowser,
     public modalController: ModalController
   ) {
-      this.gastronomia = "";
+      this.gastronomia = '';
    }
 
   ngOnInit() {
 
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.gastronomiaService.getGastronomia(id)
     .subscribe(data => {
       this.gastronomia = data;
-      //console.log(this.gastronomia);
+      // console.log(this.gastronomia);
     });
   }
 
@@ -51,14 +51,14 @@ export class GastronomiaDetailPage implements OnInit {
     const modal = await this.modalController.create({
       component: ModalPage,
       componentProps: {
-        "title": this.gastronomia.name,
-        "calle": this.gastronomia.calle,
-        "localidad": this.gastronomia.localidad,
-        "provincia": this.gastronomia.provincia,
-        "gmapsURL": this.gastronomia.gmapsURL,
-        "tel": this.gastronomia.tel,
-        "mail": this.gastronomia.mail,
-        "url": this.gastronomia.url,
+        title: this.gastronomia.name,
+        calle: this.gastronomia.calle,
+        localidad: this.gastronomia.localidad,
+        provincia: this.gastronomia.provincia,
+        gmapsURL: this.gastronomia.gmapsURL,
+        tel: this.gastronomia.tel,
+        mail: this.gastronomia.mail,
+        url: this.gastronomia.url,
       }
     });
 

@@ -10,10 +10,10 @@ const routes: Routes = [
     path: '',
     component: GastronomiaPage
   },
-  {
-    path: ':id',
-    component: GastronomiaDetailPage
-  },
+  // {
+  //   path: 'gastronomia/:id',
+  //   component: GastronomiaDetailPage
+  // },
   {
     path: 'ofertas',
     component: OfertasComponent
