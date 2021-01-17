@@ -11,7 +11,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 // import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 // import googleCalendarPlugin from '@fullcalendar/google-calendar';
 
-// FullCalendarModule.registerPlugins([ 
+// FullCalendarModule.registerPlugins([
 //   //interactionPlugin
 //   //googleCalendarPlugin
 // ]);

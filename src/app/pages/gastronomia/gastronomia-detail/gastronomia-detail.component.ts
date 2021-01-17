@@ -4,16 +4,16 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { ModalController } from '@ionic/angular';
 // import { ActionSheetController } from '@ionic/angular';
 
-import { GastronomiaService } from './../../services/gastronomia.service';
-import { environment } from '../../../environments/environment';
-import { ModalPage } from './../../modal/modal.page';
+import { GastronomiaService } from '../../../services/gastronomia.service';
+import { environment } from '../../../../environments/environment';
+import { ModalPage } from '../../../modal/modal.page';
 
 @Component({
   selector: 'app-gastronomia-detail',
   templateUrl: './gastronomia-detail.component.html',
   styleUrls: ['./gastronomia-detail.component.scss'],
 })
-export class GastronomiaDetailPage implements OnInit {
+export class GastronomiaDetailComponent implements OnInit {
 
   env = environment;
   public gastronomia;

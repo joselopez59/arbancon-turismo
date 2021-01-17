@@ -9,7 +9,7 @@ import { GastronomiaPageRoutingModule } from './gastronomia-routing.module';
 import { GastronomiaPage } from './gastronomia.page';
 import { ExpandableComponent } from './../../components/expandable/expandable.component';
 import { OfertasComponent } from './ofertas/ofertas.component';
-import { GastronomiaDetailPage } from '../gastronomia-detail/gastronomia-detail.page';
+import { GastronomiaDetailComponent } from './gastronomia-detail/gastronomia-detail.component';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import { GastronomiaDetailPage } from '../gastronomia-detail/gastronomia-detail.
   ],
   declarations: [
     GastronomiaPage,
-    GastronomiaDetailPage,
+    GastronomiaDetailComponent,
     OfertasComponent,
     ExpandableComponent
   ]

@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FullCalendarComponent, CalendarOptions } from '@fullcalendar/angular';
 import esLocale from '@fullcalendar/core/locales/es';
 // import googleCalendarPlugin from '@fullcalendar/google-calendar';
-//import dayGridPlugin from '@fullcalendar/daygrid'; 
-import { EventosService } from './../../services/eventos.service';
+// import dayGridPlugin from '@fullcalendar/daygrid';
+import { EventosService } from '../eventos/eventos.service';
 
 @Component({
   selector: 'app-calendar',
@@ -14,7 +14,6 @@ import { EventosService } from './../../services/eventos.service';
 export class CalendarPage implements OnInit {
 
   public eventos;
-  
   // @ViewChild('calendar') calendarComponent: FullCalendarComponent;
 
   calendarOptions: CalendarOptions = {
@@ -31,13 +30,20 @@ export class CalendarPage implements OnInit {
       center: 'title',
       right: 'next'
     },
-    //weekNumbers: true,
-    //dateClick: this.handleDateClick.bind(this),
-    eventSources: [ 
+    footerToolbar: {
+      left: 'custom1',
+    },
+    customButtons: {
+      custom1: {
+        text: 'custom 1'}
+    },
+    // weekNumbers: true,
+    // dateClick: this.handleDateClick.bind(this),
+    eventSources: [
       {
         color: 'black',     // an option!
         textColor: 'yellow' // an option!
-      }      
+      }
     ]
   };
 
@@ -50,9 +56,9 @@ export class CalendarPage implements OnInit {
     this.eventosService.getEventos()
     .subscribe(data => {
       this.eventos = data;
-      //console.log("this.eventos", this.eventos);
+      // console.log("this.eventos", this.eventos);
       this.calendarOptions.events = this.eventos;
-      
+
     });
   }
 }

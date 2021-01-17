@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { GastronomiaDetailPage } from './pages/gastronomia-detail/gastronomia-detail.page';
+import { GastronomiaDetailComponent } from './pages/gastronomia/gastronomia-detail/gastronomia-detail.component';
 
 const routes: Routes = [
   {
@@ -38,7 +38,7 @@ const routes: Routes = [
   // },
   {
     path: 'gastronomia/:id',
-    component: GastronomiaDetailPage
+    component: GastronomiaDetailComponent
   },
   {
     path: 'patrimonio',
