@@ -91,25 +91,11 @@ export class MapaPage {
 
     controlLayers.addTo(this.map);
 
-    this.map.on ({
-      overlayadd: () => {
-        // console.log('overlayadd');
-      }
-    });
-
-    const iconTest = L.icon({
-      iconUrl: '../../../assets/icon/g109.png',
-      className: 'mapicon'
-    });
-
-    const markerTest = L.marker(
-      [
-        40.966,
-        -3.113823
-      ],
-      {icon: iconTest}
-    ).addTo(this.map);
-
+    // this.map.on ({
+    //   overlayadd: () => {
+    //     // console.log('overlayadd');
+    //   }
+    // });
 
   }
 
@@ -119,7 +105,7 @@ export class MapaPage {
 
     this.markerService.getPois(layerName)
     .subscribe((data: any) => {
-
+      console.log(data);
       for (const poi of data) {
 
         const marker = L.marker(
@@ -129,9 +115,8 @@ export class MapaPage {
           ]
         );
 
-        if (poi.properties.iconMap) {
+        if (poi.properties.iconMap) { // poi has icon
           // console.log(poi.properties.iconMap.url);
-
           const icon = L.icon({
             iconUrl: this.env.cmsURL + poi.properties.iconMap.url,
             className: 'mapicon'
@@ -139,14 +124,10 @@ export class MapaPage {
 
           marker.setIcon(icon);
         }
-
         marker.bindPopup(this.makePopup(poi.properties.name));
-
         marker.addTo(layer);
       }
-
     });
-
     return layer;
   }
 
@@ -156,7 +137,7 @@ export class MapaPage {
   }
 
   ionViewWillLeave() {
-    console.log('ionViewWillLeave');
+    // console.log('ionViewWillLeave');
     this.map.remove();
   }
 

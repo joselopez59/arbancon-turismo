@@ -12,7 +12,7 @@ export class GastronomiaPage implements OnInit {
   env = environment;
   public gastronomias;
   public expanded = false;
-  
+
   constructor(
     public gastronomiaService: GastronomiaService
   ) { }
@@ -26,11 +26,11 @@ export class GastronomiaPage implements OnInit {
   }
 
   expandHeader() {
-    console.log("expandHeader()");
+    // console.log('expandHeader()');
     if (this.expanded) {
       this.expanded = false;
-    } else {    
-      this.expanded = !this.expanded;   
+    } else {
+      this.expanded = !this.expanded;
     }
   }
 }

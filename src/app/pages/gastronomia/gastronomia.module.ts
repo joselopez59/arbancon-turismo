@@ -8,6 +8,8 @@ import { GastronomiaPageRoutingModule } from './gastronomia-routing.module';
 
 import { GastronomiaPage } from './gastronomia.page';
 import { ExpandableComponent } from './../../components/expandable/expandable.component';
+import { OfertasComponent } from './ofertas/ofertas.component';
+import { GastronomiaDetailPage } from '../gastronomia-detail/gastronomia-detail.page';
 
 @NgModule({
   imports: [
@@ -16,6 +18,11 @@ import { ExpandableComponent } from './../../components/expandable/expandable.co
     IonicModule,
     GastronomiaPageRoutingModule
   ],
-  declarations: [GastronomiaPage, ExpandableComponent]
+  declarations: [
+    GastronomiaPage,
+    GastronomiaDetailPage,
+    OfertasComponent,
+    ExpandableComponent
+  ]
 })
 export class GastronomiaPageModule {}

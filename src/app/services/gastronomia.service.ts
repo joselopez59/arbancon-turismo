@@ -9,15 +9,18 @@ import { environment } from '../../environments/environment';
 export class GastronomiaService {
 
   env = environment;
-  
-  constructor(private http : HttpClient) { }
+
+  constructor(private http: HttpClient) { }
 
   getGastronomias() {
-    return this.http.get(this.env.cmsURL + "/gastronomias/")
+    return this.http.get(this.env.cmsURL + '/gastronomias/');
   }
 
-  getGastronomia(id) { 
-    return this.http.get(this.env.cmsURL + "/gastronomias/" + id)
+  getGastronomia(id) {
+    return this.http.get(this.env.cmsURL + '/gastronomias/' + id);
   }
 
+  getOfertas() {
+    return this.http.get(this.env.cmsURL + '/ofertas/');
+  }
 }

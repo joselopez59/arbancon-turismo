@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+// import { NgModule } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule } from '@angular/forms';
+// import { IonicModule } from '@ionic/angular';
 
-import { GastronomiaDetailPageRoutingModule } from './gastronomia-detail-routing.module';
-import { GastronomiaDetailPage } from './gastronomia-detail.page';
-import { ModalPageModule } from './../../modal/modal.module';
+// import { GastronomiaDetailPageRoutingModule } from './gastronomia-detail-routing.module';
+// import { GastronomiaDetailPage } from './gastronomia-detail.page';
+// import { ModalPageModule } from './../../modal/modal.module';
 
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    GastronomiaDetailPageRoutingModule,
-    ModalPageModule
-  ],
-  declarations: [GastronomiaDetailPage]
-})
+// @NgModule({
+//   imports: [
+//     CommonModule,
+//     FormsModule,
+//     IonicModule,
+//     GastronomiaDetailPageRoutingModule,
+//     ModalPageModule
+//   ],
+//   declarations: [GastronomiaDetailPage]
+// })
 
-export class GastronomiaDetailPageModule {}
+// export class GastronomiaDetailPageModule {}

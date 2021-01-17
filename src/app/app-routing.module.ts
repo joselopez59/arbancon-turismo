@@ -31,10 +31,10 @@ const routes: Routes = [
     path: 'gastronomia',
     loadChildren: () => import('./pages/gastronomia/gastronomia.module').then( m => m.GastronomiaPageModule)
   },
-  {
-    path: 'gastronomia/:id',
-    loadChildren: () => import('./pages/gastronomia-detail/gastronomia-detail.module').then( m => m.GastronomiaDetailPageModule)
-  },
+  // {
+  //   path: 'gastronomia/:id',
+  //   loadChildren: () => import('./pages/gastronomia-detail/gastronomia-detail.module').then( m => m.GastronomiaDetailPageModule)
+  // },
   {
     path: 'patrimonio',
     loadChildren: () => import('./pages/patrimonio/patrimonio.module').then( m => m.PatrimonioPageModule)
@@ -60,9 +60,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
   },
   {
-    path: 'ofertas',
-    loadChildren: () => import('./pages/ofertas/ofertas.module').then( m => m.OfertasPageModule)
-  },  {
     path: 'mapa',
     loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   }
