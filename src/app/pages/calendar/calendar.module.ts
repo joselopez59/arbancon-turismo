@@ -8,6 +8,7 @@ import { CalendarPage } from './calendar.page';
 import { CalendarPageRoutingModule } from './calendar-routing.module';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
 // import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 // import googleCalendarPlugin from '@fullcalendar/google-calendar';
 
@@ -15,6 +16,10 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 //   //interactionPlugin
 //   //googleCalendarPlugin
 // ]);
+
+// FullCalendarModule.registerPlugins(
+//   [ dayGridPlugin ]
+// );
 
 @NgModule({
   imports: [

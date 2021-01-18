@@ -24,10 +24,10 @@ const routes: Routes = [
     path: 'alojamiento/:id',
     loadChildren: () => import('./pages/alojamiento/alojamiento.module').then( m => m.AlojamientoPageModule)
   },
-  {
-    path: 'escapadas',
-    loadChildren: () => import('./pages/escapadas/escapadas.module').then( m => m.EscapadasPageModule)
-  },
+  // {
+  //   path: 'escapadas',
+  //   loadChildren: () => import('./pages/escapadas/escapadas.module').then( m => m.EscapadasPageModule)
+  // },
   {
     path: 'gastronomia',
     loadChildren: () => import('./pages/gastronomia/gastronomia.module').then( m => m.GastronomiaPageModule)

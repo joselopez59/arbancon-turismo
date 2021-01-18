@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventosService } from './../../services/eventos.service';
+import { EventosService } from './eventos.service';
 
 @Component({
   selector: 'app-eventos',
@@ -20,16 +20,16 @@ export class EventosPage implements OnInit {
     this.eventosService.getEventos()
     .subscribe(data => {
       this.eventos = data;
-      //console.log("this.eventos", this.eventos);
+      // console.log("this.eventos", this.eventos);
     });
   }
 
   expandHeader() {
-    //console.log("expandHeader()");
+
     if (this.expanded) {
       this.expanded = false;
-    } else {    
-      this.expanded = !this.expanded;   
+    } else {
+      this.expanded = !this.expanded;
     }
   }
 

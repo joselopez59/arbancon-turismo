@@ -13,12 +13,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
-import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid';
+// import { FullCalendarModule } from '@fullcalendar/angular';
+// import dayGridPlugin from '@fullcalendar/daygrid';
 
-FullCalendarModule.registerPlugins(
-  [ dayGridPlugin ]
-);
+// FullCalendarModule.registerPlugins(
+//   [ dayGridPlugin ]
+// );
 
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
@@ -33,7 +33,7 @@ registerLocaleData(es);
     AppRoutingModule,
     SuperTabsModule.forRoot(),
     HttpClientModule,
-    FullCalendarModule
+    // FullCalendarModule
   ],
   providers: [
     StatusBar,

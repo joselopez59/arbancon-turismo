@@ -8,7 +8,7 @@ import { AlojamientosPageRoutingModule } from './alojamientos-routing.module';
 
 import { AlojamientosPage } from './alojamientos.page';
 import { ExpandableComponent } from './../../components/expandable/expandable.component';
-
+import { EscapadasComponent } from './escapadas/escapadas.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +16,11 @@ import { ExpandableComponent } from './../../components/expandable/expandable.co
     IonicModule,
     AlojamientosPageRoutingModule
   ],
-  declarations: [AlojamientosPage, ExpandableComponent]
+  declarations: [
+    AlojamientosPage,
+    ExpandableComponent,
+    EscapadasComponent
+  ]
 })
 
 export class AlojamientosPageModule {}
