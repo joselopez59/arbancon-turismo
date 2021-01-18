@@ -62,7 +62,7 @@ const routes: Routes = [
   },
   {
     path: 'calendar',
-    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+    loadChildren: () => import('./pages/eventos/calendar/calendar.module').then( m => m.CalendarPageModule)
   },
   {
     path: 'mapa',
