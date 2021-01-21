@@ -16,7 +16,9 @@ import { ExpandableComponent } from './../../components/expandable/expandable.co
     IonicModule,
     EscapadasPageRoutingModule
   ],
-  declarations: [EscapadasPage, ExpandableComponent]
+  declarations: [EscapadasPage,
+    // ExpandableComponent
+  ]
 })
 
 export class EscapadasPageModule {}

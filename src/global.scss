@@ -127,11 +127,10 @@ ion-list {
       display: flex;
       // padding: 0;
 
-      img {
+      img, ion-img {
         //TO DO: imágenes 100x100
         height: 100px;
         width: 100px;
-       
       }
 
       div {

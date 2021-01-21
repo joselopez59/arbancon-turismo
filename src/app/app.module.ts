@@ -25,7 +25,9 @@ registerLocaleData(es);
 //   [ dayGridPlugin ]
 // );
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   entryComponents: [],
   imports: [
     BrowserModule,

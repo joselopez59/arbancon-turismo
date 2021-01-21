@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  cmsURL: 'http://h2522373.stratoserver.net:1337'
 };

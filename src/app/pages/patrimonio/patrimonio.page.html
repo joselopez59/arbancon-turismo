@@ -21,13 +21,13 @@
   <ion-grid >
     <ion-row>
       <ion-col 
-        size="6"     
+        size="6" size-sm="4" size-md="2"   
         *ngFor="let patrimonio of patrimonios"
       >
         <!-- <ion-card [routerLink]="['/patrimonio/' + patrimonio.idName]"> -->
         <ion-card [routerLink]="['/patrimonio/' + patrimonio.id]">
-          <ion-img [src] = "env.cmsURL + patrimonio.listImage.url"></ion-img>
-
+          <!-- <ion-img [src] = "env.cmsURL + patrimonio.listImage.url"></ion-img> -->
+          <img src = "{{ env.cmsURL }}{{ patrimonio.listImage.url }}"/>
           {{ patrimonio.title }}
 
         </ion-card>

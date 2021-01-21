@@ -24,20 +24,20 @@ export class ActividadesPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    //console.log("ngOnInit()");
+    // console.log("ngOnInit()");
     this.actividadesService.getactividades()
     .subscribe(data => {
       this.actividades = data;
-      //console.log("this.actividades", this.actividades);
-    });  
+      // console.log("this.actividades", this.actividades);
+    });
   }
 
   expandHeader() {
-    console.log("expandHeader()");
+    console.log('expandHeader()');
     if (this.expanded) {
       this.expanded = false;
-    } else {    
-      this.expanded = !this.expanded;   
+    } else {
+      this.expanded = !this.expanded;
     }
   }
 }
