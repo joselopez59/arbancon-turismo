@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { map } from 'rxjs/operators';
-
+import { Apollo, QueryRef } from 'apollo-angular';
+import gql from 'graphql-tag';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,13 +11,32 @@ export class EventosService {
 
   env = environment;
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient, private apollo: Apollo) { }
 
   getEventos() {
-    // console.log("getEventos", this.http.get("./../assets/data/eventos.json"))
-    // return this.http.get("./../assets/data/eventos.json")
-    // console.log("getEventos", this.http.get("http://localhost:1337/eventos/"))
-    // return this.http.get("http://localhost:1337/eventos/")
-    return this.http.get(this.env.cmsURL + '/eventos/');
+    console.log('getEventos');
+    const eventosQuery: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query {
+          eventos {
+            title
+            descr
+            start
+          }
+        }
+      `
+    });
+
+    return eventosQuery;
+
+    // eventosQuery.valueChanges.subscribe(result => {
+    //   // this.eventos = result.data && result.data.eventos;
+    //   console.log('getEventos result', result);
+    // });
   }
+
+
+  // getEventos() {
+  //   return this.http.get(this.env.cmsURL + '/eventos/');
+  // }
 }

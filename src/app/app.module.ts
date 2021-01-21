@@ -18,6 +18,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+import { GraphQLModule } from './graphql.module';
 
 registerLocaleData(es);
 
@@ -35,7 +36,8 @@ registerLocaleData(es);
     AppRoutingModule,
     SuperTabsModule.forRoot(),
     HttpClientModule,
-    FullCalendarModule
+    FullCalendarModule,
+    GraphQLModule
   ],
   providers: [
     StatusBar,

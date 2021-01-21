@@ -61,16 +61,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/eventos/eventos.module').then( m => m.EventosPageModule)
   },
   {
-    path: 'calendar',
-    loadChildren: () => import('./pages/eventos/calendar/calendar.module').then( m => m.CalendarPageModule)
-  },
-  {
     path: 'mapa',
     loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   }
 
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

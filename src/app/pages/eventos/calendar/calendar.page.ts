@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular';
-// import interactionPlugin from '@fullcalendar/interaction';
 import esLocale from '@fullcalendar/core/locales/es';
-// import googleCalendarPlugin from '@fullcalendar/google-calendar';
-// import dayGridPlugin from '@fullcalendar/daygrid';
 import { EventosService } from '../eventos.service';
-
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.page.html',
@@ -13,9 +9,6 @@ import { EventosService } from '../eventos.service';
 })
 
 export class CalendarPage implements OnInit {
-
-  public eventos;
-  // @ViewChild('calendar') calendarComponent: FullCalendarComponent;
 
   calendarOptions: CalendarOptions = {
     locale: esLocale,
@@ -56,11 +49,9 @@ export class CalendarPage implements OnInit {
   ngOnInit() {
 
     this.eventosService.getEventos()
-    .subscribe(data => {
-      this.eventos = data;
-      // console.log("this.eventos", this.eventos);
-      this.calendarOptions.events = this.eventos;
-
+    .valueChanges
+    .subscribe(result => {
+      this.calendarOptions.events = result.data.eventos;
     });
   }
 

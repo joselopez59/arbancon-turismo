@@ -7,7 +7,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import { EventosPageRoutingModule } from './eventos-routing.module';
 import { ExpandableModule } from 'src/app/components/expandable/expandable.module';
 import { EventosPage } from './eventos.page';
-// import { CalendarioComponent } from './calendario/calendario.component';
+import { CalendarPage } from './calendar/calendar.page';
 
 FullCalendarModule.registerPlugins(
   [ dayGridPlugin ]
@@ -17,12 +17,12 @@ FullCalendarModule.registerPlugins(
     CommonModule,
     IonicModule,
     EventosPageRoutingModule,
-    ExpandableModule
-    // FullCalendarModule
+    ExpandableModule,
+    FullCalendarModule
   ],
   declarations: [
     EventosPage,
-    // CalendarioComponent
+    CalendarPage
   ]
 })
 

@@ -9,8 +9,8 @@ import { EventosService } from './eventos.service';
 
 export class EventosPage implements OnInit {
 
-  public expanded = false;
-  public eventos;
+  expanded = false;
+  eventos: any[] = [];
 
   constructor(
     private eventosService: EventosService
@@ -18,9 +18,9 @@ export class EventosPage implements OnInit {
 
   ngOnInit() {
     this.eventosService.getEventos()
-    .subscribe(data => {
-      this.eventos = data;
-      // console.log("this.eventos", this.eventos);
+    .valueChanges
+    .subscribe(result => {
+      this.eventos = result.data.eventos;
     });
   }
 
