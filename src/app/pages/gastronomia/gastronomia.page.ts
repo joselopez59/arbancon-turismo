@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GastronomiaService } from './../../services/gastronomia.service';
+import { GastronomiaService } from './gastronomia.service';
 import { environment } from '../../../environments/environment';
 
 @Component({

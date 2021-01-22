@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs"></ion-back-button>
     </ion-buttons>
@@ -11,10 +11,8 @@
   <img src="{{ env.cmsURL }}{{ imgURL }}">
  
   <ion-text >
-    <p class="ion-padding ion-text-justify"
-    [innerHTML]="actividad.text"
-    >
-      
+    <p class="ion-padding ion-text-justify">
+      {{ actividad.text }}
     </p>
   </ion-text>
 </ion-content>
@@ -22,7 +20,7 @@
 <ion-footer class="ion-justify-content-center">
 
   <ion-chip  
-  *ngFor="let button of actividad.buttons"
+    *ngFor="let button of actividad.buttons"
     outline = true
     color= "white"
   >

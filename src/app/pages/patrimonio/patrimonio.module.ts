@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { PatrimonioPageRoutingModule } from './patrimonio-routing.module';
 import { ExpandableModule } from 'src/app/components/expandable/expandable.module';
 import { PatrimonioPage } from './patrimonio.page';
+import { PatrimonioDetailComponent } from './patrimonio-detail/patrimonio-detail.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,10 @@ import { PatrimonioPage } from './patrimonio.page';
     PatrimonioPageRoutingModule,
     ExpandableModule
   ],
-  declarations: [ PatrimonioPage ]
+  declarations: [
+    PatrimonioPage,
+    PatrimonioDetailComponent
+   ]
 })
 
 export class PatrimonioPageModule {}

@@ -14,17 +14,12 @@ import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
-// import dayGridPlugin from '@fullcalendar/daygrid';
-
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { GraphQLModule } from './graphql.module';
 
 registerLocaleData(es);
 
-// FullCalendarModule.registerPlugins(
-//   [ dayGridPlugin ]
-// );
 @NgModule({
   declarations: [
     AppComponent

@@ -1,19 +1,15 @@
-// import { IvyParser } from '@angular/compiler';
 import { Component } from '@angular/core';
-
 import * as L from 'leaflet';
-
-import { environment } from '../../../environments/environment';
-import { MarkerService } from './../../services/mapa/marker.service';
-// import * from '../../../assets/icon/'
+import { MarkerService } from 'src/app/pages/actividades/marker.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-mapa',
-  templateUrl: './mapa.page.html',
-  styleUrls: ['./mapa.page.scss'],
+  templateUrl: './mapa.component.html',
+  styleUrls: ['./mapa.component.scss'],
 })
 
-export class MapaPage {
+export class MapaComponent {
 
   map: L.Map;
 
@@ -96,7 +92,6 @@ export class MapaPage {
     //     // console.log('overlayadd');
     //   }
     // });
-
   }
 
   createLayer(layerName: string) {
@@ -105,7 +100,7 @@ export class MapaPage {
 
     this.markerService.getPois(layerName)
     .subscribe((data: any) => {
-      console.log(data);
+      // console.log(data);
       for (const poi of data) {
 
         const marker = L.marker(

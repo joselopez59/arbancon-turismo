@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ActividadDetailComponent } from './pages/actividades/actividad-detail/actividad-detail.component';
+import { AlojamientoDetailComponent } from './pages/alojamientos/alojamiento-detail/alojamiento-detail.component';
 import { GastronomiaDetailComponent } from './pages/gastronomia/gastronomia-detail/gastronomia-detail.component';
+import { PatrimonioDetailComponent } from './pages/patrimonio/patrimonio-detail/patrimonio-detail.component';
 
 const routes: Routes = [
   {
@@ -22,20 +25,12 @@ const routes: Routes = [
   },
   {
     path: 'alojamiento/:id',
-    loadChildren: () => import('./pages/alojamiento/alojamiento.module').then( m => m.AlojamientoPageModule)
+    component: AlojamientoDetailComponent
   },
-  // {
-  //   path: 'escapadas',
-  //   loadChildren: () => import('./pages/escapadas/escapadas.module').then( m => m.EscapadasPageModule)
-  // },
   {
     path: 'gastronomia',
     loadChildren: () => import('./pages/gastronomia/gastronomia.module').then( m => m.GastronomiaPageModule)
   },
-  // {
-  //   path: 'gastronomia/:id',
-  //   loadChildren: () => import('./pages/gastronomia-detail/gastronomia-detail.module').then( m => m.GastronomiaDetailPageModule)
-  // },
   {
     path: 'gastronomia/:id',
     component: GastronomiaDetailComponent
@@ -46,7 +41,7 @@ const routes: Routes = [
   },
   {
     path: 'patrimonio/:id',
-    loadChildren: () => import('./pages/patrimonio-detail/patrimonio-detail.module').then( m => m.PatrimonioDetailPageModule)
+    component: PatrimonioDetailComponent
   },
   {
     path: 'actividades',
@@ -54,17 +49,12 @@ const routes: Routes = [
   },
   {
     path: 'actividad/:id',
-    loadChildren: () => import('./pages/actividad/actividad.module').then( m => m.ActividadPageModule)
+    component: ActividadDetailComponent
   },
   {
     path: 'eventos',
     loadChildren: () => import('./pages/eventos/eventos.module').then( m => m.EventosPageModule)
-  },
-  {
-    path: 'mapa',
-    loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   }
-
 ];
 @NgModule({
   imports: [

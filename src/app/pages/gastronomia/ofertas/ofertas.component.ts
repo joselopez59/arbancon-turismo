@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { environment } from '../../../../environments/environment';
-import { GastronomiaService } from './../../../services/gastronomia.service';
+import { GastronomiaService } from '../gastronomia.service';
 
 @Component({
   selector: 'app-ofertas',

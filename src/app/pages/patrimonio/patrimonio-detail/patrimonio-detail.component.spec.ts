@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PatrimonioDetailPage } from './patrimonio-detail.page';
+import { PatrimonioDetailComponent } from './patrimonio-detail.component';
 
-describe('PatrimonioDetailPage', () => {
-  let component: PatrimonioDetailPage;
-  let fixture: ComponentFixture<PatrimonioDetailPage>;
+describe('PatrimonioDetailComponent', () => {
+  let component: PatrimonioDetailComponent;
+  let fixture: ComponentFixture<PatrimonioDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PatrimonioDetailPage ],
+      declarations: [ PatrimonioDetailComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PatrimonioDetailPage);
+    fixture = TestBed.createComponent(PatrimonioDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

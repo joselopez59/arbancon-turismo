@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
-import { WheaterService } from '../../services/wheater.service';
+import { WheaterService } from './wheater.service';
 
 @Component({
   selector: 'app-home',

@@ -3,19 +3,19 @@ import { ActivatedRoute } from '@angular/router';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { ModalController } from '@ionic/angular';
 
-import { AlojamientosService } from './../../services/alojamientos.service';
-import { environment } from '../../../environments/environment';
-import { ModalPage } from './../../modal/modal.page';
+import { environment } from 'src/environments/environment';
+import { AlojamientosService } from '../alojamientos.service';
+import { ModalPage } from 'src/app/modal/modal.page';
+
 
 @Component({
-  selector: 'app-alojamiento',
-  templateUrl: './alojamiento.page.html',
-  styleUrls: ['./alojamiento.page.scss'],
+  selector: 'app-alojamiento-detail',
+  templateUrl: './alojamiento-detail.component.html',
+  styleUrls: ['./alojamiento-detail.component.scss'],
 })
 
-export class AlojamientoPage implements OnInit {
+export class AlojamientoDetailComponent implements OnInit {
 
-  // alojamiento: Alojamiento;
   env = environment;
   public alojamiento: any = '';
 
@@ -25,7 +25,6 @@ export class AlojamientoPage implements OnInit {
     autoplay: {
       delay: 3000,
     },
-
   };
 
   constructor(
@@ -33,12 +32,9 @@ export class AlojamientoPage implements OnInit {
     private alojamientosService: AlojamientosService,
     private inAppBrowser: InAppBrowser,
     public modalController: ModalController
-  ) {
-      // this.alojamiento = '';
-   }
+  ) { }
 
   ngOnInit() {
-    // console.log("alojamiento-page ngOnInit");
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.alojamientosService.getAlojamiento(id)
@@ -64,7 +60,6 @@ export class AlojamientoPage implements OnInit {
         url: this.alojamiento.url,
       }
     });
-
     return await modal.present();
   }
 

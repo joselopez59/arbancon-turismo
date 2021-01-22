@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActividadesService } from './../../services/actividades.service';
+import { ActividadesService } from './actividades.service';
 import { throwIfEmpty } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';

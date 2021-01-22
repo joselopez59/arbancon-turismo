@@ -4,7 +4,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { ModalController } from '@ionic/angular';
 // import { ActionSheetController } from '@ionic/angular';
 
-import { GastronomiaService } from '../../../services/gastronomia.service';
+import { GastronomiaService } from '../gastronomia.service';
 import { environment } from '../../../../environments/environment';
 import { ModalPage } from '../../../modal/modal.page';
 

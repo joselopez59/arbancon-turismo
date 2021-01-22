@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AlojamientoDetailComponent } from './alojamiento-detail/alojamiento-detail.component';
 
 import { AlojamientosPage } from './alojamientos.page';
 import { EscapadasComponent } from './escapadas/escapadas.component';
@@ -12,7 +13,11 @@ const routes: Routes = [
   {
     path: 'escapadas',
     component: EscapadasComponent
-  }
+  },
+  // {
+  //   path: '/:id',
+  //   component: AlojamientoDetailComponent
+  // },
 ];
 
 @NgModule({
