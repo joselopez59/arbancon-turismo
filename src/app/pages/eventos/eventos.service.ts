@@ -14,7 +14,6 @@ export class EventosService {
   constructor( private http: HttpClient, private apollo: Apollo) { }
 
   getEventos() {
-    console.log('getEventos');
     const eventosQuery: QueryRef<any> = this.apollo.watchQuery({
       query: gql`
         query {
@@ -28,11 +27,6 @@ export class EventosService {
     });
 
     return eventosQuery;
-
-    // eventosQuery.valueChanges.subscribe(result => {
-    //   // this.eventos = result.data && result.data.eventos;
-    //   console.log('getEventos result', result);
-    // });
   }
 
 

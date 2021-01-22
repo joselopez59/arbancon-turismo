@@ -1,51 +1,59 @@
-<!-- <ion-content></ion-content> -->
-
-  <!-- <ion-grid class="ion-no-padding"></ion-grid> -->
-
-  <ion-grid class="logos" class="ion-no-padding">
-    
+<ion-img id="banner"
+  src="../../../assets/images/home/turismo2.png">
+</ion-img>
+<ion-content>
+  
+  <!-- <ion-grid class="ion-no-padding ion-align-items-end">
     <ion-row id="logo">
       <ion-col>
         <ion-img src="../../../assets/images/home/turismo2.png"></ion-img>
       </ion-col>
     </ion-row>
+  </ion-grid> -->
 
-    <ion-row>
-
-      <ion-col class="side ion-padding">
-        
-        <a href="https://www.google.com/maps?daddr=Arbanc%C3%B3n,+Spanien">
-          <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
-        </a>
-        
-        <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
-
-      </ion-col>
-
-      <ion-col size="7">
-        <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
-      </ion-col>
-
-      <ion-col class="side ion-padding">
-        <div id="wetterCont">
+  <div id="logos">
+    <ion-grid>
+      <ion-row>
+  
+        <ion-col class="side ion-padding">
+          
+          <a href="https://www.google.com/maps?daddr=Arbanc%C3%B3n,+Spanien">
+            <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
+          </a>
+          
+          <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
+  
+        </ion-col>
+  
+        <ion-col size="7">
+          <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
+        </ion-col>
+  
+        <ion-col class="side ion-padding">
+          <div id="wetterCont">
+            <ion-img 
+              (click)="openExternalUrl('https://openweathermap.org/city/3129813')"
+              src="{{ iconUrl }}" 
+              id="wicon" 
+              class="top"></ion-img>
+            <ion-label id="temp">{{ temp }}</ion-label> 
+            <!-- <span id="temp">{{ temp }}</span> -->
+          </div>
+  
           <ion-img 
-            (click)="openExternalUrl('https://openweathermap.org/city/3129813')"
-            src="{{ iconUrl }}" 
-            id="wicon" 
-            class="top"></ion-img>
-          <ion-label id="temp">{{ temp }}</ion-label> 
-          <!-- <span id="temp">{{ temp }}</span> -->
-        </div>
+            src="../../../assets/images/home/ayuntamientoArbancon.png" 
+            button (click)="openExternalUrl('http://www.arbancon.es/')"
+            class="bottom">
+          </ion-img>
+  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+</ion-content>
 
-        <ion-img 
-          src="../../../assets/images/home/ayuntamientoArbancon.png" 
-          button (click)="openExternalUrl('http://www.arbancon.es/')"
-          class="bottom">
-        </ion-img>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  
 
 <ion-footer color="primary">
   <!-- <div class="inFooter"></div> -->

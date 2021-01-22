@@ -26,8 +26,8 @@
         <!-- <ion-card [routerLink]="['/actividad/' + actividad.idName]"> -->
         <ion-card [routerLink]="['/actividad/' + actividad.id]">
           
-          <img src = "{{ env.cmsURL }}{{ actividad.listImage.url }}"/>
-
+          <!-- <img src = "{{ env.cmsURL }}{{ actividad.listImage.url }}"/> -->
+          <ion-img [src] = "env.cmsURL + actividad.listImage.url"></ion-img>
           {{ actividad.title }}
 
         </ion-card>
