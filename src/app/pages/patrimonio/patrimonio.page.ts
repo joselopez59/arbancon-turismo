@@ -24,7 +24,7 @@ export class PatrimonioPage implements OnInit {
     .subscribe(result => {
       this.patrimonios = result.data.patrimonios;
       // console.log('patrimonios', result);
-      console.log('patrimonios', this.patrimonios);
+      // console.log('patrimonios', this.patrimonios);
     });
   }
 
