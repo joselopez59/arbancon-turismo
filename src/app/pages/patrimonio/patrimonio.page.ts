@@ -11,18 +11,20 @@ import { environment } from '../../../environments/environment';
 
 export class PatrimonioPage implements OnInit {
 
-  env = environment;
-  public patrimonios;
-  public expanded = false;
+  // env = environment;
+  patrimonios: any[] = [];
+  expanded = false;
 
   constructor(
-    public patrimonioService: PatrimonioService
+    private patrimonioService: PatrimonioService
   ) {}
 
   ngOnInit() {
     this.patrimonioService.getPatrimonios()
-    .subscribe(data => {
-      this.patrimonios = data;
+    .subscribe(result => {
+      this.patrimonios = result.data.patrimonios;
+      // console.log('patrimonios', result);
+      console.log('patrimonios', this.patrimonios);
     });
   }
 

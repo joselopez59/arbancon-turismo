@@ -11,10 +11,13 @@ export class EventosService {
 
   env = environment;
 
-  constructor( private http: HttpClient, private apollo: Apollo) { }
+  constructor(
+    private http: HttpClient,
+    private apollo: Apollo
+    ) { }
 
   getEventos() {
-    const eventosQuery: QueryRef<any> = this.apollo.watchQuery({
+    const query: QueryRef<any> = this.apollo.watchQuery({
       query: gql`
         query {
           eventos {
@@ -26,7 +29,7 @@ export class EventosService {
       `
     });
 
-    return eventosQuery;
+    return query;
   }
 
 

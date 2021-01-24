@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Apollo, QueryRef } from 'apollo-angular';
+import gql from 'graphql-tag';
 
 import { environment } from '../../../environments/environment';
 
@@ -12,13 +13,53 @@ export class PatrimonioService {
 
   env = environment;
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient, private apollo: Apollo ) { }
 
   getPatrimonios() {
-    return this.http.get(this.env.cmsURL + '/patromonios/');  // TO DO: Corregir
+    const query: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query {
+          patrimonios {
+            id
+            name
+            list_img {
+              url
+            }
+          }
+        }
+      `
+    });
+    return query.valueChanges;
   }
 
-  getPatrimonio(id) {
-    return this.http.get(this.env.cmsURL + '/patromonios/' + id);
+  // getPatrimonios() {
+  //   return this.http.get(this.env.cmsURL + '/patromonios/');  // TO DO: Corregir
+  // }
+
+  // getPatrimonio(id) {
+  //   return this.http.get(this.env.cmsURL + '/patromonios/' + id);
+  // }
+
+  getPatrimonio(ide: string) {
+    const query: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query ($id: ID!)
+        {
+          patrimonio(where: {id: $id})
+          {
+            name
+            detail_img
+            {
+              url
+            }
+            text
+          }
+        }
+      `,
+      variables: {
+        id: ide
+      }
+    });
+    return query.valueChanges;
   }
 }

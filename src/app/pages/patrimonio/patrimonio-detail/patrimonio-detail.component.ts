@@ -14,7 +14,7 @@ import { PatrimonioService } from '../patrimonio.service';
 export class PatrimonioDetailComponent implements OnInit {
 
   env = environment;
-  patrimonio: any = '';
+  patrimonio: any = {};
   public imgURL = '';
 
   constructor(
@@ -27,10 +27,11 @@ export class PatrimonioDetailComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.patrimonioService.getPatrimonio(id)
-      .subscribe(data => {
-        this.patrimonio = data;
-        console.log('this.patrimonio', this.patrimonio);
-        this.imgURL = this.patrimonio.cardImage.url;
+      .subscribe(result => {
+        // console.log('result', result);
+        this.patrimonio = result.data.patrimonio;
+        // console.log('this.patrimonio', this.patrimonio);
+        this.imgURL = this.patrimonio.detail_img.url;
       });
   }
 
