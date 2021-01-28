@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { Apollo, QueryRef } from 'apollo-angular';
 import gql from 'graphql-tag';
 
@@ -13,17 +13,23 @@ export class PatrimonioService {
 
   env = environment;
 
-  constructor( private http: HttpClient, private apollo: Apollo ) { }
+  constructor(
+    // private http: HttpClient,
+    private apollo: Apollo
+     ) { }
 
   getPatrimonios() {
     const query: QueryRef<any> = this.apollo.watchQuery({
       query: gql`
         query {
-          patrimonios {
-            id
-            name
-            list_img {
-              url
+          getPatrimonios {
+            headText
+            patrimonios {
+              id
+              name
+              list_img {
+                url
+              }
             }
           }
         }
@@ -53,6 +59,11 @@ export class PatrimonioService {
               url
             }
             text
+            buttons {
+              icon
+              name
+              url
+            }
           }
         }
       `,

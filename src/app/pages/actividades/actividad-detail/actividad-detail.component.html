@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <img src="{{ env.cmsURL }}{{ imgURL }}">
+  <img src="{{ imgURL }}">
  
   <ion-text >
     <p class="ion-padding ion-text-justify">
@@ -19,13 +19,13 @@
 
 <ion-footer class="ion-justify-content-center">
 
-  <ion-chip  
+  <!-- <ion-chip  
     *ngFor="let button of actividad.buttons"
     outline = true
     color= "white"
   >
     <ion-icon name= "{{ button.icon }}"></ion-icon>
     <ion-label>{{ button.text }}</ion-label>
-  </ion-chip>
+  </ion-chip> -->
 
 </ion-footer>

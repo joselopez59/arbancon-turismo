@@ -18,18 +18,15 @@
   </ion-text>
 </ion-content>
 
-<ion-footer
-  class="ion-justify-content-center"
->
-
+<ion-footer>
+  
   <ion-chip
     *ngFor="let button of patrimonio.buttons"
     button (click)="openExternalUrl(button.url)"
-    outline = true
     color= "white"
   >
     <ion-icon name= "{{ button.icon }}"></ion-icon>
-    <ion-label>{{ button.text }}</ion-label>
+    <ion-label>{{ button.name }}</ion-label>
   </ion-chip>
 
 </ion-footer>

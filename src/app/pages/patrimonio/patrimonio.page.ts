@@ -13,6 +13,7 @@ export class PatrimonioPage implements OnInit {
 
   // env = environment;
   patrimonios: any[] = [];
+  headText = '';
   expanded = false;
 
   constructor(
@@ -22,9 +23,11 @@ export class PatrimonioPage implements OnInit {
   ngOnInit() {
     this.patrimonioService.getPatrimonios()
     .subscribe(result => {
-      this.patrimonios = result.data.patrimonios;
-      // console.log('patrimonios', result);
-      // console.log('patrimonios', this.patrimonios);
+      this.patrimonios = result.data.getPatrimonios[0].patrimonios;
+      this.headText = result.data.getPatrimonios[0].headText;
+      // console.log('result', result);
+      // console.log('result', result.data.getPatrimonios[0].patrimonios);
+      // console.log('headText', this.headText);
     });
   }
 

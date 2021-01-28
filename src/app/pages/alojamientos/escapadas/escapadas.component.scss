@@ -1,12 +1,16 @@
-ion-card-title {
-  font-size: 14px;
-}
-
 ion-card { 
   width: 100%;
   padding: 10px; 
   position: relative;
 }
+
+ion-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ion-color-danger);
+}
+
+ion-card-subtitle { font-size: .6em;}
 
 ion-card .inCard {
   //border: 1px solid red;
@@ -18,7 +22,7 @@ ion-card .inCard {
   margin-bottom: 10px;
 }
 
-ion-card-subtitle { font-size: .6em;}
+
 
 .precio { 
   position: absolute;
@@ -57,9 +61,9 @@ ion-card-content {
 ion-badge {
   
   margin: 2px;
-  
+  padding: 2px 8px 4px 8px;
   font-size: .8em;
-  
+  font-weight: 300;
   border-radius: 10px;
   width: fit-content;
 }

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActividadesService } from './actividades.service';
-import { throwIfEmpty } from 'rxjs/operators';
-
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-actividades',
@@ -12,12 +9,9 @@ import { environment } from '../../../environments/environment';
 
 export class ActividadesPage implements OnInit {
 
-  env = environment;
-
+  headText = '';
   public expanded = false;
-  // public headerTitle;
-  // public headerText;
-  public actividades;
+  public actividades: any[] = [];
 
   constructor(
     private actividadesService: ActividadesService
@@ -25,15 +19,17 @@ export class ActividadesPage implements OnInit {
 
   ngOnInit() {
     // console.log("ngOnInit()");
-    this.actividadesService.getactividades()
-    .subscribe(data => {
-      this.actividades = data;
-      // console.log("this.actividades", this.actividades);
+    this.actividadesService.getActividades()
+    .subscribe(result => {
+      // console.log('result', result);
+      this.actividades = result.data.getActividades[0].actividades;
+      this.headText = result.data.getActividades[0].headText;
+      // console.log('this.actividades', this.actividades);
     });
   }
 
   expandHeader() {
-    console.log('expandHeader()');
+    // console.log('expandHeader()');
     if (this.expanded) {
       this.expanded = false;
     } else {

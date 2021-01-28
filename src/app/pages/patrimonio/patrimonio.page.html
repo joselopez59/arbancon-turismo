@@ -11,7 +11,8 @@
       </h6>
       <app-expandable expandHeight="150px" [expanded]= expanded>
         <p>
-            Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes.
+            <!-- Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes. -->
+            {{ headText }}
         </p>  
       </app-expandable>    
     </ion-text>
@@ -20,7 +21,7 @@
   <ion-grid >
     <ion-row>
       <ion-col 
-        size="6" size-sm="4" size-md="2"   
+        size="6" 
         *ngFor="let patrimonio of patrimonios"
       >
         <ion-card 

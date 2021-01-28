@@ -11,12 +11,12 @@ const routes: Routes = [
     component: AlojamientosPage
   },
   {
-    path: 'escapadas',
-    component: EscapadasComponent
+    path: ':id',
+    component: AlojamientoDetailComponent
   },
   // {
-  //   path: '/:id',
-  //   component: AlojamientoDetailComponent
+  //   path: 'escapadas',
+  //   component: EscapadasComponent
   // },
 ];
 

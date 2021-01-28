@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AlojamientosService } from './alojamientos.service';
 import { environment } from '../../../environments/environment';
 
@@ -10,13 +11,22 @@ import { environment } from '../../../environments/environment';
 
 export class AlojamientosPage implements OnInit {
 
-  public env = environment;
-  public alojamientos;
-  public expanded = false;
+  headText = '';
+  alojamientos: any[] = [];
+  expanded = false;
 
   constructor(
-    public alojamientosService: AlojamientosService
+    private alojamientosService: AlojamientosService
   ) {}
+
+  ngOnInit() {
+
+    this.alojamientosService.getAlojamientos()
+    .subscribe(result => {
+      this.alojamientos = result.data.getAlojamientos[0].alojamientos;
+      this.headText = result.data.getAlojamientos[0].headText;
+    });
+  }
 
   expandHeader() {
     // console.log("expandHeader()");
@@ -25,16 +35,6 @@ export class AlojamientosPage implements OnInit {
     } else {
       this.expanded = !this.expanded;
     }
-  }
-
-  ngOnInit() {
-
-    this.alojamientosService.getAlojamientos()
-    .subscribe(data => {
-
-      this.alojamientos = data;
-
-    });
   }
 
 }

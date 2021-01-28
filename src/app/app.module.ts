@@ -17,6 +17,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { GraphQLModule } from './graphql.module';
+import { ActividadesPageModule } from './pages/actividades/actividades.module';
+import { AlojamientosPageModule } from './pages/alojamientos/alojamientos.module';
 
 registerLocaleData(es);
 
@@ -32,7 +34,9 @@ registerLocaleData(es);
     SuperTabsModule.forRoot(),
     HttpClientModule,
     FullCalendarModule,
-    GraphQLModule
+    GraphQLModule,
+    // ActividadesPageModule,
+    // AlojamientosPageModule
   ],
   providers: [
     StatusBar,

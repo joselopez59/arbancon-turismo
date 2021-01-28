@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { ModalController } from '@ionic/angular';
 
-import { environment } from 'src/environments/environment';
 import { AlojamientosService } from '../alojamientos.service';
 import { ModalPage } from 'src/app/modal/modal.page';
 
@@ -16,7 +15,6 @@ import { ModalPage } from 'src/app/modal/modal.page';
 
 export class AlojamientoDetailComponent implements OnInit {
 
-  env = environment;
   public alojamiento: any = '';
 
   slideOpts = {
@@ -38,9 +36,10 @@ export class AlojamientoDetailComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.alojamientosService.getAlojamiento(id)
-    .subscribe(data => {
-      this.alojamiento = data;
-      // console.log("this.alojamiento", this.alojamiento);
+    .subscribe(result => {
+      console.log('result', result);
+      this.alojamiento = result.data.alojamiento;
+      console.log('this.alojamiento', this.alojamiento.legals[0].propietario);
     });
   }
 
@@ -49,14 +48,14 @@ export class AlojamientoDetailComponent implements OnInit {
     const modal = await this.modalController.create({
       component: ModalPage,
       componentProps: {
-        title: this.alojamiento.vendor,
-        propietario: this.alojamiento.propietario,
-        calle: this.alojamiento.calle,
-        localidad: this.alojamiento.localidad,
-        provincia: this.alojamiento.provincia,
-        gmapsURL: this.alojamiento.gmapsURL,
-        tel: this.alojamiento.tel,
-        mail: this.alojamiento.mail,
+        title: this.alojamiento.name,
+        propietario: this.alojamiento.legals[0].propietario,
+        calle: this.alojamiento.legals[0].calle,
+        localidad: this.alojamiento.legals[0].localidad,
+        provincia: this.alojamiento.legals[0].provincia,
+        gmapsURL: this.alojamiento.legals[0].gmapsURL,
+        tel: this.alojamiento.legals[0].telefono,
+        mail: this.alojamiento.legals[0].mail,
         url: this.alojamiento.url,
       }
     });
