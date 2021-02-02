@@ -5,7 +5,7 @@ import { ModalController } from '@ionic/angular';
 // import { ActionSheetController } from '@ionic/angular';
 
 import { GastronomiaService } from '../gastronomia.service';
-import { environment } from '../../../../environments/environment';
+// import { environment } from '../../../../environments/environment';
 import { ModalPage } from '../../../modal/modal.page';
 
 @Component({
@@ -15,7 +15,7 @@ import { ModalPage } from '../../../modal/modal.page';
 })
 export class GastronomiaDetailComponent implements OnInit {
 
-  env = environment;
+  // env = environment;
   public gastronomia;
 
   slideOpts = {
@@ -40,8 +40,9 @@ export class GastronomiaDetailComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.gastronomiaService.getGastronomia(id)
-    .subscribe(data => {
-      this.gastronomia = data;
+    .subscribe(response => {
+      // console.log(response);
+      this.gastronomia = response.data.gastronomia;
       // console.log(this.gastronomia);
     });
   }
@@ -52,13 +53,14 @@ export class GastronomiaDetailComponent implements OnInit {
       component: ModalPage,
       componentProps: {
         title: this.gastronomia.name,
-        calle: this.gastronomia.calle,
-        localidad: this.gastronomia.localidad,
-        provincia: this.gastronomia.provincia,
-        gmapsURL: this.gastronomia.gmapsURL,
-        tel: this.gastronomia.tel,
-        mail: this.gastronomia.mail,
-        url: this.gastronomia.url,
+        propietario: this.gastronomia.legal[0].propietario,
+        calle: this.gastronomia.legal[0].calle,
+        localidad: this.gastronomia.legal[0].localidad,
+        provincia: this.gastronomia.legal[0].provincia,
+        gmapsURL: this.gastronomia.legal[0].gmapsURL,
+        tel: this.gastronomia.legal[0].tel,
+        mail: this.gastronomia.legal[0].mail,
+        buttons: this.gastronomia.footers
       }
     });
 

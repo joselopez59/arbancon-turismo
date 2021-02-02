@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { Apollo, QueryRef } from 'apollo-angular';
 import gql from 'graphql-tag';
 
-import { environment } from '../../../environments/environment';
+// import { environment } from '../../../environments/environment';
 
 
 @Injectable({
@@ -12,9 +12,12 @@ import { environment } from '../../../environments/environment';
 
 export class AlojamientosService {
 
-  env = environment;
+  // env = environment;
 
-  constructor( private apollo: Apollo, private http: HttpClient ) { }
+  constructor(
+    private apollo: Apollo,
+    // private http: HttpClient
+  ) { }
 
   // getAlojamientos() {
   //   return this.http.get(this.env.cmsURL + '/alojamientos/');
@@ -37,7 +40,7 @@ export class AlojamientosService {
       `
     });
     return query.valueChanges;
-    }
+  }
 
   // getAlojamiento(id) {
   //   return this.http.get(this.env.cmsURL + '/alojamientos/' + id);
@@ -51,10 +54,7 @@ export class AlojamientosService {
           {
             name
             slider { url }
-            features {
-              typ
-              amount
-            }
+            features
             profil
             footers {
               label

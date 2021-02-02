@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GastronomiaService } from './gastronomia.service';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-gastronomia',
@@ -9,8 +8,8 @@ import { environment } from '../../../environments/environment';
 })
 export class GastronomiaPage implements OnInit {
 
-  env = environment;
-  public gastronomias;
+  public gastronomias: [] = [];
+  headText = '';
   public expanded = false;
 
   constructor(
@@ -20,13 +19,15 @@ export class GastronomiaPage implements OnInit {
   ngOnInit() {
 
     this.gastronomiaService.getGastronomias()
-    .subscribe(data => {
-      this.gastronomias = data;
+    .subscribe(result => {
+      // console.log(result.data.getGastronomias[0]);
+      this.gastronomias = result.data.getGastronomias[0].gastronomias;
+      this.headText = result.data.getGastronomias[0].headText;
+      // console.log(this.gastronomias[0].name);
     });
   }
 
   expandHeader() {
-    // console.log('expandHeader()');
     if (this.expanded) {
       this.expanded = false;
     } else {

@@ -1,26 +1,84 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { environment } from '../../../environments/environment';
+import { Apollo, QueryRef } from 'apollo-angular';
+import gql from 'graphql-tag';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GastronomiaService {
 
-  env = environment;
-
-  constructor(private http: HttpClient) { }
+  constructor(
+    private apollo: Apollo,
+  ) { }
 
   getGastronomias() {
-    return this.http.get(this.env.cmsURL + '/gastronomias/');
+    const query: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query {
+          getGastronomias{
+            headText
+            gastronomias {
+              id
+              name
+              features
+              list_img { url }
+            }
+          }
+        }
+      `
+    });
+    return query.valueChanges;
   }
 
-  getGastronomia(id) {
-    return this.http.get(this.env.cmsURL + '/gastronomias/' + id);
+  getGastronomia(ide: string) {
+    const query: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query ($id: ID!)
+        {
+          gastronomia (where: {id: $id})
+          {
+            name
+            slider { url }
+            features
+            profil
+            footers {
+              label
+              icon
+              url
+            }
+            legal {
+              propietario
+              calle
+              localidad
+              provincia
+              gmapsURL
+              telefono
+              mail
+            }
+          }
+        }
+      `,
+      variables: {
+        id: ide
+      }
+    });
+    return query.valueChanges;
   }
 
   getOfertas() {
-    return this.http.get(this.env.cmsURL + '/ofertas/');
+    const query: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query {
+          getOfertas{
+            headText
+            ofertas {
+              name
+              imagen { url }
+            }
+          }
+        }
+      `
+    });
+    return query.valueChanges;
   }
 }

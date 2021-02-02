@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { environment } from '../../../../environments/environment';
 import { GastronomiaService } from '../gastronomia.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { GastronomiaService } from '../gastronomia.service';
 })
 export class OfertasComponent implements OnInit {
 
-  env = environment;
+  headText = '';
   public expanded = false;
   public ofertas: any = '';
 
@@ -20,9 +19,10 @@ export class OfertasComponent implements OnInit {
 
   ngOnInit() {
     this.ofertasService.getOfertas()
-      .subscribe( data => {
-        this.ofertas = data;
-        // console.log(data.imagen.url);
+      .subscribe( result => {
+        this.ofertas = result.data.getOfertas[0].ofertas;
+        this.headText = result.data.getOfertas[0].headText;
+        // console.log(result.data.getOfertas[0].ofertas);
       });
   }
 

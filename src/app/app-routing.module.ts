@@ -6,6 +6,7 @@ import { MapaComponent } from './pages/actividades/mapa/mapa.component';
 // import { AlojamientoDetailComponent } from './pages/alojamientos/alojamiento-detail/alojamiento-detail.component';
 // import { AlojamientosPage } from './pages/alojamientos/alojamientos.page';
 import { EscapadasComponent } from './pages/alojamientos/escapadas/escapadas.component';
+import { CalendarPage } from './pages/eventos/calendar/calendar.page';
 
 const routes: Routes = [
   {
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: 'eventos',
     loadChildren: () => import('./pages/eventos/eventos.module').then( m => m.EventosPageModule)
+  },
+  {
+    path: 'calendario',
+    component: CalendarPage
   }
 ];
 @NgModule({

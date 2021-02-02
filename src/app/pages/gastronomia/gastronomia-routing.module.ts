@@ -11,12 +11,12 @@ const routes: Routes = [
     component: GastronomiaPage
   },
   {
-    path: ':id',
-    component: GastronomiaDetailComponent
-  },
-  {
     path: 'ofertas',
     component: OfertasComponent
+  },
+  {
+    path: ':id',
+    component: GastronomiaDetailComponent
   }
 ];
 

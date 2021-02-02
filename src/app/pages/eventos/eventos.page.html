@@ -35,9 +35,20 @@
 
             <ion-label>
               <ion-text class="datum">
-                {{ evento.start | date:'fullDate'}} 
-                <br/>
-                {{ evento.end | date:'fullDate'}}
+                <div>
+                  {{ evento.startTime | date:'fullDate'}}
+                  <span *ngIf="!evento.allDay">
+                    , {{ evento.startTime | date:'shortTime'}}
+                  </span> 
+                </div>
+
+                <div *ngIf="evento.endTime > evento.startTime">
+                  {{ evento.endTime | date:'fullDate'}}
+                  <span *ngIf="!evento.allDay">
+                    , {{ evento.endTime | date:'shortTime'}}
+                  </span>  
+                </div>
+
               </ion-text>
             </ion-label>
             
@@ -49,8 +60,13 @@
               <ion-text color="text">
                 {{ evento.descr }}
               </ion-text>
-              
             </ion-label>
+
+            <ion-button color="primary"
+                        (click)="addToGCalender(evento)"
+              >
+              <ion-label>Añadir a mi calendario</ion-label>
+            </ion-button>
 
           </ion-col>
         </ion-row>
@@ -64,7 +80,7 @@
 <ion-footer class="ion-justify-content-center">
 
   <ion-button 
-    [routerLink]="['/eventos/calendario/']"
+    [routerLink]="['/calendario/']"
     shape="round" 
     fill="outline" 
     size="small" 

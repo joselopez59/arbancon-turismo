@@ -23,13 +23,61 @@ export class EventosService {
           eventos {
             title
             descr
-            start
+            startTime
+            endTime
+            allDay
           }
         }
       `
     });
 
-    return query;
+    return query.valueChanges;
+  }
+
+  getProximosEventos(today: Date) {
+    const query: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query ($date: DateTime)
+        {
+          eventos (
+            where: {
+              startTime_gte: $date
+            }
+            orderBy: startTime_ASC
+          )
+            {
+              title
+              descr
+              startTime
+              endTime
+              allDay
+            }
+        }
+        `
+        ,
+        variables: {
+          date: today
+        }
+    });
+
+    return query.valueChanges;
+  }
+
+  getCalendarEventos() {
+    const query: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query {
+          eventos {
+            title
+            startTime
+            endTime
+            allDay
+          }
+        }
+      `
+    });
+
+    return query.valueChanges;
   }
 
 

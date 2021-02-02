@@ -13,12 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
-import { FullCalendarModule } from '@fullcalendar/angular';
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { GraphQLModule } from './graphql.module';
-import { ActividadesPageModule } from './pages/actividades/actividades.module';
-import { AlojamientosPageModule } from './pages/alojamientos/alojamientos.module';
 
 registerLocaleData(es);
 
@@ -33,10 +30,7 @@ registerLocaleData(es);
     AppRoutingModule,
     SuperTabsModule.forRoot(),
     HttpClientModule,
-    FullCalendarModule,
     GraphQLModule,
-    // ActividadesPageModule,
-    // AlojamientosPageModule
   ],
   providers: [
     StatusBar,

@@ -10,10 +10,10 @@ const routes: Routes = [
     path: '',
     component: EventosPage
   },
-  {
-    path: 'calendario',
-    component: CalendarPage
-  }
+  // {
+  //   path: 'calendario',
+  //   component: CalendarPage
+  // }
 ];
 
 @NgModule({

@@ -12,8 +12,8 @@
       </h6>
       <app-expandable expandHeight="150px" [expanded]= expanded>
         <p>
-          <!-- {{ gastronomias.headerText}} -->
-          Los restaurantes de Arbancón preparan especialidades de la cocina serrana tienda de ultramarinos para el abastecimiento diario y venta de productos naturales de la huerta local.
+          {{ headText}}
+          <!-- Los restaurantes de Arbancón preparan especialidades de la cocina serrana tienda de ultramarinos para el abastecimiento diario y venta de productos naturales de la huerta local. -->
         </p>  
       </app-expandable>    
     </ion-text>
@@ -30,8 +30,8 @@
 
         <ion-card-content class="ion-no-padding">
 
-          <img src="{{ env.cmsURL }}{{ gastronomia.mainImage.url }}">
-
+          <!-- <img src="{{ env.cmsURL }}{{ gastronomia.mainImage.url }}"> -->
+          <ion-img [src] = "gastronomia.list_img.url"></ion-img>
           <div>
 
             <ion-card-title>

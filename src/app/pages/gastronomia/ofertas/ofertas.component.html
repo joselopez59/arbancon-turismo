@@ -17,7 +17,7 @@
       </h6>
       <app-expandable expandHeight="150px" [expanded]= expanded>
         <p>
-          Los establecimientos gastronómicos de Arbancón ofrecen regularmente ofertas de temporada.          
+          {{ headText }}          
         </p>  
       </app-expandable>
     </ion-text>
@@ -26,8 +26,8 @@
 
 <ion-content>
 
-  <img *ngFor="let oferta of ofertas"
-    src="{{env.cmsURL}}{{ oferta.imagen.url }}" />
+  <ion-img *ngFor="let oferta of ofertas"
+            [src]= "oferta.imagen.url"></ion-img>
 
 </ion-content>
 

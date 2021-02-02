@@ -17,7 +17,7 @@ export class ModalPage implements OnInit {
   gmapsURL: string;
   tel: string;
   mail: string;
-  url: string;
+  footers: [];
 
   constructor(
     private modalController: ModalController,
@@ -25,7 +25,7 @@ export class ModalPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // console.table(this.navParams);
+    // console.log(this.navParams);
     this.title = this.navParams.data.title;
     this.propietario = this.navParams.data.propietario;
     this.calle = this.navParams.data.calle;
@@ -34,14 +34,14 @@ export class ModalPage implements OnInit {
     this.gmapsURL = this.navParams.data.gmapsURL;
     this.tel = this.navParams.data.tel;
     this.mail = this.navParams.data.mail;
-    this.url = this.navParams.data.url;
-
+    this.footers = this.navParams.data.buttons;
   }
 
   openWindow(method: string, target: string) {
-    console.log(method + target);
+    // console.log(method + target);
     window.open(method + target);
   }
+
   async closeModal() {
     // console.log("closeModal");
     await this.modalController.dismiss();

@@ -37,9 +37,9 @@ export class AlojamientoDetailComponent implements OnInit {
 
     this.alojamientosService.getAlojamiento(id)
     .subscribe(result => {
-      console.log('result', result);
+      // console.log('result', result);
       this.alojamiento = result.data.alojamiento;
-      console.log('this.alojamiento', this.alojamiento.legals[0].propietario);
+      // console.log('this.alojamiento', this.alojamiento.legals[0].propietario);
     });
   }
 
@@ -56,7 +56,7 @@ export class AlojamientoDetailComponent implements OnInit {
         gmapsURL: this.alojamiento.legals[0].gmapsURL,
         tel: this.alojamiento.legals[0].telefono,
         mail: this.alojamiento.legals[0].mail,
-        url: this.alojamiento.url,
+        buttons: this.alojamiento.footers
       }
     });
     return await modal.present();

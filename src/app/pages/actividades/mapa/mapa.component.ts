@@ -25,21 +25,11 @@ export class MapaComponent {
 
   initMap() {
 
-    // const callejero = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={ accessToken }',
-    // {
-    //   attribution: 'Map data ©OpenStreetMap, Imagery ©Mapbox',
-    //   maxZoom: 25,
-    //   id: 'mapbox.streets',
-    //   accessToken: 'pk.eyJ1Ijoiam9zZWxvcGV6IiwiYSI6ImNqdTJyenVqczBlYm4zeXFjaWJ5cmNjNXQifQ.GHte88RjI_B38NJc0df3dg'
-    // });
-    const callejero = L.tileLayer(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 25,
-        id: 'mapbox.streets'
-      }
-    );
+    const callejero = L.tileLayer('https://api.mapbox.com/styles/v1/joselopez/cju2smdse0xzk1fp5eoq8v36h/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoiam9zZWxvcGV6IiwiYSI6ImNqdTJyeGhmZjBmcG40ZXA4dGJ3Zmw4NHQifQ.TNgZK280-8jEv9GbasCfRg',
+    {
+      attribution: 'Map data ©OpenStreetMap, Imagery ©Mapbox, Style ©Jose Lopez',
+      maxZoom: 25,
+    });
 
     // Cartografía raster del Instituto Geográfico Nacional.
     const topografico = L.tileLayer.wms('http://www.ign.es/wms-inspire/mapa-raster', {
