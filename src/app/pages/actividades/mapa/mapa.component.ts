@@ -37,7 +37,7 @@ export class MapaComponent {
       format: 'image/png',
       transparent: false,
       continuousWorld : true,
-      attribution: '©Instituto Geográfico Nacional',
+      attribution: '©Instituto Geográfico Nacional de España',
       maxZoom: 20
     });
 
@@ -47,7 +47,7 @@ export class MapaComponent {
       format: 'image/png',
       transparent: false,
       continuousWorld : true,
-      attribution: 'PNOA cedido por © <a href="http://www.ign.es/ign/main/index.do" target="_blank">Instituto Geográfico Nacional de España</a>',
+      attribution: '©Instituto Geográfico Nacional de España',
       maxZoom: 25
     });
 
