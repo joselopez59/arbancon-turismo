@@ -16,23 +16,24 @@ export class EventosService {
     private apollo: Apollo
     ) { }
 
-  getEventos() {
-    const query: QueryRef<any> = this.apollo.watchQuery({
-      query: gql`
-        query {
-          eventos {
-            title
-            descr
-            startTime
-            endTime
-            allDay
-          }
-        }
-      `
-    });
+  // getEventos() {
+  //   const query: QueryRef<any> = this.apollo.watchQuery({
+  //     query: gql`
+  //       query {
+  //         eventos {
+  //           title
+  //           descr
+  //           startTime
+  //           endTime
+  //           allDay
+  //           link
+  //         }
+  //       }
+  //     `
+  //   });
 
-    return query.valueChanges;
-  }
+  //   return query.valueChanges;
+  // }
 
   getProximosEventos(today: Date) {
     const query: QueryRef<any> = this.apollo.watchQuery({
@@ -41,7 +42,8 @@ export class EventosService {
         {
           eventos (
             where: {
-              startTime_gte: $date
+              OR:
+              [{startTime_gte: $date}, {endTime_gte: $date}]
             }
             orderBy: startTime_ASC
           )
@@ -51,6 +53,7 @@ export class EventosService {
               startTime
               endTime
               allDay
+              link
             }
         }
         `
@@ -72,6 +75,7 @@ export class EventosService {
             startTime
             endTime
             allDay
+            link
           }
         }
       `

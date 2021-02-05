@@ -13,11 +13,7 @@ const routes: Routes = [
   {
     path: ':id',
     component: ActividadDetailComponent
-  },
-  // {
-  //   path: '/mapa',
-  //   component: MapaComponent
-  // },
+  }
 ];
 
 @NgModule({

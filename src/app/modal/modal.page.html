@@ -35,7 +35,7 @@
         <ion-button *ngIf="gmapsURL"
                     fill="clear"
                     color="green"
-                    (click)="openWindow('', gmapsURL)"
+                    (click)="openExternalUrl(gmapsURL)"
         >
           <ion-icon  name="locate-outline"></ion-icon>
         </ion-button>
@@ -97,7 +97,7 @@
       <ion-col size="3">
         <ion-button 
           fill="clear"
-          (click)="openWindow('', item.url)"
+          (click)="openExternalUrl(item.url)"
         >
           <ion-icon slot="icon-only" 
                     name="{{item.icon}}" 

@@ -20,16 +20,12 @@ export class EventosPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.eventosService.getEventos()
-    // .subscribe(result => {
-    //   this.eventos = result.data.eventos;
-    //   console.log(this.eventos);
-    // });
     const today = new Date();
     today.setHours(0, 0, 0 , 0);
     this.eventosService.getProximosEventos(today)
     .subscribe(result => {
       this.eventos = result.data.eventos;
+      // console.log(this.eventos);
     });
   }
 
@@ -42,6 +38,11 @@ export class EventosPage implements OnInit {
     }
   }
 
+  // openWindow(target: string) {
+  //   console.log(target);
+  //   window.open('' + target);
+  // }
+
   addToGCalender(evento) {
     const gcURL = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
     const text = '&text=' + this.parseString(evento.title);
@@ -52,6 +53,7 @@ export class EventosPage implements OnInit {
 
     const gCalEvento = gcURL + text + dates + details + location;
     this.openExternalUrl(gCalEvento);
+    // this.openWindow(gCalEvento);
   }
 
   parseString(inputString: string): string {
@@ -60,8 +62,7 @@ export class EventosPage implements OnInit {
 
   openExternalUrl(url: string) {
     this.inAppBrowser.create(
-      url,
-      '_blank'
+      url, '_blank'
     );
   }
 

@@ -33,41 +33,44 @@
         <ion-row>
           <ion-col>
 
-            <ion-label>
-              <ion-text class="datum">
-                <div>
-                  {{ evento.startTime | date:'fullDate'}}
-                  <span *ngIf="!evento.allDay">
-                    , {{ evento.startTime | date:'shortTime'}}
-                  </span> 
-                </div>
-
-                <div *ngIf="evento.endTime > evento.startTime">
-                  {{ evento.endTime | date:'fullDate'}}
-                  <span *ngIf="!evento.allDay">
-                    , {{ evento.endTime | date:'shortTime'}}
-                  </span>  
-                </div>
-
-              </ion-text>
-            </ion-label>
-            
-            <ion-label class="ion-text-wrap">
-              <h2>{{ evento.title }}</h2>
-            </ion-label>
-
-            <ion-label class="ion-text-wrap">
-              <ion-text color="text">
-                {{ evento.descr }}
-              </ion-text>
-            </ion-label>
-
-            <ion-button color="primary"
+            <div (click)="openExternalUrl(evento.link)">
+              <ion-label>
+                <ion-text class="datum">
+                  <div>
+                    {{ evento.startTime | date:'fullDate'}}
+                    <span *ngIf="!evento.allDay">
+                      , {{ evento.startTime | date:'shortTime'}}
+                    </span> 
+                  </div>
+  
+                  <div *ngIf="evento.endTime > evento.startTime">
+                    {{ evento.endTime | date:'fullDate'}}
+                    <span *ngIf="!evento.allDay">
+                      , {{ evento.endTime | date:'shortTime'}}
+                    </span>  
+                  </div>
+  
+                </ion-text>
+              </ion-label>
+              
+              <ion-label class="ion-text-wrap">
+                <h2>{{ evento.title }}</h2>
+              </ion-label>
+  
+              <ion-label class="ion-text-wrap">
+                <ion-text color="text">
+                  {{ evento.descr }}
+                </ion-text>
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size="1" class="ion-no-padding">
+            <ion-button fill="clear"
+                        color="green"
                         (click)="addToGCalender(evento)"
               >
-              <ion-label>Añadir a mi calendario</ion-label>
+              <ion-icon  name="today-outline"></ion-icon>
             </ion-button>
-
           </ion-col>
         </ion-row>
       </ion-grid>

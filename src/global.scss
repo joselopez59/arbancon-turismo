@@ -249,6 +249,8 @@ ion-footer {
   }
 }
 
+/** MAPA  **/
+
 .mapicon {
   
   width: 30px;
@@ -257,4 +259,17 @@ ion-footer {
   border-radius: 50%;
   border: 1px solid gray;
   background-color: #26A767;
+}
+
+.mapicontext {
+  // width: 150px !important;
+  color: rgb(78, 30, 30);
+}
+
+.leaflet-popup-content  {
+  margin: 3px 9px;
+  div {
+    color: var(--ion-color-text);
+  }
+  
 }

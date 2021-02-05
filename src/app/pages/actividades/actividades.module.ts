@@ -7,13 +7,15 @@ import { ExpandableModule } from 'src/app/components/expandable/expandable.modul
 import { ActividadesPage } from './actividades.page';
 import { ActividadDetailComponent } from './actividad-detail/actividad-detail.component';
 import { MapaComponent } from './mapa/mapa.component';
+// import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
     ActividadesPageRoutingModule,
-    ExpandableModule
+    ExpandableModule,
+    // NgxLeafletLocateModule
   ],
   declarations:  [
     ActividadesPage,

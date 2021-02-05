@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams  } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-modal',
@@ -21,7 +22,8 @@ export class ModalPage implements OnInit {
 
   constructor(
     private modalController: ModalController,
-    private navParams: NavParams
+    private navParams: NavParams,
+    private inAppBrowser: InAppBrowser
   ) { }
 
   ngOnInit() {
@@ -40,6 +42,12 @@ export class ModalPage implements OnInit {
   openWindow(method: string, target: string) {
     // console.log(method + target);
     window.open(method + target);
+  }
+
+  openExternalUrl(url: string) {
+    this.inAppBrowser.create(
+      url, '_blank'
+    );
   }
 
   async closeModal() {
