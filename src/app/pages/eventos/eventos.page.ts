@@ -61,9 +61,11 @@ export class EventosPage implements OnInit {
   }
 
   openExternalUrl(url: string) {
-    this.inAppBrowser.create(
-      url, '_blank'
-    );
+    if (url) {
+      this.inAppBrowser.create(
+        url, '_blank'
+      );
+    }
   }
 
 }
