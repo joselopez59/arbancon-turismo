@@ -134,18 +134,11 @@ ion-list {
   ion-card {
     width: 100%;
     margin: 0.4em 0;
-    padding: 0;
+    // padding: 0;
     border-radius: 24px 8px 24px 8px;
 
     ion-card-content {
       display: flex;
-      // padding: 0;
-
-      img  {
-        //TO DO: imágenes 100x100
-        height: 100px;
-        width: 100px;
-      }
 
       div {
         text-align: right;
