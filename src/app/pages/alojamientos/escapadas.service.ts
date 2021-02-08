@@ -26,12 +26,15 @@ export class EscapadasService {
       query: gql`
         query
         {
-          escapadas {
-            name
-            vendor
-            features
-            price
-            list_img { url }
+          getEscapadas {
+            headText
+            escapadas {
+              name
+              vendor
+              features
+              price
+              list_img { url }
+            }
           }
         }
       `

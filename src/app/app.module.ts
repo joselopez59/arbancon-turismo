@@ -7,15 +7,17 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
+import { MarkdownModule } from 'ngx-markdown';
 
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { GraphQLModule } from './graphql.module';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 registerLocaleData(es);
 
@@ -31,6 +33,7 @@ registerLocaleData(es);
     SuperTabsModule.forRoot(),
     HttpClientModule,
     GraphQLModule,
+    MarkdownModule.forRoot()
   ],
   providers: [
     StatusBar,

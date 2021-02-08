@@ -8,6 +8,7 @@ import { EscapadasService } from 'src/app/pages/alojamientos/escapadas.service';
 export class EscapadasComponent implements OnInit {
 
   escapadas: any[] = [];
+  headText;
   expanded = false;
 
   constructor( private escapadasService: EscapadasService ) { }
@@ -15,7 +16,9 @@ export class EscapadasComponent implements OnInit {
   ngOnInit() {
     this.escapadasService.getEscapadas()
     .subscribe(result => {
-      this.escapadas = result.data.escapadas;
+      // console.log(result);
+      this.escapadas = result.data.getEscapadas[0].escapadas;
+      this.headText = result.data.getEscapadas[0].headText;
     });
   }
 

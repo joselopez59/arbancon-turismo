@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { MarkdownModule } from 'ngx-markdown';
+
 
 import { ActividadesPageRoutingModule } from './actividades-routing.module';
 import { ExpandableModule } from 'src/app/components/expandable/expandable.module';
@@ -15,7 +17,7 @@ import { MapaComponent } from './mapa/mapa.component';
     IonicModule,
     ActividadesPageRoutingModule,
     ExpandableModule,
-    // NgxLeafletLocateModule
+    MarkdownModule.forChild()
   ],
   declarations:  [
     ActividadesPage,

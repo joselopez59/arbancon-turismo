@@ -4,6 +4,10 @@ ion-card {
   position: relative;
 }
 
+.card-header{
+  margin-bottom: 10px;
+}
+
 ion-card-title {
   font-size: 14px;
   font-weight: 600;
@@ -11,18 +15,6 @@ ion-card-title {
 }
 
 ion-card-subtitle { font-size: .6em;}
-
-ion-card .inCard {
-  //border: 1px solid red;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-}
-
-.card-header{
-  margin-bottom: 10px;
-}
-
-
 
 .precio { 
   position: absolute;
@@ -40,10 +32,10 @@ ion-card .inCard {
   line-height: 20px;
 }
 
-img {
-  border-radius: 4px;
-  //height: 85px;
-  width: 100px;
+ion-card .inCard {
+  //border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 }
 
 .imgInCard {
@@ -51,15 +43,19 @@ img {
   align-items: center;
 }
 
+ion-img {
+  border-radius: 4px;
+  width: 100px;
+}
+
 ion-card-content {
   //border: 1px solid red;
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 24px;
+  padding: 0 0 0 15px;
 }
 
 ion-badge {
-  
   margin: 2px;
   padding: 2px 8px 4px 8px;
   font-size: .8em;
@@ -68,6 +64,3 @@ ion-badge {
   width: fit-content;
 }
 
-ul {
-  margin-bottom: 0;
-}

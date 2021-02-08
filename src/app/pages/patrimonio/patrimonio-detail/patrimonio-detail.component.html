@@ -10,12 +10,13 @@
 <ion-content>
  
   <ion-img src="{{imgURL}}"></ion-img> 
-  <!-- <img src={{imgURL}}/> -->
-  <ion-text >
-    <p class="ion-padding ion-text-justify">
-      {{ patrimonio.text }}
-    </p>
+   
+  <ion-text>
+    <div class="ion-padding ion-text-justify" >
+      <markdown [data]="patrimonio.markdownText" style="line-height: 140%;"></markdown>
+    </div>
   </ion-text>
+  
 </ion-content>
 
 <ion-footer>

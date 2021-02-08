@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { PatrimonioPageRoutingModule } from './patrimonio-routing.module';
 import { ExpandableModule } from 'src/app/components/expandable/expandable.module';
@@ -12,7 +13,8 @@ import { PatrimonioDetailComponent } from './patrimonio-detail/patrimonio-detail
     CommonModule,
     IonicModule,
     PatrimonioPageRoutingModule,
-    ExpandableModule
+    ExpandableModule,
+    MarkdownModule.forChild()
   ],
   declarations: [
     PatrimonioPage,

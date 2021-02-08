@@ -9,11 +9,14 @@
 
 <ion-content>
   <img src="{{ imgURL }}">
- 
+  
   <ion-text >
-    <p class="ion-padding ion-text-justify">
+    <!-- <p class="ion-padding ion-text-justify">
       {{ actividad.text }}
-    </p>
+    </p> -->
+    <div class="ion-padding ion-text-justify" >
+      <markdown [data]="actividad.markdownText" style="line-height: 140%;"></markdown>
+    </div>
   </ion-text>
 </ion-content>
 

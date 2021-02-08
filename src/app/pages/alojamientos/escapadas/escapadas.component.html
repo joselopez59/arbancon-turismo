@@ -1,6 +1,4 @@
-<ion-header 
-    color="primary" 
-    (click)="expandHeader()">
+<ion-header (click)="expandHeader()">
     
     <ion-toolbar color="green" >
 
@@ -15,9 +13,10 @@
         </h6>
         
         <app-expandable expandHeight="150px" [expanded]= expanded>
-          <p>
+          <!-- <p>
             Hemos preparado paquetes de ofertas especiales para un fin de semana rural. Para detalles, consultar a los propietarios
-          </p>  
+          </p>   -->
+          <p>{{ headText }}</p>  
         </app-expandable>    
       </ion-text>
     </ion-toolbar>
@@ -28,7 +27,7 @@
   <ion-list>
     <ion-item *ngFor="let escapada of escapadas"
       lines="none">
-      <ion-card class="ion-no-padding">
+      <ion-card>
 
         <div class="card-header">
           
@@ -49,16 +48,15 @@
         <div class="inCard">
           
           <div class="imgInCard">
-            <!-- <img src="{{env.cmsURL}}{{ escapada.image.url }}"> -->
             <ion-img [src] = "escapada.list_img.url"></ion-img>
           </div>
           
             <ion-card-content >
               
-              <ion-badge 
-                color="green"
-                *ngFor="let feature of escapada.features">
-                  {{ feature }}
+              <ion-badge color="green"
+                        *ngFor="let feature of escapada.features"
+              >
+                {{ feature }}
               </ion-badge>
             </ion-card-content>
               

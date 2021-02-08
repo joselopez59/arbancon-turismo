@@ -59,6 +59,7 @@ export class PatrimonioService {
               url
             }
             text
+            markdownText
             buttons {
               icon
               name

@@ -59,6 +59,7 @@ export class ActividadesService {
               url
             }
             text
+            markdownText
           }
         }
       `,

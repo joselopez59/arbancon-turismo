@@ -1,7 +1,7 @@
 <ion-content >
-  <ion-header 
-    color="green" 
-    (click)="expandHeader()">
+  <ion-header color="green" 
+              (click)="expandHeader()"
+  >
     <ion-text>
       <h6 class="ion-text-uppercase">
         Alojamientos
@@ -27,6 +27,7 @@
           
           <ion-img [src] = "alojamiento.list_img.url"></ion-img>
           
+          <ion-text>
           <div>
             <ion-card-title>
               {{ alojamiento.name }}
@@ -35,8 +36,9 @@
             <ion-card-subtitle class="ion-text-end">
               {{ alojamiento.shortProfil }}
             </ion-card-subtitle>
-
           </div>
+        </ion-text>
+
         </ion-card-content>      
       </ion-card>
     </ion-item>
